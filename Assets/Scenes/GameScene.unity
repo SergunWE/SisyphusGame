@@ -1028,8 +1028,15 @@ MonoBehaviour:
   playerSpawnOffset: {x: 0, y: 0, z: -10}
   stoneSpawnOffset: {x: 0, y: 2, z: -1}
   levelOffset: 10
+  obstacleClearance: 5
+  obstacleVerticalOffset: 9
+  obstacleHorizontalOffset: 6
+  obstacles:
+  - {fileID: 1558701893152855384, guid: 06226ed123e9fd7468a61f006f3050ee, type: 3}
+  - {fileID: 938141462233862694, guid: 34a9bf72e6f37d440803bdc0d504cd67, type: 3}
+  - {fileID: 1016906245847389394, guid: ab8d2f789bf720e408b3237de57e3fba, type: 3}
   saveInfo:
-    <LevelNumber>k__BackingField: 0
+    <LevelNumber>k__BackingField: 5
     <MusicOn>k__BackingField: 0
     <SoundOn>k__BackingField: 0
     <Coins>k__BackingField: 0

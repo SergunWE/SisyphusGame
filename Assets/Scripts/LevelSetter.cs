@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelSetter : MonoBehaviour
 {
@@ -11,20 +14,35 @@ public class LevelSetter : MonoBehaviour
     [SerializeField,Space] private Vector3 playerSpawnOffset;
     [SerializeField] private Vector3 stoneSpawnOffset;
     [SerializeField] private float levelOffset = 10f;
-    
+
+    [SerializeField] private float obstacleClearance = 3f;
+    [SerializeField] private float obstacleVerticalOffset = 8f;
+    [SerializeField] private float obstacleHorizontalOffset = 1f;
+    [SerializeField] private List<GameObject> obstacles;
+
     //todo: use singleton
     [SerializeField] private SaveInfo saveInfo;
 
     private void Awake()
     {
+        //level
         var startPosition = mainPlatformStartPos.position;
-        var maxDistance = Vector3.Distance(startPosition, mainPlatformEndPos.position);
-        Debug.Log($"Platform distance {maxDistance}");
+        float maxDistance = Vector3.Distance(startPosition, mainPlatformEndPos.position);
         var direction = mainPlatformStartPos.forward;
-        var levelDistance = Mathf.Clamp(levelOffset * saveInfo.LevelNumber, 0, maxDistance);
+        float levelDistance = Mathf.Clamp(levelOffset * saveInfo.LevelNumber, 0, maxDistance);
         var position = startPosition + direction * levelDistance;
         mainPlatform.transform.position = position;
         player.transform.position = position + playerSpawnOffset;
         stone.position = position + stoneSpawnOffset;
+        
+        //obstacle
+        for (float i = obstacleClearance; i < levelDistance; i+= obstacleVerticalOffset)
+        {
+            var currentHorizontalOffset =
+                new Vector3(Random.Range(-obstacleHorizontalOffset, obstacleHorizontalOffset), 0, 0);
+            var obstaclePosition = startPosition + direction * i + currentHorizontalOffset;
+            int index = Random.Range(0, obstacles.Count - 1);
+            Instantiate(obstacles[index], obstaclePosition, Quaternion.identity);
+        }
     }
 }
