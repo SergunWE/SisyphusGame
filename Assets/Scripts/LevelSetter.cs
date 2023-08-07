@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using YandexSDK.Scripts;
 using Random = UnityEngine.Random;
 
 public class LevelSetter : MonoBehaviour
@@ -19,9 +20,8 @@ public class LevelSetter : MonoBehaviour
     [SerializeField] private float obstacleVerticalOffset = 8f;
     [SerializeField] private float obstacleHorizontalOffset = 1f;
     [SerializeField] private List<GameObject> obstacles;
-
-    //todo: use singleton
-    [SerializeField] private SaveInfo saveInfo;
+    
+    private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
 
     private void Awake()
     {
@@ -29,14 +29,14 @@ public class LevelSetter : MonoBehaviour
         var startPosition = mainPlatformStartPos.position;
         float maxDistance = Vector3.Distance(startPosition, mainPlatformEndPos.position);
         var direction = mainPlatformStartPos.forward;
-        float levelDistance = Mathf.Clamp(levelOffset * saveInfo.LevelNumber, 0, maxDistance);
+        float levelDistance = Mathf.Clamp(levelOffset * SaveInfo.LevelNumber, 0, maxDistance);
         var position = startPosition + direction * levelDistance;
         mainPlatform.transform.position = position;
         player.transform.position = position + playerSpawnOffset;
         stone.position = position + stoneSpawnOffset;
         
         //obstacle
-        for (float i = obstacleClearance; i < levelDistance; i+= obstacleVerticalOffset)
+        for (float i = 0; i < levelDistance - obstacleClearance; i+= obstacleVerticalOffset)
         {
             var currentHorizontalOffset =
                 new Vector3(Random.Range(-obstacleHorizontalOffset, obstacleHorizontalOffset), 0, 0);
