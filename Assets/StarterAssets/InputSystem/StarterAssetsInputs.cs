@@ -48,12 +48,12 @@ namespace StarterAssets
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
-			move = newMoveDirection;
+			move = Vector3.ClampMagnitude(newMoveDirection, 1f);
 		} 
 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = newLookDirection;
+			look = Vector3.ClampMagnitude(newLookDirection, 1f);
 		}
 
 		public void JumpInput(bool newJumpState)
