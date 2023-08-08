@@ -53,7 +53,7 @@ namespace StarterAssets
 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = Vector3.ClampMagnitude(newLookDirection, 1f);
+			look = newLookDirection;
 		}
 
 		public void JumpInput(bool newJumpState)

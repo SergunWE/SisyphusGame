@@ -28,6 +28,10 @@ public class PlayerUpgrader : MonoBehaviourInitializable
     public override void Initialize()
     {
         Physics.gravity = DefaultGravity + Vector3.up * SaveInfo.GravityLevel * gravityOffset;
+        if (Physics.gravity.y > -0.1f)
+        {
+            Physics.gravity = new Vector3(Physics.gravity.x, -0.1f, Physics.gravity.z);
+        }
         
         playerController.MoveSpeed += SaveInfo.SpeedLevel * walkOffset;
         playerController.SprintSpeed += SaveInfo.SpeedLevel * sprintOffset;
