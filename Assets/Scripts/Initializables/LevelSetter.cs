@@ -12,6 +12,7 @@ public class LevelSetter : MonoBehaviourInitializable
     [SerializeField] private Transform mainPlatformEndPos;
     [SerializeField] private Transform mainPlatform;
     [SerializeField] private Transform parkourPlatform;
+    [SerializeField] private Transform islandStartPos;
     [SerializeField] private Transform player;
     [SerializeField] private Rigidbody stone;
     
@@ -21,9 +22,9 @@ public class LevelSetter : MonoBehaviourInitializable
     
     [SerializeField,Space] private float parkourLevelOffset = 10f;
     [SerializeField] private float parkourIslandMinDistance = 1f;
-    [SerializeField] private float parkourIslandMaxDistance = 5f;
     [SerializeField] private Vector3 parkourIslandOffset;
-    [SerializeField] private Vector3 parkourIslandMaxOffset;
+    [SerializeField] private Vector2 parkourIslandMaxOffset;
+    [SerializeField] private List<GameObject> islands;
 
     [SerializeField,Space] private float slopeLevelOffset = 1f;
     [SerializeField] private float obstacleClearance = 3f;
@@ -57,8 +58,28 @@ public class LevelSetter : MonoBehaviourInitializable
         //island
         float islandDistance = SaveInfo.LevelNumber * parkourLevelOffset;
         var islandDirection = parkourPlatform.forward * -1;
-        parkourPlatform.transform.position = levelPosition + islandSpawnOffset + islandDirection * islandDistance;
-        
-        player.transform.position = parkourPlatform.transform.position + playerSpawnOffset;
+        var islandPosition = levelPosition + islandSpawnOffset + islandDirection * islandDistance;
+        parkourPlatform.transform.position = islandPosition;
+        player.transform.position = islandPosition + playerSpawnOffset;
+
+        var currentIslandPosition = islandStartPos.position;
+        float currentDistance = 0;
+        while (currentDistance < islandDistance)
+        {
+            int index = Random.Range(0, islands.Count - 1);
+            var offset = Vector3.zero;
+            offset.x = Mathf.Abs(islandStartPos.position.x - currentIslandPosition.x) >= parkourIslandMaxOffset.x
+                ? 0
+                : Random.Range(parkourIslandOffset.x, -parkourIslandOffset.x);
+            
+            offset.y = Mathf.Abs(islandStartPos.position.y - currentIslandPosition.y) >= parkourIslandMaxOffset.y
+                ? 0
+                : Random.Range(parkourIslandOffset.y, -parkourIslandOffset.y);
+
+            offset.z = Random.Range(parkourIslandMinDistance, parkourIslandOffset.z);
+            currentIslandPosition += offset;
+            Instantiate(islands[index], currentIslandPosition, Quaternion.identity);
+            currentDistance += offset.z;
+        }
     }
 }

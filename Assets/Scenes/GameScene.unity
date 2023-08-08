@@ -766,6 +766,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+--- !u!1 &348359233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348359234}
+  m_Layer: 0
+  m_Name: IslandStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &348359234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348359233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1001688082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442310911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,16 +1145,18 @@ MonoBehaviour:
   mainPlatformEndPos: {fileID: 1507332410}
   mainPlatform: {fileID: 1059781659}
   parkourPlatform: {fileID: 1001688082}
+  islandStartPos: {fileID: 348359234}
   player: {fileID: 3893294199183149141}
   stone: {fileID: 278860412}
   playerSpawnOffset: {x: 0, y: 0, z: -5}
   stoneSpawnOffset: {x: 0, y: 2, z: -1}
   islandSpawnOffset: {x: 0, y: 0, z: -53}
   parkourLevelOffset: 5
-  parkourIslandMinDistance: 1
-  parkourIslandMaxDistance: 3
-  parkourIslandOffset: {x: 3, y: 0.5, z: 3}
-  parkourIslandMaxOffset: {x: 50, y: 3, z: 0}
+  parkourIslandMinDistance: 2
+  parkourIslandOffset: {x: 5, y: 1, z: 5}
+  parkourIslandMaxOffset: {x: 50, y: 2}
+  islands:
+  - {fileID: 2066000584587812530, guid: a95ceb376e4a8b84aa2b7d41a350b204, type: 3}
   slopeLevelOffset: 2
   obstacleClearance: 5
   obstacleVerticalOffset: 9
@@ -1211,6 +1244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1616969078}
+  - {fileID: 348359234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027672511
@@ -1415,7 +1449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 4416926082705838820}
   pushController: {fileID: 5885216828710271007}
-  walkOffset: 0.2
+  walkOffset: 0.4
   sprintOffset: 0.5
   gravityOffset: 0.7
   jumpOffset: 0.25
@@ -1863,7 +1897,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8890774966862588244, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2238,9 +2273,9 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
-  analogMovement: 0
-  cursorLocked: 1
-  cursorInputForLook: 1
+  analogMovement: 1
+  cursorLocked: 0
+  cursorInputForLook: 0
 --- !u!4 &272993187485431500
 Transform:
   m_ObjectHideFlags: 0

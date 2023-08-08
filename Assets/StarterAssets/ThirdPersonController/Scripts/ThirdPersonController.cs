@@ -225,7 +225,7 @@ namespace StarterAssets
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
             float speedOffset = 0.1f;
-            float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+            float inputMagnitude = _input.analogMovement ? Vector3.ClampMagnitude(_input.move, 1f).magnitude : 1f;
 
             // accelerate or decelerate to target speed
             if (currentHorizontalSpeed < targetSpeed - speedOffset ||
@@ -384,7 +384,7 @@ namespace StarterAssets
             {
                 audioSource.PlayOneShot(LandingAudioClip);
                 //AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center),
-                    //FootstepAudioVolume);
+                //FootstepAudioVolume);
             }
         }
     }
