@@ -1,11 +1,12 @@
 ﻿using System;
+using SkibidiRunner.Managers;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using YandexSDK.Scripts;
 
-public class PlayerUpgrader : MonoBehaviour
+public class PlayerUpgrader : MonoBehaviourInitializable
 {
     [SerializeField] private ThirdPersonController playerController;
     [SerializeField] private BasicRigidBodyPush pushController;
@@ -24,7 +25,7 @@ public class PlayerUpgrader : MonoBehaviour
         DefaultGravity = Physics.gravity;
     }
     
-    private void Awake()
+    public override void Initialize()
     {
         Physics.gravity = DefaultGravity + Vector3.up * SaveInfo.GravityLevel * gravityOffset;
         

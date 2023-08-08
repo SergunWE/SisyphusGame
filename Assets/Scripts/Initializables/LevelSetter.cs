@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using SkibidiRunner.Managers;
 using UnityEngine;
 using YandexSDK.Scripts;
 using Random = UnityEngine.Random;
 
-public class LevelSetter : MonoBehaviour
+public class LevelSetter : MonoBehaviourInitializable
 {
     [SerializeField] private Transform mainPlatformStartPos;
     [SerializeField] private Transform mainPlatformEndPos;
@@ -22,8 +23,8 @@ public class LevelSetter : MonoBehaviour
     [SerializeField] private List<GameObject> obstacles;
     
     private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
-
-    private void Awake()
+    
+    public override void Initialize()
     {
         //level
         var startPosition = mainPlatformStartPos.position;

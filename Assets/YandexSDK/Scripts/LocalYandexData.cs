@@ -29,6 +29,12 @@ namespace YandexSDK.Scripts
             }
             OnYandexDataLoaded?.Invoke();
         }
+        
+        public void DebugSetPlayerData(SaveInfo playerData)
+        {
+            YandexDataLoaded = true;
+            SaveInfo = playerData;
+        }
 
         private void SaveData()
         {
