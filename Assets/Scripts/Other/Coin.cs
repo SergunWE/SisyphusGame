@@ -7,6 +7,8 @@ namespace SkibidiRunner.Managers
 {
     public class Coin : MonoBehaviour
     {
+        [SerializeField] private bool deleteParent = true;
+        [SerializeField] private AudioClip gettingSound;
         [SerializeField, Range(0,1)] private float spawnChance;
 
         private static readonly Random Random;
@@ -25,9 +27,11 @@ namespace SkibidiRunner.Managers
             }
             else
             {
+                if (!deleteParent) return;
                 var transform1 = transform;
                 transform1.parent = null;
                 transform1.localScale = Vector3.one;
+                transform1.rotation = Quaternion.identity;
             }
         }
 
@@ -36,6 +40,11 @@ namespace SkibidiRunner.Managers
             if (!other.CompareTag("Player")) return;
             LocalYandexData.Instance.SaveInfo.Coins++;
             gameObject.SetActive(false);
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(gettingSound);
+            }
+            
         }
     }
 }
