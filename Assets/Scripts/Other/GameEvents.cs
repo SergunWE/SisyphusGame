@@ -4,10 +4,45 @@ using UnityEngine.Serialization;
 
 namespace SkibidiRunner.Managers
 {
-    public class GameEvents : MonoBehaviour
+    public class GameEvents : MonoBehaviourInitializable
     {
-        public UnityEvent gameWin;
-        public UnityEvent gameLose;
-        public UnityEvent gameContinue;
+        public static GameEvents Instance { get; private set; }
+        
+        [SerializeField] private UnityEvent gameWin;
+        [SerializeField] private UnityEvent gameLose;
+        [SerializeField] private UnityEvent gameContinue;
+
+        private bool _gameWined;
+        private bool _gameLost;
+        
+        public override void Initialize()
+        {
+            Instance = this;
+        }
+
+        public void WinGame()
+        {
+            if(_gameLost || _gameWined) return;
+            Debug.Log("Game win");
+            _gameWined = true;
+            gameWin?.Invoke();
+        }
+
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void LoseGame(bool stoneFell)
+        {
+            if(_gameLost || _gameWined) return;
+            Debug.Log(stoneFell ? "Game lose stone" : "Game lose player");
+            _gameLost = true;
+            GameInfo.Instance.StoneFall = stoneFell;
+
+            gameLose?.Invoke();
+        }
+
+        public void ContinueGame()
+        {
+            _gameLost = false;
+            gameContinue?.Invoke();
+        }
     }
 }

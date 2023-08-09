@@ -6,11 +6,10 @@ namespace SkibidiRunner.Managers
 {
     public class PlayerColorChanger : MonoBehaviourInitializable
     {
-        [SerializeField] private Renderer playerRenderer;
-        
         public override void Initialize()
         {
-            playerRenderer.sharedMaterial.color = LocalYandexData.Instance.SaveInfo.PlayerColor;
+            ActiveGameObjectStore.Instance.Player.gameObject.GetComponentInChildren<Renderer>().sharedMaterial.color =
+                LocalYandexData.Instance.SaveInfo.PlayerColor;
         }
     }
 }

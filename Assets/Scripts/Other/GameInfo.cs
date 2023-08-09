@@ -7,29 +7,27 @@ namespace SkibidiRunner.Managers
     {
         public static GameInfo Instance { get; private set; }
 
-        [SerializeField] private Transform stone;
-        [SerializeField] private Transform player;
-
+        [field: SerializeField] public Transform MainPlatform { get; private set; }
+        [field: SerializeField] public Transform StoneSpawnPoint { get; private set; }
+        [field: SerializeField] public Transform PlayerSavePoint { get; set; }
         [field: SerializeField] public int CoinCount { get; set; }
-        [field: SerializeField] public Vector3 PlayerSavePoint { get; set; }
+        [field: SerializeField] public bool StoneFall { get; set; }
         [field: SerializeField] public Vector3 StoneLastPoint { get; private set; }
 
+        private Transform _stone;
         private float _lastStoneSum;
-
-        private void Awake()
-        {
-            Instance = this;
-        }
+        
         
         public override void Initialize()
         {
-            PlayerSavePoint = player.position;
+            Instance = this;
+            _stone = ActiveGameObjectStore.Instance.Stone;
         }
 
         private void FixedUpdate()
         {
-            var stoneCurrentPosition = stone.position;
-            float sum = stoneCurrentPosition.x + stoneCurrentPosition.y + stoneCurrentPosition.z;
+            var stoneCurrentPosition = _stone.position;
+            float sum = stoneCurrentPosition.y + stoneCurrentPosition.z;
             if (!(sum >= _lastStoneSum)) return;
             StoneLastPoint = stoneCurrentPosition;
             _lastStoneSum = sum;
