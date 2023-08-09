@@ -7,6 +7,8 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
+		[field: SerializeField] public bool InputEnable { get; private set; } = true;
+		
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
@@ -48,22 +50,22 @@ namespace StarterAssets
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
-			move = Vector3.ClampMagnitude(newMoveDirection, 1f);
+			move = InputEnable ? Vector3.ClampMagnitude(newMoveDirection, 1f) : Vector3.zero;
 		} 
 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = newLookDirection;
+			look = InputEnable ? newLookDirection : Vector3.zero;
 		}
 
 		public void JumpInput(bool newJumpState)
 		{
-			jump = newJumpState;
+			jump = InputEnable && newJumpState;
 		}
 
 		public void SprintInput(bool newSprintState)
 		{
-			sprint = newSprintState;
+			sprint = InputEnable && newSprintState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
@@ -75,6 +77,17 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+		
+		public void SetInputEnable(bool state)
+		{
+			InputEnable = state;
+			MoveInput(Vector2.zero);
+			LookInput(Vector2.zero);
+			JumpInput(false);
+			SprintInput(false);
+		}
 	}
+	
+	
 	
 }

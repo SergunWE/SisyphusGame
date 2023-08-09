@@ -6,14 +6,13 @@ namespace SkibidiRunner.Managers
 {
     public class SoundManager : MonoBehaviourInitializable
     {
-        private static SoundManager _instance;
-        public static SoundManager Instance => _instance;
-        
+        public static SoundManager Instance { get; private set; }
+
         [SerializeField] private AudioSource audioSource;
         
         public override void Initialize()
         {
-            _instance = this;
+            Instance = this;
             audioSource.mute = !LocalYandexData.Instance.SaveInfo.SoundOn;
         }
 

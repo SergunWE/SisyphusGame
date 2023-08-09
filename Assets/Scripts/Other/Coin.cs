@@ -38,13 +38,13 @@ namespace SkibidiRunner.Managers
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-            LocalYandexData.Instance.SaveInfo.Coins++;
-            gameObject.SetActive(false);
             if (SoundManager.Instance != null)
             {
                 SoundManager.Instance.PlaySound(gettingSound);
             }
-            
+            LocalYandexData.Instance.SaveInfo.Coins++;
+            GameInfo.Instance.CoinCount++;
+            gameObject.SetActive(false);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace StarterAssets
 
         public void VirtualMoveInput(Vector2 virtualMoveDirection)
         {
+            starterAssetsInputs.sprint = true;
             starterAssetsInputs.MoveInput(virtualMoveDirection);
         }
 
