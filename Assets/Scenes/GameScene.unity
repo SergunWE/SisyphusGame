@@ -2048,10 +2048,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 4416926082705838820}
   pushController: {fileID: 5885216828710271007}
-  walkOffset: 0.4
+  walkOffset: 0.1
   sprintOffset: 0.5
-  gravityOffset: 0.7
-  jumpOffset: 0.3
+  gravityOffset: 0.3
+  jumpOffset: 0.7
   pushOffset: 1
 --- !u!4 &1106755902
 Transform:
@@ -2113,15 +2113,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveInfo:
-    <LevelNumber>k__BackingField: 10
+    <LevelNumber>k__BackingField: 6
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <Coins>k__BackingField: 0
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 3
-    <GravityLevel>k__BackingField: 3
-    <PushingForceLevel>k__BackingField: 3
+    <SpeedLevel>k__BackingField: 0
+    <GravityLevel>k__BackingField: 0
+    <PushingForceLevel>k__BackingField: 1
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
 --- !u!4 &1201349809 stripped
