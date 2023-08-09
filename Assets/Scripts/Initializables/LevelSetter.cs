@@ -38,6 +38,8 @@ public class LevelSetter : MonoBehaviourInitializable
 
     public override void Initialize()
     {
+        Random.InitState(SaveInfo.LevelNumber);
+        
         //level
         var startPosition = mainPlatformStartPos.position;
         float maxDistance = Vector3.Distance(startPosition, mainPlatformEndPos.position);

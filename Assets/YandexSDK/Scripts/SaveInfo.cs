@@ -10,8 +10,8 @@ namespace YandexSDK.Scripts
         [field: SerializeField] public int LevelNumber { get; set; }
 
         //settings
-        [field: SerializeField] public bool MusicOn { get; set; }
-        [field: SerializeField] public bool SoundOn { get; set; }
+        [field: SerializeField] public bool MusicOn { get; set; } = true;
+        [field: SerializeField] public bool SoundOn { get; set; } = true;
 
         //pumping
         [field: SerializeField] public int Coins { get; set; }
@@ -22,20 +22,7 @@ namespace YandexSDK.Scripts
         [field: SerializeField] public int PushingForceLevel { get; set; }
 
         //other
+        [field: SerializeField] public Color PlayerColor { get; set; } = Color.white;
         [field: SerializeField] public long LastSaveTimeTicks { get; set; }
-
-        public SaveInfo()
-        {
-            LevelNumber = 0;
-            MusicOn = true;
-            SoundOn = true;
-            Coins = 0;
-            DailyRewardLevel = 0;
-            DailyRewardTimeTicks = 0;
-            SpeedLevel = 0;
-            GravityLevel = 0;
-            PushingForceLevel = 0;
-            LastSaveTimeTicks = 0;
-        }
     }
 }

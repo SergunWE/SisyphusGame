@@ -1253,6 +1253,12 @@ Transform:
   - {fileID: 348359234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1021474620 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5723852466048221708, guid: f9bb608a887367b41bab531e025c5b0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4197445429782275310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1027672511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1294,7 @@ Transform:
   - {fileID: 3739721}
   - {fileID: 662963556}
   - {fileID: 1106755902}
+  - {fileID: 1484510030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1027672513
@@ -1308,6 +1315,7 @@ MonoBehaviour:
   - {fileID: 3739722}
   - {fileID: 662963555}
   - {fileID: 1106755901}
+  - {fileID: 1484510031}
   startInitObjects: []
 --- !u!1 &1045816824
 GameObject:
@@ -1334,7 +1342,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045816824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1520,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveInfo:
-    <LevelNumber>k__BackingField: 5
+    <LevelNumber>k__BackingField: 2
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <Coins>k__BackingField: 0
@@ -1529,7 +1537,53 @@ MonoBehaviour:
     <SpeedLevel>k__BackingField: 1
     <GravityLevel>k__BackingField: 1
     <PushingForceLevel>k__BackingField: 1
+    <PlayerColor>k__BackingField: {r: 0.36862746, g: 0.654902, b: 0.31764707, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
+--- !u!1 &1484510029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484510030}
+  - component: {fileID: 1484510031}
+  m_Layer: 0
+  m_Name: PlayerColorChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484510030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484510029}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1027672512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484510031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484510029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0deacce91b16b4c9bd6e4f9ae94129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRenderer: {fileID: 1021474620}
 --- !u!1 &1507332409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1624,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507332409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
