@@ -1624,6 +1624,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 940587633}
+        m_TargetAssemblyTypeName: SkibidiRunner.Managers.AwardManager, Assembly-CSharp
+        m_MethodName: GetLevelReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gameLose:
     m_PersistentCalls:
       m_Calls:
@@ -2146,6 +2158,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1027672512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &940587632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940587634}
+  - component: {fileID: 940587633}
+  m_Layer: 0
+  m_Name: AwardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &940587633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940587632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bd558ac7867474fb7e87951ecc901a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winGameCoinCount: 10
+  winGameCoinArithmeticOffset: 1
+  winGameCoinGeometricOffset: 0.02
+--- !u!4 &940587634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940587632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001688081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,14 +2609,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveInfo:
-    <LevelNumber>k__BackingField: 15
+    <LevelNumber>k__BackingField: 10
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <Coins>k__BackingField: 0
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
     <SpeedLevel>k__BackingField: 10
-    <GravityLevel>k__BackingField: 15
+    <GravityLevel>k__BackingField: 10
     <PushingForceLevel>k__BackingField: 3
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
@@ -6714,5 +6773,6 @@ SceneRoots:
   - {fileID: 309980875}
   - {fileID: 1027672512}
   - {fileID: 24594048}
+  - {fileID: 940587634}
   - {fileID: 1601865462}
   - {fileID: 1782466472}
