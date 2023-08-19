@@ -10,16 +10,7 @@ namespace SkibidiRunner.Managers
 
         private float _startHeight;
         private Transform _player;
-        
-        private IEnumerator CheckPlayer()
-        {
-            while (_player.position.y + offset >= _startHeight)
-            {
-                yield return new WaitForSeconds(1f);
-                yield return new WaitForEndOfFrame();
-            }
-            GameEvents.Instance.LoseGame(false);
-        }
+        private bool _checking;
         
         public override void Initialize()
         {
@@ -30,8 +21,14 @@ namespace SkibidiRunner.Managers
         
         public void StartChecking()
         {
-            StopAllCoroutines();
-            StartCoroutine(CheckPlayer());
+            _checking = true;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_checking || !(_player.position.y + offset < _startHeight)) return;
+            _checking = false;
+            GameEvents.Instance.LoseGame(false);
         }
     }
 }

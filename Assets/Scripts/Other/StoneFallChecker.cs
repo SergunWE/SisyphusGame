@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Threading;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SkibidiRunner.Managers
 {
@@ -10,28 +7,24 @@ namespace SkibidiRunner.Managers
         [SerializeField] private float offset;
 
         private Transform _stone;
-
-        private IEnumerator CheckStone()
-        {
-            while (_stone.position.y >= GameInfo.Instance.StoneLastPoint.y - offset)
-            {
-                yield return new WaitForSeconds(1f);
-                yield return new WaitForEndOfFrame();
-            }
-            GameEvents.Instance.LoseGame(true);
-        }
+        private bool _checking;
 
         public override void Initialize()
         {
             _stone = ActiveGameObjectStore.Instance.Stone;
             StartChecking();
         }
-        
 
         public void StartChecking()
         {
-            StopAllCoroutines();
-            StartCoroutine(CheckStone());
+            _checking = true;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_checking || !(_stone.position.y < GameInfo.Instance.StoneLastPoint.y - offset)) return;
+            _checking = false;
+            GameEvents.Instance.LoseGame(true);
         }
     }
 }
