@@ -1966,6 +1966,8 @@ MonoBehaviour:
   - {fileID: 2066000584587812530, guid: 89f78c114bea15e48980b41baa5d9bfa, type: 3}
   - {fileID: 3603960335470740008, guid: 661c3502e51fa86469d3c9d1747bf77c, type: 3}
   - {fileID: 1966334982672295049, guid: c698e92835f6eae4b83c3406fe386b78, type: 3}
+  - {fileID: 3603960335470740008, guid: 35845763e2f6235459d23ffc23e15093, type: 3}
+  - {fileID: 3603960335470740008, guid: 0766915a5458bbf4bb62d04655ceb06e, type: 3}
   slopeLevelOffset: 2
   obstacleClearance: 5
   obstacleVerticalOffset: 9
@@ -2636,7 +2638,7 @@ MonoBehaviour:
   sprintOffset: 0.5
   gravityOffset: 0.3
   jumpOffset: 0.7
-  pushOffset: 1
+  pushOffset: 0.5
 --- !u!4 &1106755902
 Transform:
   m_ObjectHideFlags: 0
@@ -2697,15 +2699,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveInfo:
-    <LevelNumber>k__BackingField: 10
+    <LevelNumber>k__BackingField: 20
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <Coins>k__BackingField: 0
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 10
-    <GravityLevel>k__BackingField: 10
-    <PushingForceLevel>k__BackingField: 3
+    <SpeedLevel>k__BackingField: 5
+    <GravityLevel>k__BackingField: 5
+    <PushingForceLevel>k__BackingField: 5
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
 --- !u!4 &1201349809 stripped
