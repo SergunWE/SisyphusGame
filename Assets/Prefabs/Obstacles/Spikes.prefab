@@ -42,15 +42,18 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558701893152855384}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
+  m_LocalReferencePoint: {x: 0.58773947, y: -0.92057574, z: 0.13}
+  m_Size: 7.218848
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.003
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 7324587404841454157}
+    - renderer: {fileID: 5926010495410303761}
+    - renderer: {fileID: 7818719880806439782}
   m_Enabled: 1
 --- !u!1 &2904333900985239592
 GameObject:
@@ -380,7 +383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 712533194403158726}
   - component: {fileID: 3730352263567754274}
-  - component: {fileID: 513236178745790106}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -424,27 +426,6 @@ MonoBehaviour:
   randomScale: 0
   scaleMinOffset: {x: 0, y: 0, z: 0}
   scaleMaxOffset: {x: 0, y: 0, z: 0}
---- !u!205 &513236178745790106
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9102142444621039660}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.58773947, y: -0.92057574, z: 0.13}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7324587404841454157}
-    - renderer: {fileID: 5926010495410303761}
-    - renderer: {fileID: 7818719880806439782}
-  m_Enabled: 1
 --- !u!1001 &3331857288533691736
 PrefabInstance:
   m_ObjectHideFlags: 0
