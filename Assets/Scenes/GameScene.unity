@@ -370,6 +370,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1356,7 +1366,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!65 &469887027
 BoxCollider:
@@ -2131,6 +2141,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2558,7 +2578,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &1059781659
 Transform:
@@ -2677,7 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveInfo:
-    <LevelNumber>k__BackingField: 0
+    <LevelNumber>k__BackingField: 10
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <Coins>k__BackingField: 0
@@ -3010,6 +3030,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3109,7 +3139,7 @@ PrefabInstance:
     - target: {fileID: 700378693299197633, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
       propertyPath: m_Size.x
-      value: 49
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 700378693299197633, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
@@ -3119,7 +3149,7 @@ PrefabInstance:
     - target: {fileID: 700378693299197633, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
       propertyPath: m_Size.z
-      value: 49
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 700378693299197633, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
@@ -3130,6 +3160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SavePoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919379482350296176, guid: c431280febe822e4784e03d201e9867e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 8327451223050534554, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
@@ -3757,6 +3792,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4052,6 +4097,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
