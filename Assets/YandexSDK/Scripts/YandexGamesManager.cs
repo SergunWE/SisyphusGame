@@ -149,6 +149,19 @@ namespace YandexSDK.Scripts
             }
             
         }
+        
+        public static string GetLanguageString()
+        {
+            try
+            {
+                return getLang();
+            }
+            catch (Exception)
+            {
+                return "en";
+            }
+            
+        }
 
         public static void ShowSplashAdv(string objectName, string methodName)
         {

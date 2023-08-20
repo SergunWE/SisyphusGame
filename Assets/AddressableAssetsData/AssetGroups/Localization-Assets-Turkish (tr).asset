@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Turkish (tr)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Turkish (tr)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f7fbf291af71a6140aff565c5ac0c270
+  m_SerializeEntries:
+  - m_GUID: f068496be82f28f45a6fbd7cd283ce95
+    m_Address: 640px-Flag_of_Turkey.svg
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 1f7025dab472c33469da76360ce1e656, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: aca66a767f1042446831991fb555e998, type: 2}
+    - {fileID: 11400000, guid: 82d948f581a8abb41bc3ae34d8386397, type: 2}

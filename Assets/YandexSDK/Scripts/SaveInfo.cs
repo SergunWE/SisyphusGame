@@ -12,6 +12,7 @@ namespace YandexSDK.Scripts
         //settings
         [field: SerializeField] public bool MusicOn { get; set; } = true;
         [field: SerializeField] public bool SoundOn { get; set; } = true;
+        [field: SerializeField] public string ManualLanguage { get; set; }
 
         //pumping
         [field: SerializeField] public int Coins { get; set; }
