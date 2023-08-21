@@ -14,6 +14,7 @@ namespace SkibidiRunner.Managers
         public void DebugLoadNextLevel()
         {
             SceneManager.LoadSceneAsync(1);
+            LocalYandexData.Instance.SaveData();
         }
     }
 }

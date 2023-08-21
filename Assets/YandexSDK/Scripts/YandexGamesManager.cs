@@ -16,28 +16,28 @@ namespace YandexSDK.Scripts
 
         [DllImport("__Internal")]
         private static extern void requestReviewGame();
-        
+
         [DllImport("__Internal")]
         private static extern int getReviewStatus();
-        
+
         [DllImport("__Internal")]
         private static extern void savePlayerData(string data);
-        
+
         [DllImport("__Internal")]
         private static extern void loadPlayerData(string objectName, string methodName);
-        
+
         [DllImport("__Internal")]
         private static extern void setToLeaderboard(int value);
-        
+
         [DllImport("__Internal")]
         private static extern string getLang();
-        
+
         [DllImport("__Internal")]
         private static extern void helloString(string str);
-        
+
         [DllImport("__Internal")]
         private static extern void showSplashPageAdv(string objectName, string methodName);
-        
+
         [DllImport("__Internal")]
         private static extern void showRewardedAdv(string objectName, string methodName);
 
@@ -100,7 +100,7 @@ namespace YandexSDK.Scripts
                 string json = JsonUtility.ToJson(playerData);
                 savePlayerData(json);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.Log(e);
             }
@@ -116,7 +116,6 @@ namespace YandexSDK.Scripts
             {
                 Debug.Log(e);
             }
-            
         }
 
         public static void SetToLeaderboard(int value)
@@ -147,9 +146,8 @@ namespace YandexSDK.Scripts
             {
                 return Language.English;
             }
-            
         }
-        
+
         public static string GetLanguageString()
         {
             try
@@ -160,11 +158,13 @@ namespace YandexSDK.Scripts
             {
                 return "en";
             }
-            
         }
 
         public static void ShowSplashAdv(string objectName, string methodName)
         {
+#if UNITY_EDITOR
+            return;
+#endif
             try
             {
                 showSplashPageAdv(objectName, methodName);
@@ -174,12 +174,17 @@ namespace YandexSDK.Scripts
                 // ignored
             }
         }
-        
-        public static void ShowRewardedAdv(string objectName, string methodName)
+
+        public static void ShowRewardedAdv(GameObject gameObject, string methodName)
         {
+#if UNITY_EDITOR
+            gameObject.SendMessage(methodName, 1);
+            return;
+#endif
+
             try
             {
-                showRewardedAdv(objectName, methodName);
+                showRewardedAdv(gameObject.name, methodName);
             }
             catch (Exception)
             {

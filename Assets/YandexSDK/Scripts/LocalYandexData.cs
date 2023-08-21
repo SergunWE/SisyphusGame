@@ -36,7 +36,7 @@ namespace YandexSDK.Scripts
             SaveInfo = playerData;
         }
 
-        private void SaveData()
+        public void SaveData()
         {
             SaveInfo.LastSaveTimeTicks = DateTime.UtcNow.Ticks;
             YandexGamesManager.SavePlayerData(SaveInfo);
