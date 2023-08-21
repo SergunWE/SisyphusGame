@@ -25,42 +25,41 @@ namespace Buttons
             button.onClick.RemoveListener(ChangeLanguage);
         }
 
-        public override void Initialize()
+        public override async void Initialize()
         {
-            var init = LocalizationSettings.InitializationOperation;
-            init.Completed += _ =>
+            await LocalizationSettings.InitializationOperation.Task;
+
+            Locale locale;
+            if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
             {
-                Locale locale;
-                if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+                string localeCode = YandexGamesManager.GetLanguageString();
+                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                    x.Identifier.Code == localeCode);
+                if (locale == null)
                 {
-                    string localeCode = YandexGamesManager.GetLanguageString();
-                    locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                        x.Identifier.Code == localeCode);
-                    if (locale == null)
-                    {
-                        locale = LocalizationSettings.AvailableLocales.Locales[0];
-                    }
+                    locale = LocalizationSettings.AvailableLocales.Locales[0];
                 }
-                else
-                {
-                    locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                        x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
-                    LocalizationSettings.SelectedLocale = locale;
-                }
-            
+            }
+            else
+            {
+                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                    x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
                 LocalizationSettings.SelectedLocale = locale;
-                LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
-            };
+            }
+
+            LocalizationSettings.SelectedLocale = locale;
+            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
         }
 
         private void ChangeLanguage()
         {
             imageButton.sprite = waitSprite;
-            
+
             int currentLanguageIndex =
                 LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale);
             Locale locale;
-            if (currentLanguageIndex == -1 || currentLanguageIndex + 1 >= LocalizationSettings.AvailableLocales.Locales.Count)
+            if (currentLanguageIndex == -1 ||
+                currentLanguageIndex + 1 >= LocalizationSettings.AvailableLocales.Locales.Count)
             {
                 locale = LocalizationSettings.AvailableLocales.Locales[0];
             }
@@ -68,7 +67,7 @@ namespace Buttons
             {
                 locale = LocalizationSettings.AvailableLocales.Locales[currentLanguageIndex + 1];
             }
-            
+
             LocalizationSettings.SelectedLocale = locale;
             LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
         }
