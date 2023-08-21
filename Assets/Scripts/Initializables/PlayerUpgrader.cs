@@ -30,9 +30,9 @@ namespace SkibidiRunner.Managers
         public override void Initialize()
         {
             Physics.gravity = DefaultGravity + Vector3.up * SaveInfo.GravityLevel * gravityOffset;
-            if (Physics.gravity.y > -0.1f)
+            if (Physics.gravity.y > -1f)
             {
-                Physics.gravity = new Vector3(Physics.gravity.x, -0.1f, Physics.gravity.z);
+                Physics.gravity = new Vector3(Physics.gravity.x, -1f, Physics.gravity.z);
             }
 
             _playerController = ActiveGameObjectStore.Instance.Player.GetComponent<ThirdPersonController>();

@@ -27,26 +27,30 @@ namespace Buttons
 
         public override void Initialize()
         {
-            Locale locale;
-            if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+            var init = LocalizationSettings.InitializationOperation;
+            init.Completed += _ =>
             {
-                string localeCode = YandexGamesManager.GetLanguageString();
-                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                    x.Identifier.Code == localeCode);
-                if (locale == null)
+                Locale locale;
+                if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
                 {
-                    locale = LocalizationSettings.AvailableLocales.Locales[0];
+                    string localeCode = YandexGamesManager.GetLanguageString();
+                    locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                        x.Identifier.Code == localeCode);
+                    if (locale == null)
+                    {
+                        locale = LocalizationSettings.AvailableLocales.Locales[0];
+                    }
                 }
-            }
-            else
-            {
-                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                    x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
-                LocalizationSettings.SelectedLocale = locale;
-            }
+                else
+                {
+                    locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                        x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
+                    LocalizationSettings.SelectedLocale = locale;
+                }
             
-            LocalizationSettings.SelectedLocale = locale;
-            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+                LocalizationSettings.SelectedLocale = locale;
+                LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+            };
         }
 
         private void ChangeLanguage()

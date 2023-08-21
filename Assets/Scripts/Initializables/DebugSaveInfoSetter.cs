@@ -10,6 +10,7 @@ public class DebugSaveInfoSetter : MonoBehaviourInitializable
 
     public override void Initialize()
     {
+#if UNITY_EDITOR
         if (_set)
         {
             saveInfo = LocalYandexData.Instance.SaveInfo;
@@ -20,5 +21,6 @@ public class DebugSaveInfoSetter : MonoBehaviourInitializable
             LocalYandexData.Instance.DebugSetPlayerData(saveInfo);
             _set = true;
         }
+#endif
     }
 }

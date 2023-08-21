@@ -11,10 +11,11 @@ namespace SkibidiRunner.Managers
             LocalYandexData.Instance.SaveInfo.LevelNumber++;
         }
 
-        public void DebugLoadNextLevel()
+        public void GoToMainMenu()
         {
-            SceneManager.LoadSceneAsync(1);
+            Cursor.lockState = CursorLockMode.None;
             LocalYandexData.Instance.SaveData();
+            SceneManager.LoadSceneAsync(0);
         }
     }
 }
