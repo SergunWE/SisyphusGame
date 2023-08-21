@@ -5,23 +5,22 @@ namespace SkibidiRunner.Managers
 {
     public class CursorLocker : MonoBehaviour
     {
-        private bool _currentState;
+        private bool _lock;
         
         private void Awake()
         {
-            _currentState = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            SetCursorState(true);
         }
         
         public void SetCursorState(bool state)
         {
-            _currentState = state;
+            _lock = state;
             Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
         }
         
         private void OnApplicationFocus(bool hasFocus)
         {
-            SetCursorState(_currentState);
+            SetCursorState(_lock);
         }
     }
 }

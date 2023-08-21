@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
 {
@@ -11,6 +12,7 @@ namespace SkibidiRunner.Managers
         [SerializeField] private UnityEvent gameWin;
         [SerializeField] private UnityEvent gameLose;
         [SerializeField] private UnityEvent gameContinue;
+        [SerializeField] private UnityEvent coinCollect;
 
         private bool _gameWined;
         private bool _gameLost;
@@ -43,6 +45,13 @@ namespace SkibidiRunner.Managers
         {
             _gameLost = false;
             gameContinue?.Invoke();
+        }
+
+        public void CoinCollected()
+        {
+            LocalYandexData.Instance.SaveInfo.Coins++;
+            GameInfo.Instance.CoinCount++;
+            coinCollect?.Invoke();
         }
     }
 }

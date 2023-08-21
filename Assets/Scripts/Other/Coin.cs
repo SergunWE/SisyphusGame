@@ -8,7 +8,6 @@ namespace SkibidiRunner.Managers
     public class Coin : MonoBehaviour
     {
         [SerializeField] private bool deleteParent = true;
-        [SerializeField] private AudioClip gettingSound;
         [SerializeField, Range(0,1)] private float spawnChance;
 
         private static readonly Random Random;
@@ -38,12 +37,7 @@ namespace SkibidiRunner.Managers
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-            if (SoundManager.Instance != null)
-            {
-                SoundManager.Instance.PlaySound(gettingSound);
-            }
-            LocalYandexData.Instance.SaveInfo.Coins++;
-            GameInfo.Instance.CoinCount++;
+            GameEvents.Instance.CoinCollected();
             gameObject.SetActive(false);
         }
     }
