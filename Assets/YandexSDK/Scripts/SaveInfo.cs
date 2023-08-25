@@ -17,7 +17,7 @@ namespace YandexSDK.Scripts
         //pumping
         [field: SerializeField] public int Coins { get; set; }
         [field: SerializeField] public int DailyRewardLevel { get; set; }
-        [field: SerializeField] public ulong DailyRewardTimeTicks { get; set; }
+        [field: SerializeField] public long DailyRewardTimeTicks { get; set; }
         [field: SerializeField] public int SpeedLevel { get; set; }
         [field: SerializeField] public int GravityLevel { get; set; }
         [field: SerializeField] public int PushingForceLevel { get; set; }
