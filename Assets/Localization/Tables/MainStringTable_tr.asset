@@ -48,10 +48,15 @@ MonoBehaviour:
     m_Localized: Mevcut
     m_Metadata:
       m_Items: []
+  - m_Id: 2195464311853056
+    m_Localized: "{0} seviyesine ge\xE7in!"
+    m_Metadata:
+      m_Items:
+      - rid: 128906228692418564
   references:
     version: 2
     RefIds:
     - rid: 128906228692418564
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00d0ec4602000000
+        m_Entries: 00d0ec460200000000d06c5ec3cc0700

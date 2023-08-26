@@ -41,5 +41,12 @@ namespace YandexSDK.Scripts
             SaveInfo.LastSaveTimeTicks = DateTime.UtcNow.Ticks;
             YandexGamesManager.SavePlayerData(SaveInfo);
         }
+
+        public void ResetProgress()
+        {
+            SaveInfo = new SaveInfo();
+            YandexGamesManager.SavePlayerData(SaveInfo);
+            OnYandexDataLoaded?.Invoke();
+        }
     }
 }

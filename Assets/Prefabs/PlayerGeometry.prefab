@@ -48,3 +48,4 @@ MonoBehaviour:
   <PlayerList>k__BackingField:
   - {fileID: 11400000, guid: e135afca00e7a5944b4ad9ee10e20dcb, type: 2}
   - {fileID: 11400000, guid: 961477e977c0cd0479d768c4d3854f9e, type: 2}
+  - {fileID: 11400000, guid: 2578f272581a4f444b836735634321c7, type: 2}

@@ -11,7 +11,7 @@ namespace SkibidiRunner.Managers
         [SerializeField] private List<MonoBehaviourInitializable> initObjects;
         [SerializeField] private List<MonoBehaviourInitializable> startInitObjects;
 
-        private async void Awake()
+        private void Awake()
         {
             loadingPanel.SetActive(true);
             

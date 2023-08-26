@@ -50,10 +50,15 @@ MonoBehaviour:
     m_Localized: "\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u043E"
     m_Metadata:
       m_Items: []
+  - m_Id: 2195464311853056
+    m_Localized: "\u0414\u043E\u0439\u0434\u0438 \u0434\u043E {0} \u0443\u0440\u043E\u0432\u043D\u044F!"
+    m_Metadata:
+      m_Items:
+      - rid: 128906228692418563
   references:
     version: 2
     RefIds:
     - rid: 128906228692418563
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00d0ec4602000000
+        m_Entries: 00d0ec460200000000d06c5ec3cc0700

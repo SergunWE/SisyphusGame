@@ -14,8 +14,11 @@ namespace Skins
         [SerializeField, Space] private Button prevSkinButton;
         [SerializeField] private Button buySelectButton;
         [SerializeField] private Button nextSkinButton;
-        [SerializeField, Space] private LocalizedString localizedString;
+        [SerializeField, Space] private LocalizedString levelLocalizedString;
         [SerializeField] private TMP_Text levelText;
+        [SerializeField] private TMP_Text moneyText;
+        [SerializeField] private GameObject levelCostView;
+        [SerializeField] private GameObject moneyCostView;
 
         [SerializeField, Space] private Image buySelectButtonImage;
         [SerializeField] private Sprite blockedSprite;
@@ -50,6 +53,11 @@ namespace Skins
             {
                 SelectSkin();
             }
+
+            if (_skinState == SkinState.CanBuy)
+            {
+                BuySkin();
+            }
         }
 
         private void SelectSkin()
@@ -67,6 +75,13 @@ namespace Skins
                     SetSkin(currentSkin);
                     return;
             }
+        }
+
+        private void BuySkin()
+        {
+            var currentSkin = playerSkinSetter.PlayerList[_currentSkinIndex];
+            ShopManager.Instance.BuySkin(currentSkin);
+            ShowSkin(_currentSkinIndex);
         }
 
         private void SetSkin(PlayerSkinSo skin)
@@ -130,6 +145,9 @@ namespace Skins
 
         private void SetBuySelectButtonView()
         {
+            levelCostView.SetActive(_skinState == SkinState.Blocked);
+            moneyCostView.SetActive(_skinState == SkinState.CanBuy);
+
             buySelectButtonImage.sprite = _skinState switch
             {
                 SkinState.Blocked => blockedSprite,
@@ -138,6 +156,10 @@ namespace Skins
                 SkinState.Selected => selectedSprite,
                 _ => throw new ArgumentOutOfRangeException()
             };
+
+            levelText.text =
+                levelLocalizedString.GetLocalizedString(playerSkinSetter.PlayerList[_currentSkinIndex].Cost + 1);
+            moneyText.text = playerSkinSetter.PlayerList[_currentSkinIndex].Cost.ToString();
         }
     }
 }

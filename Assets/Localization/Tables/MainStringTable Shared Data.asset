@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: GiftAvailable
     m_Metadata:
       m_Items: []
+  - m_Id: 2195464311853056
+    m_Key: NeedLevel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

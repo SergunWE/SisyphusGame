@@ -1,4 +1,5 @@
 ﻿using System;
+using Skins;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -9,7 +10,10 @@ namespace SkibidiRunner.Managers
         public static ShopManager Instance => _instance ??= new ShopManager();
 
         public event Action SkillPurchaseSuccessful;
+        public event Action SkinPurchaseSuccessful;
+        public event Action CoinAdded;
         public event Action CoinCountUpdate;
+        
 
         private ShopManager()
         {
@@ -36,8 +40,23 @@ namespace SkibidiRunner.Managers
                 }
 
                 SkillPurchaseSuccessful?.Invoke();
+                LocalYandexData.Instance.SaveData();
             }
 
+            CoinCountUpdate?.Invoke();
+        }
+
+        public void BuySkin(PlayerSkinSo skin)
+        {
+            if(skin.LevelCost) return;
+            
+            if (LocalYandexData.Instance.SaveInfo.Coins >= skin.Cost)
+            {
+                LocalYandexData.Instance.SaveInfo.Coins -= skin.Cost;
+                LocalYandexData.Instance.SaveInfo.PlayerPurchasedSkins.Add(skin.Id);
+                SkinPurchaseSuccessful?.Invoke();
+            }
+            
             CoinCountUpdate?.Invoke();
         }
 
@@ -45,7 +64,7 @@ namespace SkibidiRunner.Managers
         {
             if(value < 0) return;
             LocalYandexData.Instance.SaveInfo.Coins += value;
-            CoinCountUpdate?.Invoke();
+            CoinAdded?.Invoke();
         }
     }
 }
