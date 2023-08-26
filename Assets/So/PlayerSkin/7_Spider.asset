@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ff9761d997a10409cb1ef4641ab50c, type: 3}
+  m_Name: 7_Spider
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 7
+  <LevelCost>k__BackingField: 0
+  <Cost>k__BackingField: 5000
+  <PlayerModel>k__BackingField: {fileID: 3968401800660881336, guid: 3e6e426f79fcfab49b393c6e53298b6b,
+    type: 3}
+  <Avatar>k__BackingField: {fileID: 9000000, guid: 8f75cd9677c085a42a663624839c0561,
+    type: 3}

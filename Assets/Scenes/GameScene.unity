@@ -3052,7 +3052,7 @@ MonoBehaviour:
     <PushingForceLevel>k__BackingField: 5
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
-    <PlayerSkinId>k__BackingField: 0
+    <PlayerSkinId>k__BackingField: 3
     <PlayerPurchasedSkins>k__BackingField: 
     <StoneSkinIndex>k__BackingField: 0
 --- !u!4 &1201349809 stripped

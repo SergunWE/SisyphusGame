@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4097834392776927987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456935049102318610}
+  m_Layer: 0
+  m_Name: KABOSE3H
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1456935049102318610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097834392776927987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5958253824155086067}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6135381765681646360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1456935049102318610}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7808301206651648692, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: -4149131135022421915, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4024428943913393600, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: -455274045849060055, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: 919132149155446097, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Name
+      value: KABOSE3H
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082400601091092986, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: 2626708862063892529, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: 6911560460537223195, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: 7117331728487920531, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    - target: {fileID: 8193237503499190846, guid: cb145f45e543036469a8b21dfc169394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b24f942097e5461458bcc17a35a17cc2, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -4149131135022421915, guid: cb145f45e543036469a8b21dfc169394, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb145f45e543036469a8b21dfc169394, type: 3}
+--- !u!4 &5958253824155086067 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cb145f45e543036469a8b21dfc169394,
+    type: 3}
+  m_PrefabInstance: {fileID: 6135381765681646360}
+  m_PrefabAsset: {fileID: 0}
