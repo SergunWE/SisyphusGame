@@ -16,16 +16,19 @@ namespace SkibidiRunner.Managers
 
         private Transform _stone;
         private float _lastStoneSum;
-        
+
+        private bool _init;
         
         public override void Initialize()
         {
             Instance = this;
             _stone = ActiveGameObjectStore.Instance.Stone;
+            _init = true;
         }
 
         private void FixedUpdate()
         {
+            if(!_init) return;
             var stoneCurrentPosition = _stone.position;
             float sum = stoneCurrentPosition.y + stoneCurrentPosition.z;
             if (!(sum >= _lastStoneSum)) return;

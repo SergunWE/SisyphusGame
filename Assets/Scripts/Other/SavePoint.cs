@@ -8,7 +8,7 @@ namespace SkibidiRunner.Managers
     {
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (!other.CompareTag("Player") || GameInfo.Instance == null) return;
             GameInfo.Instance.PlayerSavePoint = transform;
             gameObject.SetActive(false);
         }

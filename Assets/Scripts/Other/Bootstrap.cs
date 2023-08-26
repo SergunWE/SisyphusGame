@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SkibidiRunner.Managers
@@ -10,7 +11,7 @@ namespace SkibidiRunner.Managers
         [SerializeField] private List<MonoBehaviourInitializable> initObjects;
         [SerializeField] private List<MonoBehaviourInitializable> startInitObjects;
 
-        private void Awake()
+        private async void Awake()
         {
             loadingPanel.SetActive(true);
             

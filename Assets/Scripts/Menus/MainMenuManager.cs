@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YandexSDK.Scripts;
@@ -9,10 +10,11 @@ namespace Menus
     {
         [SerializeField] private GameObject loadingPanel;
 
-        public void StartGame()
+        public async void StartGame()
         {
             loadingPanel.SetActive(true);
             LocalYandexData.Instance.SaveData();
+            await Task.Delay(100);
             SceneManager.LoadSceneAsync(1);
         }
     }

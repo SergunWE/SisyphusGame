@@ -2191,7 +2191,7 @@ PrefabInstance:
     - target: {fileID: 1217978265055469984, guid: 9f50c8bc6ec58f242b8ac3f5bd0dec4f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7007428552986437702, guid: 9f50c8bc6ec58f242b8ac3f5bd0dec4f,
         type: 3}
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winGameCoinCount: 10
-  winGameCoinArithmeticOffset: 1
+  winGameCoinArithmeticOffset: 2
   winGameCoinGeometricOffset: 0.02
 --- !u!4 &940587634
 Transform:
@@ -2819,11 +2819,11 @@ MonoBehaviour:
   - {fileID: 662963555}
   - {fileID: 1106755901}
   - {fileID: 898209482}
-  startInitObjects:
   - {fileID: 9097920230810295281}
   - {fileID: 256568178}
   - {fileID: 268835625}
   - {fileID: 1484510031}
+  startInitObjects: []
 --- !u!1 &1045816824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,8 +2977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkOffset: 0.1
   sprintOffset: 0.5
-  gravityOffset: 0.3
-  jumpOffset: 0.7
+  gravityOffset: 0.1
+  jumpOffset: 0.9
   pushOffset: 0.5
 --- !u!4 &1106755902
 Transform:
@@ -3053,6 +3053,7 @@ MonoBehaviour:
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
     <PlayerSkinId>k__BackingField: 0
+    <PlayerPurchasedSkins>k__BackingField: 
     <StoneSkinIndex>k__BackingField: 0
 --- !u!4 &1201349809 stripped
 Transform:
@@ -7335,10 +7336,10 @@ SceneRoots:
   - {fileID: 1568684714}
   - {fileID: 1966269713}
   - {fileID: 309980875}
-  - {fileID: 1027672512}
   - {fileID: 24594048}
   - {fileID: 940587634}
   - {fileID: 610804955}
+  - {fileID: 1027672512}
   - {fileID: 1601865462}
   - {fileID: 175097775}
   - {fileID: 1782466472}

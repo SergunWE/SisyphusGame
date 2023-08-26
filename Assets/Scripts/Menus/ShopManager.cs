@@ -43,7 +43,7 @@ namespace SkibidiRunner.Managers
 
         public void GetCoins(int value)
         {
-            if(value <= 0) return;
+            if(value < 0) return;
             LocalYandexData.Instance.SaveInfo.Coins += value;
             CoinCountUpdate?.Invoke();
         }

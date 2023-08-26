@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace YandexSDK.Scripts
@@ -25,9 +26,12 @@ namespace YandexSDK.Scripts
         //other
         [field: SerializeField] public Color PlayerColor { get; set; } = Color.white;
         [field: SerializeField] public long LastSaveTimeTicks { get; set; }
-        
+
         //customization
         [field: SerializeField] public int PlayerSkinId { get; set; }
+
+        [field: SerializeField] public List<int> PlayerPurchasedSkins { get; set; } = new() { 0 };
+
         [field: SerializeField] public int StoneSkinIndex { get; set; }
     }
 }
