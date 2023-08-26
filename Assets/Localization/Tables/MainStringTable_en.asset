@@ -16,16 +16,42 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 896937ea4a4941348895acfb4e842895, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 128906228692418562
   m_TableData:
   - m_Id: 9779859456
-    m_Localized: Level
+    m_Localized: 'Level: {0}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 128906228692418562
   - m_Id: 17774054002688
     m_Localized: Loading...
     m_Metadata:
       m_Items: []
+  - m_Id: 2042732514955264
+    m_Localized: Daily reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042739955650560
+    m_Localized: Collect a new reward every day!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042999067168768
+    m_Localized: Great
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042770217553920
+    m_Localized: You've got
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2044485981491200
+    m_Localized: Available
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 128906228692418562
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00d0ec4602000000

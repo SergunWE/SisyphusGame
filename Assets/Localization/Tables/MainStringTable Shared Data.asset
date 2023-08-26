@@ -23,6 +23,26 @@ MonoBehaviour:
     m_Key: LoadText
     m_Metadata:
       m_Items: []
+  - m_Id: 2042732514955264
+    m_Key: DailyText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042739955650560
+    m_Key: DailyDescText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042770217553920
+    m_Key: CoinViewUpperText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042999067168768
+    m_Key: GiftExitText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2044485981491200
+    m_Key: GiftAvailable
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

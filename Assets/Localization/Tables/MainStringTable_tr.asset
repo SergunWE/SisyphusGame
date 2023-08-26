@@ -16,16 +16,42 @@ MonoBehaviour:
     m_Code: tr
   m_SharedData: {fileID: 11400000, guid: 896937ea4a4941348895acfb4e842895, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 128906228692418564
   m_TableData:
   - m_Id: 9779859456
-    m_Localized: Seviye
+    m_Localized: 'Seviye: {0}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 128906228692418564
   - m_Id: 17774054002688
     m_Localized: "Y\xFCkleniyor..."
     m_Metadata:
       m_Items: []
+  - m_Id: 2042732514955264
+    m_Localized: "G\xFCnl\xFCk \xF6d\xFCl"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042739955650560
+    m_Localized: "Her g\xFCn yeni bir \xF6d\xFCl al\u0131n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042770217553920
+    m_Localized: Sende var
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2042999067168768
+    m_Localized: Bu harika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2044485981491200
+    m_Localized: Mevcut
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 128906228692418564
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00d0ec4602000000
