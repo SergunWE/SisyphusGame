@@ -87,7 +87,7 @@ namespace Skins
         private void SetSkin(PlayerSkinSo skin)
         {
             LocalYandexData.Instance.SaveInfo.PlayerSkinId = skin.Id;
-            ShopManager.Instance.GetCoins(0);
+            ShopManager.Instance.AddCoins(0);
             SetBuySelectButtonState();
             SetBuySelectButtonView();
         }

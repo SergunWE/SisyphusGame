@@ -60,11 +60,12 @@ namespace SkibidiRunner.Managers
             CoinCountUpdate?.Invoke();
         }
 
-        public void GetCoins(int value)
+        public void AddCoins(int value)
         {
             if(value < 0) return;
             LocalYandexData.Instance.SaveInfo.Coins += value;
             CoinAdded?.Invoke();
+            CoinCountUpdate?.Invoke();
         }
     }
 }

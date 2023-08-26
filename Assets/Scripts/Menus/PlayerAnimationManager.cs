@@ -7,25 +7,32 @@ namespace Menus
     public class PlayerAnimationManager : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        private static readonly int CoinUpdate = Animator.StringToHash("PlayerJoy");
+        private static readonly int CoinSpending = Animator.StringToHash("PlayerJoy");
+        private static readonly int SkinBought = Animator.StringToHash("PlayerSkinBuy");
+
 
         private void OnEnable()
         {
             ShopManager.Instance.CoinAdded += PlayerJoy;
             ShopManager.Instance.SkillPurchaseSuccessful += PlayerJoy;
-            ShopManager.Instance.SkinPurchaseSuccessful += PlayerJoy;
+            ShopManager.Instance.SkinPurchaseSuccessful += PlayerJoy2;
         }
 
         private void OnDisable()
         {
             ShopManager.Instance.CoinAdded -= PlayerJoy;
             ShopManager.Instance.SkillPurchaseSuccessful -= PlayerJoy;
-            ShopManager.Instance.SkinPurchaseSuccessful -= PlayerJoy;
+            ShopManager.Instance.SkinPurchaseSuccessful -= PlayerJoy2;
         }
-        
+
         private void PlayerJoy()
         {
-            animator.SetTrigger(CoinUpdate);
+            animator.SetTrigger(CoinSpending);
+        }
+
+        private void PlayerJoy2()
+        {
+            animator.SetTrigger(SkinBought);
         }
     }
 }
