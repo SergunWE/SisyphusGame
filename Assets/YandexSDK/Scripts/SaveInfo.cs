@@ -25,5 +25,9 @@ namespace YandexSDK.Scripts
         //other
         [field: SerializeField] public Color PlayerColor { get; set; } = Color.white;
         [field: SerializeField] public long LastSaveTimeTicks { get; set; }
+        
+        //customization
+        [field: SerializeField] public int PlayerSkinIndex { get; set; }
+        [field: SerializeField] public int StoneSkinIndex { get; set; }
     }
 }
