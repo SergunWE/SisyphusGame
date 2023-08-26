@@ -3052,7 +3052,7 @@ MonoBehaviour:
     <PushingForceLevel>k__BackingField: 5
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
-    <PlayerSkinIndex>k__BackingField: 1
+    <PlayerSkinId>k__BackingField: 0
     <StoneSkinIndex>k__BackingField: 0
 --- !u!4 &1201349809 stripped
 Transform:
@@ -6548,9 +6548,9 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416926082705838831}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 71476268703c4b440a5e0eeea33d3cd9, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

@@ -27,7 +27,7 @@ namespace YandexSDK.Scripts
         [field: SerializeField] public long LastSaveTimeTicks { get; set; }
         
         //customization
-        [field: SerializeField] public int PlayerSkinIndex { get; set; }
+        [field: SerializeField] public int PlayerSkinId { get; set; }
         [field: SerializeField] public int StoneSkinIndex { get; set; }
     }
 }
