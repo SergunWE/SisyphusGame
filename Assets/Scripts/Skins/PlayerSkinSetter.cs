@@ -13,9 +13,8 @@ namespace Skins
 
         private int _prevId = -1;
 
-        public override void Initialize()
+        protected override void Initialize()
         {
-            _prevId = -1;
             SetCurrentSkin();
         }
 

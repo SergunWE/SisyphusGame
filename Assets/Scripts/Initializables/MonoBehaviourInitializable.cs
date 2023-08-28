@@ -6,13 +6,30 @@ namespace SkibidiRunner.Managers
 {
     public abstract class MonoBehaviourInitializable : MonoBehaviour
     {
-        public abstract void Initialize();
+        [SerializeField] private bool useLoadableData;
+
+        protected abstract void Initialize();
+
+        public void TryInitialize()
+        {
+            if (useLoadableData)
+            {
+                if (LocalYandexData.Instance.YandexDataLoaded)
+                {
+                    Initialize();
+                }
+            }
+            else
+            {
+                Initialize();
+            }
+        }
 
         protected virtual void OnEnable()
         {
             LocalYandexData.Instance.OnYandexDataLoaded += OnYandexDataLoaded;
         }
-        
+
         protected virtual void OnDisable()
         {
             LocalYandexData.Instance.OnYandexDataLoaded -= OnYandexDataLoaded;

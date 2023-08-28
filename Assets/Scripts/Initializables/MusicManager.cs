@@ -7,7 +7,7 @@ namespace SkibidiRunner.Managers
     {
         [SerializeField] private AudioSource musicSource;
         
-        public override void Initialize()
+        protected override void Initialize()
         {
             musicSource.mute = !LocalYandexData.Instance.SaveInfo.MusicOn;
         }

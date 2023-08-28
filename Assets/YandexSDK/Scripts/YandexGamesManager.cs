@@ -40,6 +40,9 @@ namespace YandexSDK.Scripts
 
         [DllImport("__Internal")]
         private static extern void showRewardedAdv(string objectName, string methodName);
+        [DllImport("__Internal")]
+        private static extern void apiReady();
+
 
         /// <summary>
         /// User name on the Yandex Games platform
@@ -120,6 +123,9 @@ namespace YandexSDK.Scripts
 
         public static void SetToLeaderboard(int value)
         {
+#if UNITY_EDITOR
+            Debug.Log("Set to leaderboard - " + value);
+#endif
             try
             {
                 setToLeaderboard(value);
@@ -128,28 +134,14 @@ namespace YandexSDK.Scripts
             {
                 // ignored
             }
-        }
 
-        public static Language GetLanguage()
-        {
-            try
-            {
-                string lang = getLang();
-                return lang switch
-                {
-                    "ru" => Language.Russian,
-                    "tr" => Language.Turkey,
-                    _ => Language.English
-                };
-            }
-            catch (Exception)
-            {
-                return Language.English;
-            }
         }
 
         public static string GetLanguageString()
         {
+#if UNITY_EDITOR
+            return "en";
+#endif
             try
             {
                 return getLang();
@@ -158,6 +150,7 @@ namespace YandexSDK.Scripts
             {
                 return "en";
             }
+
         }
 
         public static void ShowSplashAdv(string objectName, string methodName)
@@ -190,6 +183,20 @@ namespace YandexSDK.Scripts
             {
                 // ignored
             }
+        }
+        
+        public static void ApiReady()
+        {
+#if !UNITY_EDITOR
+            try
+            {
+                apiReady();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+#endif
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SkibidiRunner.Managers
         private Transform _stone;
         private bool _checking;
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             _stone = ActiveGameObjectStore.Instance.Stone;
             StartChecking();

@@ -16,7 +16,7 @@ namespace SkibidiRunner.Managers
 
         private float _finalOffset;
         
-        public override void Initialize()
+        protected override void Initialize()
         {
             _player = ActiveGameObjectStore.Instance.Player;
             _startHeight = _player.position.y;

@@ -25,18 +25,18 @@ namespace SkibidiRunner.Managers
         protected override void OnEnable()
         {
             base.OnEnable();
-            ShopManager.Instance.CoinCountUpdate += Initialize;
+            ShopManager.Instance.CoinCountUpdate += TryInitialize;
             button.onClick.AddListener(BuySkill);
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            ShopManager.Instance.CoinCountUpdate -= Initialize;
+            ShopManager.Instance.CoinCountUpdate -= TryInitialize;
             button.onClick.RemoveListener(BuySkill);
         }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             int level = skill switch
             {

@@ -17,7 +17,7 @@ namespace SkibidiRunner.Managers
         private bool _gameWined;
         private bool _gameLost;
         
-        public override void Initialize()
+        protected override void Initialize()
         {
             Instance = this;
         }

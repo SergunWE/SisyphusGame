@@ -17,7 +17,7 @@ namespace SkibidiRunner.Managers
             
             foreach (var obj in initObjects)
             {
-                obj.Initialize();
+                obj.TryInitialize();
             }
         }
         
@@ -25,7 +25,7 @@ namespace SkibidiRunner.Managers
         {
             foreach (var obj in startInitObjects)
             {
-                obj.Initialize();
+                obj.TryInitialize();
             }
             
             loadingPanel.SetActive(false);

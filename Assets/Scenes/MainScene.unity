@@ -297,6 +297,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1416248813}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
+      propertyPath: useLoadableData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: m_Pivot.x
@@ -465,17 +470,18 @@ MonoBehaviour:
   loadingPanel: {fileID: 1642324682}
   initObjects:
   - {fileID: 1006497280}
+  - {fileID: 1304622735}
   - {fileID: 316003841}
   - {fileID: 1581299344}
   - {fileID: 346806620}
+  - {fileID: 826351693}
   startInitObjects:
-  - {fileID: 1304622735}
   - {fileID: 7945741226381473304}
   - {fileID: 2036034180}
   - {fileID: 939445655}
   - {fileID: 1530354188}
   - {fileID: 1956151307}
-  - {fileID: 826351693}
+  - {fileID: 1493982433}
 --- !u!4 &128110437
 Transform:
   m_ObjectHideFlags: 0
@@ -495,6 +501,7 @@ Transform:
   - {fileID: 1581299345}
   - {fileID: 346806619}
   - {fileID: 826351694}
+  - {fileID: 1493982434}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &131355791
@@ -2024,6 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915efbfc9f2c1f74985b90a81bf2557e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   button: {fileID: 2137930398}
   imageButton: {fileID: 320438269}
   onSprite: {fileID: 21300000, guid: e9eddee54280ccf4f8d19c722dff6731, type: 3}
@@ -2244,6 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a0d9b8a5465d448a32a69aded20a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   button: {fileID: 2066114202}
   imageButton: {fileID: 196578796}
   waitSprite: {fileID: 21300000, guid: 6ea4a26d7ed6e804182ca5b588bd6eb7, type: 3}
@@ -3517,6 +3526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdd4806ccb63b04faa14462295007cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 1
   localizedString:
     m_TableReference:
       m_TableCollectionName: GUID:896937ea4a4941348895acfb4e842895
@@ -3647,6 +3657,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1940869480}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
+      propertyPath: useLoadableData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3900,6 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25a55efd52b6ba47b3d42c7ae31dc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   saveInfo:
     <LevelNumber>k__BackingField: 20
     <MusicOn>k__BackingField: 1
@@ -4970,6 +4986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9a637522674e02b03358028884e56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
 --- !u!4 &1304622736
 Transform:
   m_ObjectHideFlags: 0
@@ -5842,6 +5859,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463544779}
   m_CullTransparentMesh: 1
+--- !u!1 &1493982432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493982434}
+  - component: {fileID: 1493982433}
+  m_Layer: 0
+  m_Name: ApiManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1493982433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493982432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944cf55cce9848a3ba4e6a97df3eadc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useLoadableData: 0
+--- !u!4 &1493982434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493982432}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 128110437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1512289392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9137192040417413616, guid: 88afa7148128123478f1b500e25ed8f7,
@@ -6046,6 +6108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d692b03cc865940b57dc1bcb08f227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 1
   text: {fileID: 1530354186}
 --- !u!224 &1536449629 stripped
 RectTransform:
@@ -6082,6 +6145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b036bfbbf4f6484cadf443da2c1049b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   button: {fileID: 2066479591}
   imageButton: {fileID: 243531107}
   onSprite: {fileID: 21300000, guid: 288e562610e121b4b99e79928c9cabca, type: 3}
@@ -8454,6 +8518,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1956151308}
+    - target: {fileID: 3210947979443695641, guid: 9e438babdbc7ed34b8261de4c1687ae2,
+        type: 3}
+      propertyPath: useLoadableData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8509459948846508592, guid: 9e438babdbc7ed34b8261de4c1687ae2,
         type: 3}
       propertyPath: m_Name
@@ -8717,6 +8786,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1707434582}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
+      propertyPath: useLoadableData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: m_Pivot.x

@@ -10,7 +10,7 @@ namespace SkibidiRunner.Managers
         [field:SerializeField] public Transform Stone { get; private set; }
         [field:SerializeField] public Transform Player { get; private set; }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             Instance = this;
         }

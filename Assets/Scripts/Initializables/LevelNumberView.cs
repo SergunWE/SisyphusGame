@@ -30,7 +30,7 @@ namespace SkibidiRunner.Managers
             text.text = value;
         }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             localizedString.Arguments = new object[] { _levelCount };
             _levelCount = LocalYandexData.Instance.SaveInfo.LevelNumber + 1;

@@ -11,16 +11,16 @@ namespace SkibidiRunner.Managers
         protected override void OnEnable()
         {
             base.OnEnable();
-            ShopManager.Instance.CoinCountUpdate += Initialize;
+            ShopManager.Instance.CoinCountUpdate += TryInitialize;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            ShopManager.Instance.CoinCountUpdate -= Initialize;
+            ShopManager.Instance.CoinCountUpdate -= TryInitialize;
         }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             text.text = LocalYandexData.Instance.SaveInfo.Coins.ToString();
         }

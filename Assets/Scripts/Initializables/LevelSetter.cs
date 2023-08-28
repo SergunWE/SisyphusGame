@@ -34,7 +34,7 @@ public class LevelSetter : MonoBehaviourInitializable
 
     private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
 
-    public override void Initialize()
+    protected override void Initialize()
     {
         Random.InitState(SaveInfo.LevelNumber);
         

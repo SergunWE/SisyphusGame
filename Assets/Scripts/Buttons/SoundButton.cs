@@ -27,7 +27,7 @@ namespace Buttons
             button.onClick.RemoveListener(ChangeState);
         }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             imageButton.sprite = LocalYandexData.Instance.SaveInfo.SoundOn ? onSprite : offSprite;
 
@@ -40,7 +40,7 @@ namespace Buttons
         private void ChangeState()
         {
             LocalYandexData.Instance.SaveInfo.SoundOn = !LocalYandexData.Instance.SaveInfo.SoundOn;
-            Initialize();
+            TryInitialize();
         }
     }
 }

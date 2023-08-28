@@ -8,7 +8,7 @@ public class DebugSaveInfoSetter : MonoBehaviourInitializable
 
     private static bool _set;
 
-    public override void Initialize()
+    protected override void Initialize()
     {
 #if UNITY_EDITOR
         if (_set)

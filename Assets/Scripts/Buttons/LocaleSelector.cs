@@ -25,7 +25,7 @@ namespace Buttons
             button.onClick.RemoveListener(ChangeLanguage);
         }
 
-        public override async void Initialize()
+        protected override async void Initialize()
         {
             await LocalizationSettings.InitializationOperation.Task;
 

@@ -32,7 +32,7 @@ mergeInto(LibraryManager.library, {
           console.log(feedbackSent);
         });
       } else {
-        console.error(reason);
+        console.log(reason);
       }
     });
   },
@@ -82,10 +82,12 @@ mergeInto(LibraryManager.library, {
     var obj = UTF8ToString(objectName);
     var method = UTF8ToString(methodName);
     try {
-      player.getData().then((_date) => {
-        const myJSON = JSON.stringify(_date);
-        console.log(myJSON);
-        myGameInstance.SendMessage(obj, method, myJSON);
+      YaGames.init().then(ysdk => {
+        player.getData().then((_date) => {
+          const myJSON = JSON.stringify(_date);
+          console.log(myJSON);
+          myGameInstance.SendMessage(obj, method, myJSON);
+        });
       });
     } catch (err) {
       console.error(err);
@@ -165,5 +167,13 @@ mergeInto(LibraryManager.library, {
         },
       },
     });
+  },
+
+  apiReady: function () {
+    try {
+      ysdk.features.LoadingAPI.ready();
+    } catch (err) {
+      console.error(err);
+    }
   },
 });

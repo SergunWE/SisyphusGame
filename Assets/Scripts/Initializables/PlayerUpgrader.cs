@@ -27,7 +27,7 @@ namespace SkibidiRunner.Managers
             DefaultGravity = Physics.gravity;
         }
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             Physics.gravity = DefaultGravity + Vector3.up * SaveInfo.GravityLevel * gravityOffset;
             if (Physics.gravity.y > -1f)

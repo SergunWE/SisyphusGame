@@ -19,7 +19,7 @@ namespace SkibidiRunner.Managers
 
         private bool _init;
         
-        public override void Initialize()
+        protected override void Initialize()
         {
             Instance = this;
             _stone = ActiveGameObjectStore.Instance.Stone;

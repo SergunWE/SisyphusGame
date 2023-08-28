@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3d66b145ec4bba96818c3222c625ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   audioSource: {fileID: 1966269712}
 --- !u!1001 &18550869
 PrefabInstance:
@@ -473,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376272b96fba40bbbeb0bbcfc8879819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   musicSource: {fileID: 1568684713}
 --- !u!1 &166605095
 GameObject:
@@ -518,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3d66b145ec4bba96818c3222c625ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   audioSource: {fileID: 309980874}
 --- !u!1 &175097771
 GameObject:
@@ -908,6 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1585c1f8e4476ca44bc2144bac94a242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   offset: 5
 --- !u!4 &256568179
 Transform:
@@ -968,8 +972,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8da151a949beb54e92e5a37f24e1e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   offset: 5
-  levelOffset: 0.05
+  levelOffset: 0.1
 --- !u!1 &278860411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4167847c22ac9e44ab3ba9a113740031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   gameWin:
     m_PersistentCalls:
       m_Calls:
@@ -1913,7 +1919,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1656977092}
         m_TargetAssemblyTypeName: SkibidiRunner.Managers.CoinView, Assembly-CSharp
-        m_MethodName: Initialize
+        m_MethodName: TryInitialize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2131,6 +2137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c69ec2d2077e14aa96deadf5bfa690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   mainPlatformStartPos: {fileID: 1045816827}
   mainPlatformEndPos: {fileID: 1507332410}
   mainPlatform: {fileID: 1059781659}
@@ -2141,10 +2148,10 @@ MonoBehaviour:
   islandSpawnOffset: {x: 0, y: 0, z: -53}
   parkourLevelOffset: 7.5
   parkourIslandMinDistance: 2
-  parkourIslandMinDistanceDiff: 0.3
-  parkourIslandOffset: {x: 5, y: 0.05, z: 5}
-  parkourIslandOffsetDiff: {x: 0.25, y: 0.05, z: 0.4}
-  parkourIslandMaxOffset: {x: 24, y: 5}
+  parkourIslandMinDistanceDiff: 0.35
+  parkourIslandOffset: {x: 5, y: 0.1, z: 5}
+  parkourIslandOffsetDiff: {x: 0.25, y: 0.1, z: 0.45}
+  parkourIslandMaxOffset: {x: 24, y: 2}
   islands:
   - {fileID: 2066000584587812530, guid: a95ceb376e4a8b84aa2b7d41a350b204, type: 3}
   - {fileID: 6247277052146678202, guid: 297c27d5039ec314699c830209d13b6d, type: 3}
@@ -2558,6 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4dfa2a0ab3aac4a9dccb9ff6854d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   <MainPlatform>k__BackingField: {fileID: 1059781659}
   <StoneSpawnPoint>k__BackingField: {fileID: 470584927}
   <PlayerSavePoint>k__BackingField: {fileID: 585968307}
@@ -2977,6 +2985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803745f7f2f64175844adb241fce13c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   walkOffset: 0.1
   sprintOffset: 0.5
   gravityOffset: 0.1
@@ -3041,6 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25a55efd52b6ba47b3d42c7ae31dc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   saveInfo:
     <LevelNumber>k__BackingField: 25
     <MusicOn>k__BackingField: 1
@@ -3196,6 +3206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a09511fdd868140ae05c88ce8f4ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   <Stone>k__BackingField: {fileID: 278860416}
   <Player>k__BackingField: {fileID: 3893294199183149141}
 --- !u!1 &1484510029
@@ -3242,6 +3253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0deacce91b16b4c9bd6e4f9ae94129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
 --- !u!1001 &1484858091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4394,6 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d692b03cc865940b57dc1bcb08f227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   text: {fileID: 1656977090}
 --- !u!1 &1690337714
 GameObject:
@@ -4607,7 +4620,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
