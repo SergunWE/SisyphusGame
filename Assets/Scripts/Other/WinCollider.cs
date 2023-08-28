@@ -12,5 +12,13 @@ namespace SkibidiRunner.Managers
                 GameEvents.Instance.WinGame();
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Stone"))
+            {
+                GameEvents.Instance.WinGame();
+            }
+        }
     }
 }

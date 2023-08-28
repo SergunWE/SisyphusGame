@@ -969,6 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 5
+  levelOffset: 0.05
 --- !u!1 &278860411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,12 +2139,12 @@ MonoBehaviour:
   playerSpawnOffset: {x: 0, y: 0, z: -5}
   stoneSpawnOffset: {x: 0, y: 2, z: -1}
   islandSpawnOffset: {x: 0, y: 0, z: -53}
-  parkourLevelOffset: 7
+  parkourLevelOffset: 7.5
   parkourIslandMinDistance: 2
-  parkourIslandMinDistanceDiff: 0.2
+  parkourIslandMinDistanceDiff: 0.3
   parkourIslandOffset: {x: 5, y: 0.05, z: 5}
-  parkourIslandOffsetDiff: {x: 0.21, y: 0, z: 0.32}
-  parkourIslandMaxOffset: {x: 24, y: 0.5}
+  parkourIslandOffsetDiff: {x: 0.25, y: 0.05, z: 0.4}
+  parkourIslandMaxOffset: {x: 24, y: 5}
   islands:
   - {fileID: 2066000584587812530, guid: a95ceb376e4a8b84aa2b7d41a350b204, type: 3}
   - {fileID: 6247277052146678202, guid: 297c27d5039ec314699c830209d13b6d, type: 3}
@@ -2152,9 +2153,9 @@ MonoBehaviour:
   - {fileID: 1966334982672295049, guid: c698e92835f6eae4b83c3406fe386b78, type: 3}
   - {fileID: 3603960335470740008, guid: 35845763e2f6235459d23ffc23e15093, type: 3}
   - {fileID: 3603960335470740008, guid: 0766915a5458bbf4bb62d04655ceb06e, type: 3}
-  slopeLevelOffset: 2
+  slopeLevelOffset: 1.9
   obstacleClearance: 5
-  obstacleVerticalOffset: 9
+  obstacleVerticalOffset: 8.7
   obstacleHorizontalOffset: 7
   obstacles:
   - {fileID: 1558701893152855384, guid: 06226ed123e9fd7468a61f006f3050ee, type: 3}
@@ -2525,6 +2526,7 @@ Transform:
   - {fileID: 217484254}
   - {fileID: 493326622}
   - {fileID: 442310912}
+  - {fileID: 1690337715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898209481
@@ -2607,8 +2609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winGameCoinCount: 10
-  winGameCoinArithmeticOffset: 2
-  winGameCoinGeometricOffset: 0.02
+  winGameCoinArithmeticOffset: 10
+  winGameCoinGeometricOffset: 0.04
 --- !u!4 &940587634
 Transform:
   m_ObjectHideFlags: 0
@@ -4393,6 +4395,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1656977090}
+--- !u!1 &1690337714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690337715}
+  - component: {fileID: 1690337718}
+  - component: {fileID: 1690337717}
+  - component: {fileID: 1690337716}
+  m_Layer: 0
+  m_Name: Cube (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1690337715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690337714}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 300, z: 510}
+  m_LocalScale: {x: 500, y: 500, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 877840895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690337716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690337714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20623b94597c9d44971d7f3117a5919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1690337717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690337714}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &1690337718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690337714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1782466469
 GameObject:
   m_ObjectHideFlags: 0

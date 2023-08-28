@@ -465,17 +465,17 @@ MonoBehaviour:
   loadingPanel: {fileID: 1642324682}
   initObjects:
   - {fileID: 1006497280}
-  - {fileID: 1304622735}
   - {fileID: 316003841}
   - {fileID: 1581299344}
+  - {fileID: 346806620}
   startInitObjects:
+  - {fileID: 1304622735}
   - {fileID: 7945741226381473304}
   - {fileID: 2036034180}
   - {fileID: 939445655}
   - {fileID: 1530354188}
   - {fileID: 1956151307}
   - {fileID: 826351693}
-  - {fileID: 346806620}
 --- !u!4 &128110437
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,7 +1818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.5, y: 0.000061035156}
+  m_AnchoredPosition: {x: 12.5, y: 0.00012207031}
   m_SizeDelta: {x: 25, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253420567
@@ -3908,9 +3908,9 @@ MonoBehaviour:
     <Coins>k__BackingField: 2000
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 4
-    <GravityLevel>k__BackingField: 2
-    <PushingForceLevel>k__BackingField: 1
+    <SpeedLevel>k__BackingField: 5
+    <GravityLevel>k__BackingField: 5
+    <PushingForceLevel>k__BackingField: 1000
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
     <PlayerSkinId>k__BackingField: 0
@@ -5019,7 +5019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4, y: 1}
-  m_AnchoredPosition: {x: -12.5, y: 0.000061035156}
+  m_AnchoredPosition: {x: -12.5, y: 0.00012207031}
   m_SizeDelta: {x: 25, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308966547

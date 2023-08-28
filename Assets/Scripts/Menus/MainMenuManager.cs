@@ -10,11 +10,10 @@ namespace Menus
     {
         [SerializeField] private GameObject loadingPanel;
 
-        public async void StartGame()
+        public void StartGame()
         {
             loadingPanel.SetActive(true);
             LocalYandexData.Instance.SaveData();
-            await Task.Delay(100);
             SceneManager.LoadSceneAsync(1);
         }
     }
