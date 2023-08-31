@@ -288,6 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d333bfacd8ecf43ba7a7f5707c95dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {fileID: 1690636055}
+  recoveryOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &24594048
 Transform:
   m_ObjectHideFlags: 0
@@ -374,12 +376,12 @@ PrefabInstance:
     - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1785,7 +1787,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 123
+  m_StaticEditorFlags: 121
   m_IsActive: 1
 --- !u!65 &469887027
 BoxCollider:
@@ -3067,12 +3069,12 @@ PrefabInstance:
     - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3518,7 +3520,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 123
+  m_StaticEditorFlags: 121
   m_IsActive: 1
 --- !u!4 &1059781659
 Transform:
@@ -4234,12 +4236,12 @@ PrefabInstance:
     - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4365,7 +4367,7 @@ PrefabInstance:
     - target: {fileID: 7919379482350296176, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 8327451223050534554, guid: c431280febe822e4784e03d201e9867e,
         type: 3}
@@ -5037,12 +5039,12 @@ PrefabInstance:
     - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5622,6 +5624,89 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1690636054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690636055}
+  - component: {fileID: 1690636057}
+  - component: {fileID: 1690636056}
+  m_Layer: 0
+  m_Name: Direction
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1690636055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690636054}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 166.77, z: 462.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
+--- !u!23 &1690636056
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690636054}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1690636057
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690636054}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1763369812
 GameObject:
   m_ObjectHideFlags: 0
@@ -6735,12 +6820,12 @@ PrefabInstance:
     - target: {fileID: 5810399766166659001, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 7546088839836813407, guid: 4ac845f0df0ab5f49aacc36e6be14534,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 123
+      value: 121
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9380,6 +9465,7 @@ SceneRoots:
   - {fileID: 1059781659}
   - {fileID: 1001688082}
   - {fileID: 1045816827}
+  - {fileID: 1690636055}
   - {fileID: 1507332410}
   - {fileID: 1568684714}
   - {fileID: 1966269713}

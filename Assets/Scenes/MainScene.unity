@@ -4140,16 +4140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useLoadableData: 0
   saveInfo:
-    <LevelNumber>k__BackingField: 0
+    <LevelNumber>k__BackingField: 20
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <ManualLanguage>k__BackingField: 
     <Coins>k__BackingField: 2000
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 1
-    <GravityLevel>k__BackingField: 1
-    <PushingForceLevel>k__BackingField: 1
+    <SpeedLevel>k__BackingField: 15
+    <GravityLevel>k__BackingField: 15
+    <PushingForceLevel>k__BackingField: 5
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
     <PlayerSkinId>k__BackingField: 0
