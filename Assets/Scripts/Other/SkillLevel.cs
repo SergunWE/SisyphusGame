@@ -27,6 +27,7 @@ namespace SkibidiRunner.Managers
             base.OnEnable();
             ShopManager.Instance.CoinCountUpdate += TryInitialize;
             button.onClick.AddListener(BuySkill);
+            TryInitialize();
         }
 
         protected override void OnDisable()

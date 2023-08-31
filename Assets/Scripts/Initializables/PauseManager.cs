@@ -5,10 +5,13 @@ namespace SkibidiRunner.Managers
 {
     public class PauseManager : MonoBehaviour
     {
+        public static PauseManager Instance { get; private set; }
+        
         private float _timeScale;
 
         private void Awake()
         {
+            Instance = this;
             _timeScale = Time.timeScale;
         }
 

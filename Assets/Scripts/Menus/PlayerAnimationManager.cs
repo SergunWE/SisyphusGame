@@ -13,14 +13,14 @@ namespace Menus
 
         private void OnEnable()
         {
-            ShopManager.Instance.CoinAdded += PlayerJoy;
+            ShopManager.Instance.CoinCountUpdate += PlayerJoy;
             ShopManager.Instance.SkillPurchaseSuccessful += PlayerJoy;
             ShopManager.Instance.SkinPurchaseSuccessful += PlayerJoy2;
         }
 
         private void OnDisable()
         {
-            ShopManager.Instance.CoinAdded -= PlayerJoy;
+            ShopManager.Instance.CoinCountUpdate -= PlayerJoy;
             ShopManager.Instance.SkillPurchaseSuccessful -= PlayerJoy;
             ShopManager.Instance.SkinPurchaseSuccessful -= PlayerJoy2;
         }

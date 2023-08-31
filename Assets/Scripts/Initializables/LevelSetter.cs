@@ -75,6 +75,8 @@ public class LevelSetter : MonoBehaviourInitializable
        float currentParkourIslandYMaxOffset = parkourIslandMaxOffset.y +
                                              parkourIslandOffsetDiff.y * LocalYandexData.Instance.SaveInfo.LevelNumber;
 
+       Debug.Log("MAX Y - " + currentParkourIslandYMaxOffset);
+
         while (currentDistance < islandDistance)
         {
             int index = Random.Range(0, islands.Count);
@@ -88,7 +90,7 @@ public class LevelSetter : MonoBehaviourInitializable
             offset.y = Random.Range(currentParkourIslandOffset.y, -currentParkourIslandOffset.y);
             if (Mathf.Abs(islandStartPos.position.y - currentIslandPosition.y - offset.y) >= currentParkourIslandYMaxOffset)
             {
-                offset.y *= Mathf.Sign(islandStartPos.position.y);
+                offset.y = 0;
             }
 
             offset.z = Random.Range(currentParkourIslandMinDistance, currentParkourIslandOffset.z);

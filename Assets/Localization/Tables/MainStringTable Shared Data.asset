@@ -47,6 +47,14 @@ MonoBehaviour:
     m_Key: NeedLevel
     m_Metadata:
       m_Items: []
+  - m_Id: 3968246322352128
+    m_Key: SkipLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3968383434149888
+    m_Key: ResetLevel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

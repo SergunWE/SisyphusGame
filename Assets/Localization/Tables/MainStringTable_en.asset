@@ -53,6 +53,14 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 128906228692418562
+  - m_Id: 3968246322352128
+    m_Localized: Skip a level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3968383434149888
+    m_Localized: Reset level
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

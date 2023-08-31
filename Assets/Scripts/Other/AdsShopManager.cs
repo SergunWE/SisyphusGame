@@ -8,9 +8,6 @@ namespace SkibidiRunner.Managers
     {
         public static AdsShopManager Instance { get; private set; }
 
-        [SerializeField] protected UnityEvent advStarted;
-        [SerializeField] protected UnityEvent advEnded;
-
         private void Awake()
         {
             Instance = this;
@@ -21,13 +18,13 @@ namespace SkibidiRunner.Managers
             switch (result)
             {
                 case 0:
-                    advStarted?.Invoke();
+                    PauseManager.Instance.PauseGame();
                     break;
                 case 1:
                     ShopManager.Instance.BuySkill(Skill.Speed, 0);
                     break;
                 case 2:
-                    advEnded?.Invoke();
+                    PauseManager.Instance.ResumeGame();
                     break;
             }
         }
@@ -37,13 +34,13 @@ namespace SkibidiRunner.Managers
             switch (result)
             {
                 case 0:
-                    advStarted?.Invoke();
+                    PauseManager.Instance.PauseGame();
                     break;
                 case 1:
                     ShopManager.Instance.BuySkill(Skill.Jump, 0);
                     break;
                 case 2:
-                    advEnded?.Invoke();
+                    PauseManager.Instance.ResumeGame();
                     break;
             }
         }
@@ -53,13 +50,13 @@ namespace SkibidiRunner.Managers
             switch (result)
             {
                 case 0:
-                    advStarted?.Invoke();
+                    PauseManager.Instance.PauseGame();
                     break;
                 case 1:
                     ShopManager.Instance.BuySkill(Skill.Power, 0);
                     break;
                 case 2:
-                    advEnded?.Invoke();
+                    PauseManager.Instance.ResumeGame();
                     break;
             }
         }

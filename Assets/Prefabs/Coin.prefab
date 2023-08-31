@@ -97,8 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deleteParent: 1
-  gettingSound: {fileID: 8300000, guid: e0de6f10d43805c4e91d6febe2f7d7a4, type: 3}
-  spawnChance: 0.8
+  spawnChance: 0.9
 --- !u!205 &3523957077838081347
 LODGroup:
   m_ObjectHideFlags: 0

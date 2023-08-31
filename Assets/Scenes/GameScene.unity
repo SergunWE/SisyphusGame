@@ -973,8 +973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLoadableData: 0
-  offset: 5
-  levelOffset: 0.1
+  offset: 7
+  levelOffset: 0.05
 --- !u!1 &278860411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,12 +2146,12 @@ MonoBehaviour:
   playerSpawnOffset: {x: 0, y: 0, z: -5}
   stoneSpawnOffset: {x: 0, y: 2, z: -1}
   islandSpawnOffset: {x: 0, y: 0, z: -53}
-  parkourLevelOffset: 7.5
+  parkourLevelOffset: 7.6
   parkourIslandMinDistance: 2
-  parkourIslandMinDistanceDiff: 0.35
+  parkourIslandMinDistanceDiff: 0.4
   parkourIslandOffset: {x: 5, y: 0.1, z: 5}
-  parkourIslandOffsetDiff: {x: 0.25, y: 0.1, z: 0.45}
-  parkourIslandMaxOffset: {x: 24, y: 2}
+  parkourIslandOffsetDiff: {x: 0.25, y: 0.05, z: 0.5}
+  parkourIslandMaxOffset: {x: 24, y: 5}
   islands:
   - {fileID: 2066000584587812530, guid: a95ceb376e4a8b84aa2b7d41a350b204, type: 3}
   - {fileID: 6247277052146678202, guid: 297c27d5039ec314699c830209d13b6d, type: 3}
@@ -2617,8 +2617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winGameCoinCount: 10
-  winGameCoinArithmeticOffset: 10
-  winGameCoinGeometricOffset: 0.04
+  winGameCoinArithmeticOffset: 5
+  winGameCoinGeometricOffset: 0.02
 --- !u!4 &940587634
 Transform:
   m_ObjectHideFlags: 0
@@ -2833,7 +2833,8 @@ MonoBehaviour:
   - {fileID: 256568178}
   - {fileID: 268835625}
   - {fileID: 1484510031}
-  startInitObjects: []
+  startInitObjects:
+  - {fileID: 1656977092}
 --- !u!1 &1045816824
 GameObject:
   m_ObjectHideFlags: 0

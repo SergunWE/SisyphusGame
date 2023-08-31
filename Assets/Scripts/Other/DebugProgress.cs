@@ -12,7 +12,7 @@ namespace SkibidiRunner.Managers
 
         public void GetMoney()
         {
-            ShopManager.Instance.AddCoins(100000);
+            ShopManager.Instance.ChangeCoins(100000);
             LocalYandexData.Instance.SaveData();
         }
     }

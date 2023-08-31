@@ -11,7 +11,6 @@ namespace SkibidiRunner.Managers
 
         public event Action SkillPurchaseSuccessful;
         public event Action SkinPurchaseSuccessful;
-        public event Action CoinAdded;
         public event Action CoinCountUpdate;
         
 
@@ -60,11 +59,9 @@ namespace SkibidiRunner.Managers
             CoinCountUpdate?.Invoke();
         }
 
-        public void AddCoins(int value)
+        public void ChangeCoins(int value)
         {
-            if(value < 0) return;
             LocalYandexData.Instance.SaveInfo.Coins += value;
-            CoinAdded?.Invoke();
             CoinCountUpdate?.Invoke();
         }
     }

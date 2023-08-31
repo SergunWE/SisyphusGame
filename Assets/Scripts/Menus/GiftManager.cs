@@ -43,7 +43,7 @@ namespace Menus
                 int reward = giftStartCount + giftLevelOffset * LocalYandexData.Instance.SaveInfo.DailyRewardLevel;
                 rewardCountText.text = reward.ToString();
                 
-                ShopManager.Instance.AddCoins(reward);
+                ShopManager.Instance.ChangeCoins(reward);
                 
                 LocalYandexData.Instance.SaveInfo.DailyRewardLevel++;
                 LocalYandexData.Instance.SaveInfo.DailyRewardTimeTicks = DateTime.UtcNow.Ticks;
