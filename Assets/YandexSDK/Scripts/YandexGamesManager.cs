@@ -42,6 +42,8 @@ namespace YandexSDK.Scripts
         private static extern void showRewardedAdv(string objectName, string methodName);
         [DllImport("__Internal")]
         private static extern void apiReady();
+        [DllImport("__Internal")]
+        private static extern string deviceType();
 
 
         /// <summary>
@@ -198,5 +200,25 @@ namespace YandexSDK.Scripts
             }
 #endif
         }
+
+        public static DeviceType GetDeviceType()
+        {
+            try
+            {
+                return deviceType() switch
+                {
+                    "desktop" => DeviceType.Desktop,
+                    "mobile" => DeviceType.Mobile,
+                    "tablet" => DeviceType.Tablet,
+                    "tv" => DeviceType.Tv,
+                    _ => DeviceType.Desktop
+                };
+            }
+            catch (Exception)
+            {
+                return DeviceType.Desktop;
+            }
+        }
+            
     }
 }

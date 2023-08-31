@@ -55,6 +55,26 @@ MonoBehaviour:
     m_Key: ResetLevel
     m_Metadata:
       m_Items: []
+  - m_Id: 3973338719113216
+    m_Key: LevelPassed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3973418868068352
+    m_Key: WinBest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3975182061195264
+    m_Key: YouEarned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977543521456128
+    m_Key: GetX5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977576186695680
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

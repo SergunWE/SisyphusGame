@@ -176,4 +176,17 @@ mergeInto(LibraryManager.library, {
       console.error(err);
     }
   },
+
+  deviceType: function () {
+     try {
+      var returnStr = ysdk.deviceInfo.type;
+      var bufferSize = lengthBytesUTF8(returnStr) + 1;
+      var buffer = _malloc(bufferSize);
+      stringToUTF8(returnStr, buffer, bufferSize);
+      return buffer;
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  },
 });

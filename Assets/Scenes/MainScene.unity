@@ -299,6 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 1416248813}
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
+      propertyPath: startCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
       propertyPath: useLoadableData
       value: 1
       objectReference: {fileID: 0}
@@ -3632,6 +3637,11 @@ PrefabInstance:
       objectReference: {fileID: 1940869480}
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
+      propertyPath: startCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
       propertyPath: useLoadableData
       value: 1
       objectReference: {fileID: 0}
@@ -3803,6 +3813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BuyResetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974323144841152873, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4967542696886564511, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -4125,16 +4140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useLoadableData: 0
   saveInfo:
-    <LevelNumber>k__BackingField: 22
+    <LevelNumber>k__BackingField: 0
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <ManualLanguage>k__BackingField: 
     <Coins>k__BackingField: 2000
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 5
-    <GravityLevel>k__BackingField: 5
-    <PushingForceLevel>k__BackingField: 1000
+    <SpeedLevel>k__BackingField: 1
+    <GravityLevel>k__BackingField: 1
+    <PushingForceLevel>k__BackingField: 1
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
     <PlayerSkinId>k__BackingField: 0
@@ -6228,7 +6243,7 @@ PrefabInstance:
     - target: {fileID: 4967542696886564511, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -548.37256
+      value: -693.37256
       objectReference: {fileID: 0}
     - target: {fileID: 4967542696886564511, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -6268,7 +6283,7 @@ PrefabInstance:
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
       propertyPath: cost
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -7407,6 +7422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62b657b24bf468ca13017ee42bc79eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelView: {fileID: 826351693}
 --- !u!4 &1764743709
 Transform:
   m_ObjectHideFlags: 0
@@ -8266,6 +8282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NextSkinButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484085, guid: bf03628e149d5124fbe732ad256e1cfd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9341,7 +9362,7 @@ PrefabInstance:
     - target: {fileID: 4967542696886564511, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -258.37256
+      value: -403.37256
       objectReference: {fileID: 0}
     - target: {fileID: 4967542696886564511, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -9476,6 +9497,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1707434582}
+    - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
+        type: 3}
+      propertyPath: startCost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: useLoadableData

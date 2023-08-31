@@ -6,11 +6,11 @@ namespace SkibidiRunner.Managers
     {
         public void RollbackGame()
         {
-            RollbackPlayer();
             if (GameInfo.Instance.StoneFall)
             {
                 RollbackStone();
             }
+            RollbackPlayer();
         }
 
         private void RollbackStone()

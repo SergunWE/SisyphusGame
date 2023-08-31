@@ -48,10 +48,5 @@ namespace YandexSDK.Scripts
             YandexGamesManager.SavePlayerData(SaveInfo);
             OnYandexDataLoaded?.Invoke();
         }
-
-        public void ForcedUpdate()
-        {
-            OnYandexDataLoaded?.Invoke();
-        }
     }
 }

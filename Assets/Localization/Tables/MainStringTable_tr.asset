@@ -61,10 +61,31 @@ MonoBehaviour:
     m_Localized: "Seviyeyi s\u0131f\u0131rla"
     m_Metadata:
       m_Items: []
+  - m_Id: 3973338719113216
+    m_Localized: "Seviye ge\xE7ildi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3973418868068352
+    m_Localized: "Seviyeyi oyuncular\u0131n {0}%'\u0131ndan daha iyi ge\xE7tiniz!"
+    m_Metadata:
+      m_Items:
+      - rid: 128906228692418564
+  - m_Id: 3975182061195264
+    m_Localized: "Sen kazand\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977576186695680
+    m_Localized: ' Devam edecek'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977543521456128
+    m_Localized: x5 al
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 128906228692418564
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00d0ec460200000000d06c5ec3cc0700
+        m_Entries: 00d0ec460200000000d06c5ec3cc070000d02caccd1d0e00

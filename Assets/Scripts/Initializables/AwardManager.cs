@@ -15,7 +15,8 @@ namespace SkibidiRunner.Managers
                         (int)Mathf.Round(winGameCoinArithmeticOffset * LocalYandexData.Instance.SaveInfo.LevelNumber) +
                         (int)Mathf.Round(winGameCoinCount * LocalYandexData.Instance.SaveInfo.LevelNumber * winGameCoinGeometricOffset);
             Debug.Log("Level award count: " + award);
-            LocalYandexData.Instance.SaveInfo.Coins += award;
+            GameInfo.Instance.CoinCount += award;
+            ShopManager.Instance.ChangeCoins(award);
         }
         
         
@@ -23,7 +24,7 @@ namespace SkibidiRunner.Managers
         {
             int bonusAward = GameInfo.Instance.CoinCount * multiplier;
             Debug.Log("Bonus award count: " + bonusAward);
-            LocalYandexData.Instance.SaveInfo.Coins += bonusAward;
+            ShopManager.Instance.ChangeCoins(bonusAward - GameInfo.Instance.CoinCount);
         }
     }
 }

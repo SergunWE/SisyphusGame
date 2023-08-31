@@ -5,6 +5,8 @@ namespace SkibidiRunner.Managers
 {
     public class ItemShopManager : MonoBehaviour
     {
+        [SerializeField] private LevelNumberView levelView;
+        
         public void BuyCoins()
         {
             ShopManager.Instance.ChangeCoins(400);
@@ -14,14 +16,14 @@ namespace SkibidiRunner.Managers
         {
             LocalYandexData.Instance.SaveInfo.LevelNumber++;
             LocalYandexData.Instance.SaveData();
-            LocalYandexData.Instance.ForcedUpdate();
+            levelView.TryInitialize();
         }
 
         public void ResetLevel()
         {
             LocalYandexData.Instance.SaveInfo.LevelNumber = 0;
             LocalYandexData.Instance.SaveData();
-            LocalYandexData.Instance.ForcedUpdate();
+            levelView.TryInitialize();
         }
     }
 }

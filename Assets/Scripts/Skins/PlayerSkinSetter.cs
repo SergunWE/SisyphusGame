@@ -33,7 +33,7 @@ namespace Skins
             }
 
             var model = Instantiate(playerSkinSo.PlayerModel, transform);
-            if (animator.avatar == playerSkinSo.Avatar) return;
+           
             animator.avatar = playerSkinSo.Avatar;
             animator.Rebind();
             _prevId = playerSkinSo.Id;

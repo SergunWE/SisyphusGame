@@ -61,10 +61,31 @@ MonoBehaviour:
     m_Localized: Reset level
     m_Metadata:
       m_Items: []
+  - m_Id: 3973338719113216
+    m_Localized: Level passed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3973418868068352
+    m_Localized: You passed the level better than {0}% of the players!
+    m_Metadata:
+      m_Items:
+      - rid: 128906228692418562
+  - m_Id: 3975182061195264
+    m_Localized: You earned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977576186695680
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3977543521456128
+    m_Localized: Get x5
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 128906228692418562
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00d0ec460200000000d06c5ec3cc0700
+        m_Entries: 00d0ec460200000000d06c5ec3cc070000d02caccd1d0e00
