@@ -102,6 +102,34 @@ MonoBehaviour:
     m_Localized: Return
     m_Metadata:
       m_Items: []
+  - m_Id: 4342506362556416
+    m_Localized: Use the left joystick to move around
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342561500876800
+    m_Localized: Use the right joystick to view. Use the button to jump.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342598263951360
+    m_Localized: Use the WASD keys to move. Use the SHIFT key to run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342644803948544
+    m_Localized: Use the mouse for an overview. Use the Spacebar to jump.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342713645060096
+    m_Localized: Lift the rock up. Don't drop it! Just push it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342740526354432
+    m_Localized: Avoid obstacles when lifting the stone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342772688277504
+    m_Localized: Beware of hammers and falling platforms. Pay attention!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

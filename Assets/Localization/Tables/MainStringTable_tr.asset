@@ -102,6 +102,39 @@ MonoBehaviour:
     m_Localized: "D\xF6n\xFC\u015F"
     m_Metadata:
       m_Items: []
+  - m_Id: 4342506362556416
+    m_Localized: "Hareket ettirmek i\xE7in sol joystick'i kullan\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342561500876800
+    m_Localized: "Genel bak\u0131\u015F i\xE7in sa\u011F kumanda kolunu kullan\u0131n.
+      Z\u0131plamak i\xE7in d\xFC\u011Fmeyi kullan\u0131n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342598263951360
+    m_Localized: "Hareket etmek i\xE7in WASD tu\u015Flar\u0131n\u0131 kullan\u0131n.
+      \xC7al\u0131\u015Ft\u0131rmak i\xE7in SHIFT tu\u015Funu kullan\u0131n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342644803948544
+    m_Localized: "Genel bak\u0131\u015F i\xE7in farenizi kullan\u0131n. Z\u0131plamak
+      i\xE7in Bo\u015Fluk \xC7ubu\u011Funu kullan\u0131n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342713645060096
+    m_Localized: "Ta\u015F\u0131 yukar\u0131 kald\u0131r. Sak\u0131n d\xFC\u015F\xFCrme!
+      Sadece it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342740526354432
+    m_Localized: "Ta\u015F\u0131 kald\u0131r\u0131rken engellerden ka\xE7\u0131n\u0131n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342772688277504
+    m_Localized: "\xC7eki\xE7lere ve d\xFC\u015Fen platformlara dikkat edin. Dikkatli
+      olun!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
