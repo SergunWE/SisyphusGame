@@ -48,7 +48,10 @@ namespace SkibidiRunner.Managers
 
         private void RollbackPlayer()
         {
+            //workaround
+            ActiveGameObjectStore.Instance.Player.gameObject.SetActive(false);
             ActiveGameObjectStore.Instance.Player.position = GameInfo.Instance.PlayerSavePoint.position;
+            ActiveGameObjectStore.Instance.Player.gameObject.SetActive(true);
         }
     }
 }

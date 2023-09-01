@@ -17,5 +17,10 @@ namespace SkibidiRunner.Managers
             LocalYandexData.Instance.SaveData();
             SceneManager.LoadSceneAsync(0);
         }
+
+        public void ReloadGame()
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        }
     }
 }

@@ -75,6 +75,26 @@ MonoBehaviour:
     m_Key: Continue
     m_Metadata:
       m_Items: []
+  - m_Id: 4326785716899840
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326823511773184
+    m_Key: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326846622388224
+    m_Key: FallPlayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326866415308800
+    m_Key: FallStone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326971377766400
+    m_Key: Return
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -82,6 +82,26 @@ MonoBehaviour:
     m_Localized: Get x5
     m_Metadata:
       m_Items: []
+  - m_Id: 4326785716899840
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326823511773184
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326846622388224
+    m_Localized: You fell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326866415308800
+    m_Localized: The rock fell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326971377766400
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

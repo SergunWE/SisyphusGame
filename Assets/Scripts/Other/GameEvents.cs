@@ -43,8 +43,8 @@ namespace SkibidiRunner.Managers
 
         public void ContinueGame()
         {
-            _gameLost = false;
             gameContinue?.Invoke();
+            _gameLost = false;
         }
 
         public void CoinCollected()

@@ -82,6 +82,26 @@ MonoBehaviour:
     m_Localized: x5 al
     m_Metadata:
       m_Items: []
+  - m_Id: 4326785716899840
+    m_Localized: "\xC7\u0131kt\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326823511773184
+    m_Localized: Yeniden Dene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326846622388224
+    m_Localized: "D\xFC\u015Ft\xFCn."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326866415308800
+    m_Localized: "Kaya d\xFC\u015Ft\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4326971377766400
+    m_Localized: "D\xF6n\xFC\u015F"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
