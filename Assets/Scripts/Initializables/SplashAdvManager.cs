@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -8,10 +9,10 @@ namespace SkibidiRunner.Managers
     public class SplashAdvManager : MonoBehaviour
     {
         [SerializeField] private bool showStartup;
+        [SerializeField] private int delaySeconds;
 
-        [SerializeField] public UnityEvent advStarted;
-        [SerializeField] public UnityEvent advEnded;
-
+        private static DateTime _adsTime;
+        
         private void Start()
         {
             if (showStartup)
@@ -20,10 +21,12 @@ namespace SkibidiRunner.Managers
             }
         }
 
-        public bool ShowAdv()
+        public void ShowAdv()
         {
-            YandexGamesManager.ShowSplashAdv(gameObject.name, nameof(AdvCallback));
-            return true;
+            if (DateTime.UtcNow - _adsTime > TimeSpan.FromSeconds(delaySeconds))
+            {
+                YandexGamesManager.ShowSplashAdv(gameObject.name, nameof(AdvCallback));
+            }
         }
 
         public void AdvCallback(int result)
@@ -31,10 +34,11 @@ namespace SkibidiRunner.Managers
             switch (result)
             {
                 case 0:
-                    advStarted?.Invoke();
+                    PauseManager.Instance.PauseGame();
                     break;
                 case 1:
-                    advEnded?.Invoke();
+                    PauseManager.Instance.ResumeGame();
+                    _adsTime = DateTime.UtcNow;
                     break;
             }
         }

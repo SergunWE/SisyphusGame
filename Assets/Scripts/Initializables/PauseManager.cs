@@ -3,26 +3,21 @@ using UnityEngine;
 
 namespace SkibidiRunner.Managers
 {
-    public class PauseManager : MonoBehaviour
+    public class PauseManager
     {
-        public static PauseManager Instance { get; private set; }
+        private static PauseManager _instance;
         
+        public static PauseManager Instance => _instance ??= new PauseManager();
+
         private float _timeScale;
 
-        private void Awake()
+        private PauseManager()
         {
-            Instance = this;
             _timeScale = Time.timeScale;
-        }
-
-        public void SetNewTimeScale(float value)
-        {
-            _timeScale = value;
         }
 
         public void PauseGame()
         {
-            if(!enabled) return;
             _timeScale = Time.timeScale;
             Time.timeScale = 0;
             AudioListener.pause = true;
@@ -30,7 +25,6 @@ namespace SkibidiRunner.Managers
 
         public void ResumeGame()
         {
-            if(!enabled) return;
             Time.timeScale = _timeScale;
             AudioListener.pause = false;
         }
