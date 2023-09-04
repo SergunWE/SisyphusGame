@@ -14,8 +14,8 @@ namespace SkibidiRunner.Managers
         [SerializeField] private UnityEvent gameContinue;
         [SerializeField] private UnityEvent coinCollect;
 
-        private bool _gameWined;
-        private bool _gameLost;
+        public bool GameWined { get; private set; }
+        public bool GameLost { get; private set; }
         
         protected override void Initialize()
         {
@@ -24,18 +24,18 @@ namespace SkibidiRunner.Managers
 
         public void WinGame()
         {
-            if(_gameLost || _gameWined) return;
+            if(GameLost || GameWined) return;
             Debug.Log("Game win");
-            _gameWined = true;
+            GameWined = true;
             gameWin?.Invoke();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         public void LoseGame(bool stoneFell)
         {
-            if(_gameLost || _gameWined) return;
+            if(GameLost || GameWined) return;
             Debug.Log(stoneFell ? "Game lose stone" : "Game lose player");
-            _gameLost = true;
+            GameLost = true;
             GameInfo.Instance.StoneFall = stoneFell;
 
             gameLose?.Invoke();
@@ -44,7 +44,7 @@ namespace SkibidiRunner.Managers
         public void ContinueGame()
         {
             gameContinue?.Invoke();
-            _gameLost = false;
+            GameLost = false;
         }
 
         public void CoinCollected()

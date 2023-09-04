@@ -18,9 +18,9 @@ namespace Game
         [SerializeField] private Animation panelAnimation;
         [SerializeField] private int startCost;
         [SerializeField] private int offsetCost;
-        
+
         private int _currentCost;
-        
+
         private void Awake()
         {
             _currentCost = startCost;
@@ -34,7 +34,7 @@ namespace Game
             text.text = GameInfo.Instance.StoneFall
                 ? fallStoneLocalizedString.GetLocalizedString()
                 : fallPlayerLocalizedString.GetLocalizedString();
-            
+
             panelAnimation.Play();
         }
 
@@ -44,6 +44,7 @@ namespace Game
             ShopManager.Instance.ChangeCoins(-_currentCost);
             _currentCost += offsetCost;
             GameEvents.Instance.ContinueGame();
+            gameObject.SetActive(false);
         }
     }
 }

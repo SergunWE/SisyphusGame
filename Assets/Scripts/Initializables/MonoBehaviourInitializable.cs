@@ -12,16 +12,23 @@ namespace SkibidiRunner.Managers
 
         public void TryInitialize()
         {
-            if (useLoadableData)
+            try
             {
-                if (LocalYandexData.Instance.YandexDataLoaded)
+                if (useLoadableData)
+                {
+                    if (LocalYandexData.Instance.YandexDataLoaded)
+                    {
+                        Initialize();
+                    }
+                }
+                else
                 {
                     Initialize();
                 }
             }
-            else
+            catch (Exception e)
             {
-                Initialize();
+                Debug.Log(e);
             }
         }
 

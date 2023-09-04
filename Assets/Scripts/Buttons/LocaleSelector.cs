@@ -1,4 +1,6 @@
-﻿using SkibidiRunner.Managers;
+﻿using System;
+using System.Threading.Tasks;
+using SkibidiRunner.Managers;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
@@ -27,28 +29,46 @@ namespace Buttons
 
         protected override async void Initialize()
         {
-            await LocalizationSettings.InitializationOperation.Task;
-
-            Locale locale;
-            if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+            try
             {
-                string localeCode = YandexGamesManager.GetLanguageString();
-                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                    x.Identifier.Code == localeCode);
-                if (locale == null)
+                var initializationCompletionSource = new TaskCompletionSource<bool>();
+                
+                var init = LocalizationSettings.InitializationOperation;
+                init.Completed += a =>
                 {
-                    locale = LocalizationSettings.AvailableLocales.Locales[0];
-                }
-            }
-            else
-            {
-                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                    x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
-                LocalizationSettings.SelectedLocale = locale;
-            }
+                    Locale locale;
+                    if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+                    {
+                        string localeCode = YandexGamesManager.GetLanguageString();
+                        locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                            x.Identifier.Code == localeCode);
+                        if (locale == null)
+                        {
+                            locale = LocalizationSettings.AvailableLocales.Locales[0];
+                        }
+                    }
+                    else
+                    {
+                        locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                            x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
+                        LocalizationSettings.SelectedLocale = locale;
+                    }
 
-            LocalizationSettings.SelectedLocale = locale;
-            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+                    LocalizationSettings.SelectedLocale = locale;
+                    LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+                    
+                    // Signal that the initialization is complete.
+                    initializationCompletionSource.SetResult(true);
+                };
+                
+                // Wait for the initialization to complete before continuing.
+                await initializationCompletionSource.Task;
+                Debug.Log("LocalInit");
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
         }
 
         private void ChangeLanguage()

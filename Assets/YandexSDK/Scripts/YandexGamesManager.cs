@@ -27,7 +27,7 @@ namespace YandexSDK.Scripts
         private static extern void loadPlayerData(string objectName, string methodName);
 
         [DllImport("__Internal")]
-        private static extern void setToLeaderboard(int value);
+        private static extern void setToLeaderboard(string lbName, int value);
 
         [DllImport("__Internal")]
         private static extern string getLang();
@@ -130,7 +130,7 @@ namespace YandexSDK.Scripts
 #endif
             try
             {
-                setToLeaderboard(value);
+                setToLeaderboard("gameScore", value);
             }
             catch
             {

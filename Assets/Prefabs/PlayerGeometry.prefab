@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d87067d8d4771f4bb11ca88b7a32ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   animator: {fileID: 0}
   <PlayerList>k__BackingField:
   - {fileID: 11400000, guid: e135afca00e7a5944b4ad9ee10e20dcb, type: 2}
@@ -54,3 +55,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 899844af6dfcc8b4e9804267afef91b2, type: 2}
   - {fileID: 11400000, guid: 25b1c165628e04c408b2fcc755d7c3f6, type: 2}
   - {fileID: 11400000, guid: 26ed957593809cc4195b009012e1a142, type: 2}
+  - {fileID: 11400000, guid: 60f001833bdaf5841b9f0a3bafd86844, type: 2}

@@ -12,8 +12,8 @@ namespace SkibidiRunner.Managers
         public void GetLevelReward()
         {
             int award = winGameCoinCount +
-                        (int)Mathf.Round(winGameCoinArithmeticOffset * LocalYandexData.Instance.SaveInfo.LevelNumber) +
-                        (int)Mathf.Round(winGameCoinCount * LocalYandexData.Instance.SaveInfo.LevelNumber * winGameCoinGeometricOffset);
+                        (int)Mathf.Round(winGameCoinArithmeticOffset * LocalYandexData.Instance.SaveInfo.LevelNumber);
+            award += (int)(award * winGameCoinGeometricOffset);
             Debug.Log("Level award count: " + award);
             GameInfo.Instance.CoinCount += award;
             ShopManager.Instance.ChangeCoins(award);

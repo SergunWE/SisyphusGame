@@ -95,10 +95,11 @@ mergeInto(LibraryManager.library, {
     }
   },
 
-  setToLeaderboard: function (value) {
+  setToLeaderboard: function (lbName, value) {
     try {
+      var lbNameString = UTF8ToString(lbName);
       ysdk.getLeaderboards().then((lb) => {
-        lb.setLeaderboardScore("gameScore", value);
+        lb.setLeaderboardScore(lbNameString, value);
       });
     } catch (err) {
       console.error(err);

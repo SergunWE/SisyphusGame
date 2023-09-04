@@ -475,11 +475,12 @@ MonoBehaviour:
   loadingPanel: {fileID: 1642324682}
   initObjects:
   - {fileID: 1006497280}
+  - {fileID: 346806620}
   - {fileID: 1304622735}
   - {fileID: 316003841}
   - {fileID: 1581299344}
-  - {fileID: 346806620}
   - {fileID: 826351693}
+  - {fileID: 1149343478}
   startInitObjects:
   - {fileID: 7945741226381473304}
   - {fileID: 2036034180}
@@ -2166,7 +2167,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: 26, z: -4}
+  m_LocalPosition: {x: 0, y: 25.8, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2595,9 +2596,9 @@ RectTransform:
   - {fileID: 1450424049}
   m_Father: {fileID: 1689613397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 350}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362136934
@@ -3017,6 +3018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Circle_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484085, guid: 406cdb7a7214f30409d07ae26d868540,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4096,15 +4102,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useLoadableData: 0
   saveInfo:
-    <LevelNumber>k__BackingField: 0
+    <LevelNumber>k__BackingField: 10
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <ManualLanguage>k__BackingField: 
     <Coins>k__BackingField: 2000
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 15
-    <GravityLevel>k__BackingField: 15
+    <SpeedLevel>k__BackingField: 5
+    <GravityLevel>k__BackingField: 5
     <PushingForceLevel>k__BackingField: 5
     <PlayerColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
     <LastSaveTimeTicks>k__BackingField: 0
@@ -4391,6 +4397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Circle_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484085, guid: 48d0a5e232d45f3488a2a0ac967440b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4727,6 +4738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30a3adb15356749bfe84be7a103b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLoadableData: 0
   giftStartCount: 50
   giftLevelOffset: 100
   giftPanel: {fileID: 932279119}
@@ -4946,6 +4958,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1956151308}
+  coinChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1941171263}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 8e48d629c5a45b24daa5806abba2417a,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1231370513
 Transform:
   m_ObjectHideFlags: 0
@@ -4953,6 +4981,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231370511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1264905795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264905797}
+  - component: {fileID: 1264905796}
+  m_Layer: 0
+  m_Name: ReviewManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1264905796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264905795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3623a455f7c54bed867822612c4ad4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 300
+--- !u!4 &1264905797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264905795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -6249,7 +6322,7 @@ PrefabInstance:
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -6258,12 +6331,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1764743708}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1941171263}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
@@ -6273,13 +6361,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkibidiRunner.Managers.ItemShopManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e48d629c5a45b24daa5806abba2417a, type: 3}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8312871900018176776, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
@@ -7801,7 +7909,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8818,7 +8926,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3b85f484ea4f9b48a63f3e1fdd68512, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c9efef96731a68847a2a5f642644a9d1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -9631,6 +9739,7 @@ SceneRoots:
   - {fileID: 1149343477}
   - {fileID: 1231370513}
   - {fileID: 1764743709}
+  - {fileID: 1264905797}
   - {fileID: 128110437}
   - {fileID: 1689613397}
   - {fileID: 192116655}

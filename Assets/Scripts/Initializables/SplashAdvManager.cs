@@ -8,11 +8,33 @@ namespace SkibidiRunner.Managers
 {
     public class SplashAdvManager : MonoBehaviour
     {
+       public static SplashAdvManager Instance { get; private set; }
+        
         [SerializeField] private bool showStartup;
+        [SerializeField] private int delayStartup;
         [SerializeField] private int delaySeconds;
 
         private static DateTime _adsTime;
-        
+        private static readonly DateTime StartTime;
+
+        static SplashAdvManager()
+        {
+            StartTime = DateTime.UtcNow;
+        }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
         private void Start()
         {
             if (showStartup)
@@ -23,6 +45,7 @@ namespace SkibidiRunner.Managers
 
         public void ShowAdv()
         {
+            if (DateTime.UtcNow - StartTime <= TimeSpan.FromSeconds(delayStartup)) return;
             if (DateTime.UtcNow - _adsTime > TimeSpan.FromSeconds(delaySeconds))
             {
                 YandexGamesManager.ShowSplashAdv(gameObject.name, nameof(AdvCallback));

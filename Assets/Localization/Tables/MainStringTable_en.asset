@@ -115,7 +115,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4342644803948544
-    m_Localized: Use the mouse for an overview. Use the Spacebar to jump.
+    m_Localized: Use the mouse for an overview. Use the Spacebar to jump. To pause
+      the game, press "Tab".
     m_Metadata:
       m_Items: []
   - m_Id: 4342713645060096

@@ -1,12 +1,16 @@
 ﻿using System;
 using SkibidiRunner.Managers;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Menus
 {
     public class PlayerAnimationManager : MonoBehaviour
     {
         [SerializeField] private Animator animator;
+
+        [SerializeField, Space] private UnityEvent coinChanged;
+        
         private static readonly int CoinSpending = Animator.StringToHash("PlayerJoy");
         private static readonly int SkinBought = Animator.StringToHash("PlayerSkinBuy");
 
@@ -28,11 +32,13 @@ namespace Menus
         private void PlayerJoy()
         {
             animator.SetTrigger(CoinSpending);
+            coinChanged?.Invoke();
         }
 
         private void PlayerJoy2()
         {
             animator.SetTrigger(SkinBought);
+            coinChanged?.Invoke();
         }
     }
 }

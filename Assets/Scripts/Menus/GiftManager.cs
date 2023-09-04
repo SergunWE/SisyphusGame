@@ -7,7 +7,7 @@ using YandexSDK.Scripts;
 
 namespace Menus
 {
-    public class GiftManager : MonoBehaviour
+    public class GiftManager : MonoBehaviourInitializable
     {
         [SerializeField] private int giftStartCount = 50;
         [SerializeField] private int giftLevelOffset = 50;
@@ -16,6 +16,8 @@ namespace Menus
         [SerializeField] private TMP_Text rewardCountText;
         [SerializeField] private TMP_Text timerText;
         [SerializeField] private LocalizedString localizedString;
+
+        private string _localString;
         
         private void FixedUpdate()
         {
@@ -28,8 +30,20 @@ namespace Menus
             }
             else
             {
-                timerText.text = localizedString.GetLocalizedString();
+                timerText.text = _localString;
             }
+        }
+        
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            localizedString.StringChanged += LocalizedStringOnStringChanged;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            localizedString.StringChanged -= LocalizedStringOnStringChanged;
         }
         
         public void GetGift()
@@ -52,6 +66,16 @@ namespace Menus
                 giftPanel.SetActive(true);
                 giftAnimation.Play();
             }
+        }
+
+        protected override void Initialize()
+        {
+            _localString = localizedString.GetLocalizedString();
+        }
+        
+        private void LocalizedStringOnStringChanged(string value)
+        {
+            _localString = value;
         }
     }
 }

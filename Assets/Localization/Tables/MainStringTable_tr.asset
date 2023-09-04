@@ -117,8 +117,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4342644803948544
-    m_Localized: "Genel bak\u0131\u015F i\xE7in farenizi kullan\u0131n. Z\u0131plamak
-      i\xE7in Bo\u015Fluk \xC7ubu\u011Funu kullan\u0131n."
+    m_Localized: "Genel bak\u0131\u015F i\xE7in fareyi kullan\u0131n. Z\u0131plamak
+      i\xE7in \"bo\u015Fluk tu\u015Funu\" kullan\u0131n. Oyunu duraklatmak i\xE7in
+      \"Tab\" tu\u015Funa bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 4342713645060096
