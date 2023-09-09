@@ -40,10 +40,10 @@ namespace SkibidiRunner.Managers
                 }
 
                 SkillPurchaseSuccessful?.Invoke();
-                LocalYandexData.Instance.SaveData();
             }
 
             CoinCountUpdate?.Invoke();
+            LocalYandexData.Instance.SaveData();
         }
 
         public void BuySkin(PlayerSkinSo skin)
@@ -58,6 +58,7 @@ namespace SkibidiRunner.Managers
             }
             
             CoinCountUpdate?.Invoke();
+            LocalYandexData.Instance.SaveData();
         }
 
         public void ChangeCoins(int value)
@@ -68,6 +69,7 @@ namespace SkibidiRunner.Managers
             {
                 CoinAdded?.Invoke();
             }
+            LocalYandexData.Instance.SaveData();
         }
     }
 }

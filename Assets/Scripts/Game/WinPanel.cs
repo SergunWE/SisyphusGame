@@ -28,8 +28,13 @@ namespace Game
         private void OnEnable()
         {
             bestText.text = bestLocalizedString.GetLocalizedString(_random.Next(minPercent, maxPercent));
-            moneyText.text = GameInfo.Instance.CoinCount.ToString();
+            SetEarnedMoney();
             panelAnimation.Play();
+        }
+
+        public void SetEarnedMoney()
+        {
+            moneyText.text = GameInfo.Instance.CoinCount.ToString();
         }
     }
 }

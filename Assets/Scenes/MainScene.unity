@@ -305,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: useLoadableData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
@@ -474,13 +474,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 1642324682}
   initObjects:
+  - {fileID: 1304622735}
   - {fileID: 1006497280}
   - {fileID: 346806620}
-  - {fileID: 1304622735}
   - {fileID: 316003841}
   - {fileID: 1581299344}
-  - {fileID: 826351693}
-  - {fileID: 1149343478}
   startInitObjects:
   - {fileID: 7945741226381473304}
   - {fileID: 2036034180}
@@ -488,6 +486,8 @@ MonoBehaviour:
   - {fileID: 1530354188}
   - {fileID: 1956151307}
   - {fileID: 1493982433}
+  - {fileID: 826351693}
+  - {fileID: 1149343478}
 --- !u!4 &128110437
 Transform:
   m_ObjectHideFlags: 0
@@ -3466,7 +3466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdd4806ccb63b04faa14462295007cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useLoadableData: 1
+  useLoadableData: 0
   localizedString:
     m_TableReference:
       m_TableCollectionName: GUID:896937ea4a4941348895acfb4e842895
@@ -3605,7 +3605,7 @@ PrefabInstance:
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: useLoadableData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
@@ -4106,7 +4106,7 @@ MonoBehaviour:
     <MusicOn>k__BackingField: 1
     <SoundOn>k__BackingField: 1
     <ManualLanguage>k__BackingField: 
-    <Coins>k__BackingField: 2000
+    <Coins>k__BackingField: 0
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
     <SpeedLevel>k__BackingField: 5
@@ -7398,16 +7398,16 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1689613397
 RectTransform:
@@ -9480,12 +9480,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1764743708}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1941171262}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
@@ -9495,12 +9510,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BuyCoins
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkibidiRunner.Managers.ItemShopManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
         type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SkibidiRunner.Managers.ItemShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
       propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950810065530353155, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
+        type: 3}
+      propertyPath: buyItem.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9007357105676742393, guid: c5b2d1528ab74f14aa2b5fba4b518efb,
@@ -9569,7 +9599,7 @@ PrefabInstance:
     - target: {fileID: 5908344468137971382, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}
       propertyPath: useLoadableData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5913304482335579695, guid: 86cc5724ef7ca5b4ca2d9d00297ff230,
         type: 3}

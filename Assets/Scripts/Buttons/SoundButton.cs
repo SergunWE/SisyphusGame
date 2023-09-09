@@ -40,6 +40,7 @@ namespace Buttons
         private void ChangeState()
         {
             LocalYandexData.Instance.SaveInfo.SoundOn = !LocalYandexData.Instance.SaveInfo.SoundOn;
+            LocalYandexData.Instance.SaveData();
             TryInitialize();
         }
     }

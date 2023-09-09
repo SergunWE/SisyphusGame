@@ -25,7 +25,7 @@ namespace SkibidiRunner.Managers
         public void WinGame()
         {
             if(GameLost || GameWined) return;
-            Debug.Log("Game win");
+            //Debug.Log("Game win");
             GameWined = true;
             gameWin?.Invoke();
         }
@@ -34,7 +34,7 @@ namespace SkibidiRunner.Managers
         public void LoseGame(bool stoneFell)
         {
             if(GameLost || GameWined) return;
-            Debug.Log(stoneFell ? "Game lose stone" : "Game lose player");
+            //Debug.Log(stoneFell ? "Game lose stone" : "Game lose player");
             GameLost = true;
             GameInfo.Instance.StoneFall = stoneFell;
 

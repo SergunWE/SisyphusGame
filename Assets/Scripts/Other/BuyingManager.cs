@@ -45,8 +45,8 @@ namespace SkibidiRunner.Managers
         {
             if (!_useAd)
             {
-                ShopManager.Instance.ChangeCoins(-cost);
                 buyItem?.Invoke();
+                ShopManager.Instance.ChangeCoins(-cost);
             }
             else
             {

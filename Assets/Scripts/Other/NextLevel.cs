@@ -10,6 +10,7 @@ namespace SkibidiRunner.Managers
         {
             LocalYandexData.Instance.SaveInfo.LevelNumber++;
             YandexGamesManager.SetToLeaderboard(LocalYandexData.Instance.SaveInfo.LevelNumber);
+            LocalYandexData.Instance.SaveData();
         }
 
         public void GoToMainMenu()
@@ -25,6 +26,7 @@ namespace SkibidiRunner.Managers
             Cursor.lockState = CursorLockMode.None;
             SplashAdvManager.Instance.ShowAdv();
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+            LocalYandexData.Instance.SaveData();
         }
     }
 }

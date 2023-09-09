@@ -82,15 +82,18 @@ mergeInto(LibraryManager.library, {
     var obj = UTF8ToString(objectName);
     var method = UTF8ToString(methodName);
     try {
-      YaGames.init().then(ysdk => {
-        player.getData().then((_date) => {
+      ysdk.getPlayer().then(_player => {
+        _player.getData().then((_date) => {
           const myJSON = JSON.stringify(_date);
           console.log(myJSON);
           myGameInstance.SendMessage(obj, method, myJSON);
+        }).catch(err => {
+          console.log(err);
+          throw err;
         });
       });
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
       myGameInstance.SendMessage(obj, method, null);
     }
   },
@@ -179,7 +182,7 @@ mergeInto(LibraryManager.library, {
   },
 
   deviceType: function () {
-     try {
+    try {
       var returnStr = ysdk.deviceInfo.type;
       var bufferSize = lengthBytesUTF8(returnStr) + 1;
       var buffer = _malloc(bufferSize);

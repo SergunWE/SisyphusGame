@@ -26,8 +26,8 @@ namespace SkibidiRunner.Managers
         public void StartChecking()
         {
             _finalOffset = offset + levelOffset * LocalYandexData.Instance.SaveInfo.LevelNumber;
-            Debug.Log("FInal OFFSET " + _finalOffset);
-            Debug.Log("StartHeight " + _startHeight);
+            //Debug.Log("FInal OFFSET " + _finalOffset);
+            //Debug.Log("StartHeight " + _startHeight);
             _checking = true;
         }
 

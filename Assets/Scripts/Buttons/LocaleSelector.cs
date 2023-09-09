@@ -44,7 +44,7 @@ namespace Buttons
                             x.Identifier.Code == localeCode);
                         if (locale == null)
                         {
-                            locale = LocalizationSettings.AvailableLocales.Locales[0];
+                            locale = LocalizationSettings.SelectedLocale;
                         }
                     }
                     else
@@ -63,7 +63,7 @@ namespace Buttons
                 
                 // Wait for the initialization to complete before continuing.
                 await initializationCompletionSource.Task;
-                Debug.Log("LocalInit");
+                //Debug.Log("LocalInit");
             }
             catch (Exception e)
             {
@@ -90,6 +90,7 @@ namespace Buttons
 
             LocalizationSettings.SelectedLocale = locale;
             LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+            LocalYandexData.Instance.SaveData();
         }
     }
 }

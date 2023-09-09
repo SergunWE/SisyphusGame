@@ -9,14 +9,16 @@ namespace SkibidiRunner.Managers
         protected override void Initialize()
         {
             if(LocalYandexData.Instance.YandexDataLoaded) return;
-            YandexGamesManager.LoadPlayerData(gameObject.name, nameof(OnPlayerDataReceived));
+            YandexGamesManager.LoadPlayerData(gameObject, nameof(OnPlayerDataReceived));
         }
 
         public void OnPlayerDataReceived(string json)
         {
+            //Debug.Log("OnPlayerDataReceived " + json);
             if (string.IsNullOrEmpty(json))
             {
                 Debug.Log("Failed to load player data");
+                Initialize();
             }
             else
             {

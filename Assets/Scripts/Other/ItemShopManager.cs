@@ -15,14 +15,12 @@ namespace SkibidiRunner.Managers
         public void SkipLevel()
         {
             LocalYandexData.Instance.SaveInfo.LevelNumber++;
-            LocalYandexData.Instance.SaveData();
             levelView.TryInitialize();
         }
 
         public void ResetLevel()
         {
             LocalYandexData.Instance.SaveInfo.LevelNumber = 0;
-            LocalYandexData.Instance.SaveData();
             levelView.TryInitialize();
         }
     }

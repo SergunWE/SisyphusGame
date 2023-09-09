@@ -75,7 +75,7 @@ public class LevelSetter : MonoBehaviourInitializable
        float currentParkourIslandYMaxOffset = parkourIslandMaxOffset.y +
                                              parkourIslandOffsetDiff.y * LocalYandexData.Instance.SaveInfo.LevelNumber;
 
-       Debug.Log("MAX Y - " + currentParkourIslandYMaxOffset);
+       //Debug.Log("MAX Y - " + currentParkourIslandYMaxOffset);
 
         while (currentDistance < islandDistance)
         {
