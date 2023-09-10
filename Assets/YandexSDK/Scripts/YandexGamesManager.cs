@@ -135,7 +135,7 @@ namespace YandexSDK.Scripts
             }
             catch
             {
-                // ignored
+                gameObject.SendMessage(methodName, "");
             }
         }
 

@@ -22,6 +22,7 @@ namespace SkibidiRunner.Managers
             }
             else
             {
+                Debug.Log("Data loaded");
                 LocalYandexData.Instance.SetPlayerData(JsonUtility.FromJson<SaveInfo>(json));
             }
         }
