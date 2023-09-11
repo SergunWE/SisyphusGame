@@ -9060,11 +9060,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5989841996788121151, guid: ac0395b4f3d09f64781f1b6490b22b2a,
-        type: 3}
-      propertyPath: m_text
-      value: 00000
-      objectReference: {fileID: 0}
     - target: {fileID: 7872573939606446026, guid: ac0395b4f3d09f64781f1b6490b22b2a,
         type: 3}
       propertyPath: m_Pivot.x
