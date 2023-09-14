@@ -47,6 +47,12 @@ namespace Skins
             playerSkinSetter.SetCurrentSkin();
         }
 
+        public void UpdateBuyButtonState()
+        {
+            SetBuySelectButtonState();
+            SetBuySelectButtonView();
+        }
+
         private void OnBuySelectClicked()
         {
             if (_skinState == SkinState.Bought)
@@ -88,8 +94,7 @@ namespace Skins
         {
             LocalYandexData.Instance.SaveInfo.PlayerSkinId = skin.Id;
             ShopManager.Instance.ChangeCoins(0);
-            SetBuySelectButtonState();
-            SetBuySelectButtonView();
+            UpdateBuyButtonState();
         }
 
         private void NextSkin()
@@ -109,8 +114,7 @@ namespace Skins
 
             _currentSkinIndex = index;
             playerSkinSetter.SetSkin(playerSkinSetter.PlayerList[index]);
-            SetBuySelectButtonState();
-            SetBuySelectButtonView();
+            UpdateBuyButtonState();
         }
 
         private void SetBuySelectButtonState()
