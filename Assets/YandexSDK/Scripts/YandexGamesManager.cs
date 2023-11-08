@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -33,9 +34,6 @@ namespace YandexSDK.Scripts
         private static extern string getLang();
 
         [DllImport("__Internal")]
-        private static extern void helloString(string str);
-
-        [DllImport("__Internal")]
         private static extern void showSplashPageAdv(string objectName, string methodName);
 
         [DllImport("__Internal")]
@@ -47,6 +45,9 @@ namespace YandexSDK.Scripts
         [DllImport("__Internal")]
         private static extern string deviceType();
 
+        [DllImport("__Internal")]
+        private static extern void callYandexMetric(string goalName);
+
 
         /// <summary>
         /// User name on the Yandex Games platform
@@ -57,10 +58,10 @@ namespace YandexSDK.Scripts
             return getPlayerName();
         }
 
-        /// <summary>
-        /// User avatar on the Yandex platform 
-        /// </summary>
-        /// <returns>Avatar texture, null on errors</returns>
+        // /// <summary>
+        // /// User avatar on the Yandex platform 
+        // /// </summary>
+        // /// <returns>Avatar texture, null on errors</returns>
         public static async Task<Texture2D> GetPlayerPhoto()
         {
             var request = UnityWebRequestTexture.GetTexture(getPlayerPhotoURL());
@@ -69,7 +70,7 @@ namespace YandexSDK.Scripts
             {
                 await Task.Yield();
             }
-
+        
             if (request.result is not (UnityWebRequest.Result.ConnectionError or UnityWebRequest.Result.ProtocolError))
                 return ((DownloadHandlerTexture)request.downloadHandler).texture;
             Debug.Log(request.error);
@@ -81,6 +82,9 @@ namespace YandexSDK.Scripts
         /// </summary>
         public static void RequestReviewGame()
         {
+#if UNITY_EDITOR
+            Debug.Log("Request review");
+#endif
             try
             {
                 requestReviewGame();
@@ -118,7 +122,7 @@ namespace YandexSDK.Scripts
         {
             try
             {
-                string json = JsonUtility.ToJson(playerData);
+                string json = JsonConvert.SerializeObject(playerData);
                 savePlayerData(json);
             }
             catch
@@ -129,6 +133,11 @@ namespace YandexSDK.Scripts
 
         public static void LoadPlayerData(GameObject gameObject, string methodName)
         {
+#if UNITY_EDITOR
+            gameObject.SendMessage(methodName, "DEBUG");
+            return;
+#endif
+#pragma warning disable 0162
             try
             {
                 loadPlayerData(gameObject.name, methodName);
@@ -137,13 +146,14 @@ namespace YandexSDK.Scripts
             {
                 gameObject.SendMessage(methodName, "");
             }
+#pragma warning restore 0162
         }
 
-        public static void SetToLeaderboard(int value)
+        public static void SetToLeaderboard(int value, string lbName = "gameScore")
         {
             try
             {
-                setToLeaderboard("gameScore", value);
+                setToLeaderboard(lbName, value);
             }
             catch
             {
@@ -163,11 +173,15 @@ namespace YandexSDK.Scripts
             }
         }
 
-        public static void ShowSplashAdv(string objectName, string methodName)
+        public static void ShowSplashAdv(GameObject gameObject, string methodName)
         {
+#if UNITY_EDITOR
+            gameObject.SendMessage(methodName, (object)0);
+            gameObject.SendMessage(methodName, 1);
+#endif
             try
             {
-                showSplashPageAdv(objectName, methodName);
+                showSplashPageAdv(gameObject.name, methodName);
             }
             catch
             {
@@ -178,8 +192,9 @@ namespace YandexSDK.Scripts
         public static void ShowRewardedAdv(GameObject gameObject, string methodName)
         {
 #if UNITY_EDITOR
+            gameObject.SendMessage(methodName, (object)0);
             gameObject.SendMessage(methodName, 1);
-            return;
+            gameObject.SendMessage(methodName, 2);
 #endif
             try
             {
@@ -196,6 +211,7 @@ namespace YandexSDK.Scripts
             try
             {
                 apiReady();
+                CallYandexMetric("GameLoaded");
             }
             catch
             {
@@ -219,6 +235,18 @@ namespace YandexSDK.Scripts
             catch
             {
                 return DeviceType.Desktop;
+            }
+        }
+
+        public static void CallYandexMetric(string goalName)
+        {
+            try
+            {
+                callYandexMetric(goalName);
+            }
+            catch
+            {
+                // ignored
             }
         }
     }

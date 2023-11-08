@@ -48,7 +48,7 @@ namespace SkibidiRunner.Managers
             if (DateTime.UtcNow - StartTime <= TimeSpan.FromSeconds(delayStartup)) return;
             if (DateTime.UtcNow - _adsTime > TimeSpan.FromSeconds(delaySeconds))
             {
-                YandexGamesManager.ShowSplashAdv(gameObject.name, nameof(AdvCallback));
+                YandexGamesManager.ShowSplashAdv(gameObject, nameof(AdvCallback));
             }
         }
 

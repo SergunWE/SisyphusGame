@@ -532,7 +532,12 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    ENABLE_SCOPES: true
+    INIT_LEADERBOARD_INSTANTLY: true
+    INIT_PLAYER_INSTANTLY: true
+    START_YANDEX_METRICA_EVENT_NAME: 
+    YANDEX_METRICA_ID: 
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -799,7 +804,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Yandex
+  webGLTemplate: APPLICATION:YandexWebGLTemplate
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
