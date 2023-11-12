@@ -8,8 +8,8 @@ namespace SkibidiRunner.Managers
     {
         protected override void Initialize()
         {
-            ActiveGameObjectStore.Instance.Player.gameObject.GetComponentInChildren<Renderer>().sharedMaterial.color =
-                LocalYandexData.Instance.SaveInfo.PlayerColor;
+            // ActiveGameObjectStore.Instance.Player.gameObject.GetComponentInChildren<Renderer>().sharedMaterial.color =
+            //     LocalYandexData.Instance.SaveInfo.PlayerColor;
         }
     }
 }

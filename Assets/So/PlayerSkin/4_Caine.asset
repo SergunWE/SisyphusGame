@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ff9761d997a10409cb1ef4641ab50c, type: 3}
+  m_Name: 4_Caine
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 4
+  <LevelCost>k__BackingField: 1
+  <Cost>k__BackingField: 20
+  <PlayerModel>k__BackingField: {fileID: 8711140338933979372, guid: 8ac99e7a0e6dfea4aabf13d1716df28c,
+    type: 3}
+  <Avatar>k__BackingField: {fileID: 9000000, guid: cac3157bcd8b2974bb0cacd13c159ba5,
+    type: 3}
