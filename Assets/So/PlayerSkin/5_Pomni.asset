@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ff9761d997a10409cb1ef4641ab50c, type: 3}
-  m_Name: 8_Spider2
+  m_Name: 5_Pomni
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 8
-  <LevelCost>k__BackingField: 1
-  <Cost>k__BackingField: 49
-  <PlayerModel>k__BackingField: {fileID: 3968401800660881336, guid: 38adecdcf3a99c048a05c1c984f1a272,
+  <Id>k__BackingField: 5
+  <LevelCost>k__BackingField: 0
+  <Cost>k__BackingField: 2000
+  <PlayerModel>k__BackingField: {fileID: 8711140338933979372, guid: 48aba4d2a2f22f3458ecabfe9f286f77,
     type: 3}
-  <Avatar>k__BackingField: {fileID: 9000000, guid: 256d59792d61a174a9e2f02ef91b29eb,
+  <Avatar>k__BackingField: {fileID: 9000000, guid: 2cb53a514e8878a43a24de1eb39eda56,
     type: 3}
