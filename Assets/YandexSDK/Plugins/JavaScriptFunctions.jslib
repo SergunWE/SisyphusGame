@@ -26,15 +26,19 @@ mergeInto(LibraryManager.library, {
   },
 
   requestReviewGame: function () {
-    ysdk.feedback.canReview().then(({ value, reason }) => {
-      if (value) {
-        ysdk.feedback.requestReview().then(({ feedbackSent }) => {
-          console.log(feedbackSent);
-        });
-      } else {
-        console.log(reason);
-      }
-    });
+    try {
+      ysdk.feedback.canReview().then(({ value, reason }) => {
+        if (value) {
+          ysdk.feedback.requestReview().then(({ feedbackSent }) => {
+            console.log(feedbackSent);
+          });
+        } else {
+          console.log(reason);
+        }
+      });
+    } catch (err) {
+      console.error(err);
+    }
   },
 
   getReviewStatus: function () {
@@ -78,15 +82,25 @@ mergeInto(LibraryManager.library, {
   },
 
   loadPlayerData: function (objectName, methodName) {
-    var obj = UTF8ToString(objectName);
-    var method = UTF8ToString(methodName);
+    let obj = UTF8ToString(objectName);
+    let method = UTF8ToString(methodName);
     try {
-      initPlayer().then((_player) => {
-        player.getData().then((_date) => {
-          var myJSON = JSON.stringify(_date);
-          console.log(myJSON);
-          unityInstance.SendMessage(obj, method, myJSON);
-        });
+      waitForYsdk().then((_ysdk) => {
+        if(playerData !== null && playerData !== undefined)
+        {
+          unityInstance.SendMessage(obj, method, playerData);
+        }
+        else
+        {
+          initPlayer().then((_player) => {
+            player.getData().then((_date) => {
+              var myJSON = JSON.stringify(_date);
+              console.log(myJSON);
+              playerData = myJSON;
+              unityInstance.SendMessage(obj, method, myJSON);
+            });
+          });
+        }
       });
     } catch (error) {
       if (unityInstance === undefined) return;
@@ -97,9 +111,11 @@ mergeInto(LibraryManager.library, {
 
   setToLeaderboard: function (lbName, value) {
     try {
-      var lbNameString = UTF8ToString(lbName);
-      initLb().then((_lb) => {
-        _lb.setLeaderboardScore(lbNameString, value);
+      waitForYsdk().then((_ysdk) => {
+        var lbNameString = UTF8ToString(lbName);
+        initLb().then((_lb) => {
+          _lb.setLeaderboardScore(lbNameString, value);
+        });
       });
     } catch (err) {
       console.error(err);
@@ -115,60 +131,60 @@ mergeInto(LibraryManager.library, {
       return buffer;
     } catch (err) {
       console.error(err);
-      return null;
+      return '';
     }
   },
 
   showSplashPageAdv: function (objectName, methodName) {
-    var obj = UTF8ToString(objectName);
-    var method = UTF8ToString(methodName);
-    console.log(obj);
-    console.log(method);
-    ysdk.adv.showFullscreenAdv({
-      callbacks: {
-        onOpen: function () {
-          unityInstance.SendMessage(obj, method, 0);
+    let obj = UTF8ToString(objectName);
+    let method = UTF8ToString(methodName);
+    waitForYsdk().then((_ysdk) => {
+      _ysdk.adv.showFullscreenAdv({
+        callbacks: {
+          onOpen: function () {
+            unityInstance.SendMessage(obj, method, 0);
+          },
+          onClose: function (wasShown) {
+            unityInstance.SendMessage(obj, method, 1);
+          },
+          onError: function (error) {
+            unityInstance.SendMessage(obj, method, -1);
+          },
         },
-        onClose: function (wasShown) {
-          unityInstance.SendMessage(obj, method, 1);
-        },
-        onError: function (error) {
-          unityInstance.SendMessage(obj, method, -1);
-        },
-      },
+      });
     });
   },
 
   showRewardedAdv: function (objectName, methodName) {
-    var obj = UTF8ToString(objectName);
-    var method = UTF8ToString(methodName);
-    console.log(obj);
-    console.log(method);
-    ysdk.adv.showRewardedVideo({
-      callbacks: {
-        onOpen: () => {
-          console.log("Video ad open.");
-          unityInstance.SendMessage(obj, method, 0);
+    waitForYsdk().then((_ysdk) => {
+      _ysdk.adv.showRewardedVideo({
+        callbacks: {
+          onOpen: () => {
+            console.log("Video ad open.");
+            unityInstance.SendMessage(obj, method, 0);
+          },
+          onRewarded: () => {
+            console.log("Rewarded!");
+            unityInstance.SendMessage(obj, method, 1);
+          },
+          onClose: () => {
+            console.log("Video ad close.");
+            unityInstance.SendMessage(obj, method, 2);
+          },
+          onError: (e) => {
+            console.log("Error while open video ad:", e);
+            unityInstance.SendMessage(obj, method, -1);
+          },
         },
-        onRewarded: () => {
-          console.log("Rewarded!");
-          unityInstance.SendMessage(obj, method, 1);
-        },
-        onClose: () => {
-          console.log("Video ad close.");
-          unityInstance.SendMessage(obj, method, 2);
-        },
-        onError: (e) => {
-          console.log("Error while open video ad:", e);
-          unityInstance.SendMessage(obj, method, -1);
-        },
-      },
+      });
     });
   },
 
   apiReady: function () {
     try {
-      ysdk.features.LoadingAPI.ready();
+      waitForYsdk().then((_ysdk) => {
+        _ysdk.features.LoadingAPI.ready();
+      });
     } catch (err) {
       console.error(err);
     }
@@ -176,11 +192,13 @@ mergeInto(LibraryManager.library, {
 
   deviceType: function () {
     try {
-      var returnStr = ysdk.deviceInfo.type;
-      var bufferSize = lengthBytesUTF8(returnStr) + 1;
-      var buffer = _malloc(bufferSize);
-      stringToUTF8(returnStr, buffer, bufferSize);
-      return buffer;
+      waitForYsdk().then((_ysdk) => {
+        var returnStr = _ysdk.deviceInfo.type;
+        var bufferSize = lengthBytesUTF8(returnStr) + 1;
+        var buffer = _malloc(bufferSize);
+        stringToUTF8(returnStr, buffer, bufferSize);
+        return buffer;
+      });
     } catch (err) {
       console.error(err);
       return null;

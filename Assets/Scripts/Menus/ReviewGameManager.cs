@@ -8,6 +8,8 @@ namespace Menus
     {
         [SerializeField] private int delaySeconds;
         private static readonly DateTime StartTime;
+
+        private static bool _reviewShowed;
         
         static ReviewGameManager()
         {
@@ -16,10 +18,9 @@ namespace Menus
 
         private void Start()
         {
-            if (DateTime.UtcNow - StartTime > TimeSpan.FromSeconds(delaySeconds))
-            {
-                YandexGamesManager.RequestReviewGame();
-            }
+            if (DateTime.UtcNow - StartTime <= TimeSpan.FromSeconds(delaySeconds) || _reviewShowed) return;
+            YandexGamesManager.RequestReviewGame();
+            _reviewShowed = true;
         }
     }
 }

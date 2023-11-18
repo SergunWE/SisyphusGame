@@ -27,11 +27,10 @@ namespace SkibidiRunner.Managers
                 if(_count >= countTryLoad) return;
                 _count++;
                 StartCoroutine(RetryCoroutine());
-                Initialize();
             }
             else
             {
-                Debug.Log("Data loaded");
+                Debug.Log("Data loaded" + json);
                 LocalYandexData.Instance.SetPlayerData(JsonUtility.FromJson<SaveInfo>(json));
             }
         }

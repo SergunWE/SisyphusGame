@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Threading.Tasks;
 using SkibidiRunner.Managers;
 using UnityEngine;
@@ -27,48 +28,9 @@ namespace Buttons
             button.onClick.RemoveListener(ChangeLanguage);
         }
 
-        protected override async void Initialize()
+        protected override void Initialize()
         {
-            try
-            {
-                var initializationCompletionSource = new TaskCompletionSource<bool>();
-                
-                var init = LocalizationSettings.InitializationOperation;
-                init.Completed += a =>
-                {
-                    Locale locale;
-                    if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
-                    {
-                        string localeCode = YandexGamesManager.GetLanguageString();
-                        locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                            x.Identifier.Code == localeCode);
-                        if (locale == null)
-                        {
-                            locale = LocalizationSettings.SelectedLocale;
-                        }
-                    }
-                    else
-                    {
-                        locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                            x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
-                        LocalizationSettings.SelectedLocale = locale;
-                    }
-
-                    LocalizationSettings.SelectedLocale = locale;
-                    LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
-                    
-                    // Signal that the initialization is complete.
-                    initializationCompletionSource.SetResult(true);
-                };
-                
-                // Wait for the initialization to complete before continuing.
-                await initializationCompletionSource.Task;
-                //Debug.Log("LocalInit");
-            }
-            catch (Exception e)
-            {
-                Debug.Log(e);
-            }
+            StartCoroutine(LoadLanguageCoroutine());
         }
 
         private void ChangeLanguage()
@@ -91,6 +53,39 @@ namespace Buttons
             LocalizationSettings.SelectedLocale = locale;
             LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
             LocalYandexData.Instance.SaveData();
+        }
+
+        private IEnumerator LoadLanguageCoroutine()
+        {
+            while (true)
+            {
+                if (LocalizationSettings.InitializationOperation.IsDone)
+                {
+                    break;
+                }
+
+                yield return null;
+            }
+            Locale locale;
+            if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+            {
+                string localeCode = YandexGamesManager.GetLanguageString();
+                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                    x.Identifier.Code == localeCode);
+                if (locale == null)
+                {
+                    locale = LocalizationSettings.SelectedLocale;
+                }
+            }
+            else
+            {
+                locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
+                    x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
+                LocalizationSettings.SelectedLocale = locale;
+            }
+
+            LocalizationSettings.SelectedLocale = locale;
+            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
         }
     }
 }

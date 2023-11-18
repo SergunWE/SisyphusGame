@@ -27,6 +27,8 @@ namespace YandexSDK.Scripts
             {
                 SaveInfo = playerData;
             }
+
+            Debug.Log("CALL OnYandexDataLoaded");
             OnYandexDataLoaded?.Invoke();
         }
         
@@ -40,7 +42,6 @@ namespace YandexSDK.Scripts
         {
             SaveInfo.LastSaveTimeTicks = DateTime.UtcNow.Ticks;
             YandexGamesManager.SavePlayerData(SaveInfo);
-            Debug.Log("Data save");
         }
 
         public void ResetProgress()
