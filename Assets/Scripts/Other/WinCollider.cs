@@ -5,9 +5,11 @@ namespace SkibidiRunner.Managers
 {
     public class WinCollider : MonoBehaviour
     {
+        [SerializeField] private string checkTag;
+
         private void OnCollisionEnter(Collision other)
         {
-            if (other.body.CompareTag("Stone"))
+            if (other.gameObject.tag == checkTag)
             {
                 GameEvents.Instance.WinGame();
             }
@@ -15,7 +17,7 @@ namespace SkibidiRunner.Managers
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Stone"))
+            if (other.gameObject.tag == checkTag)
             {
                 GameEvents.Instance.WinGame();
             }

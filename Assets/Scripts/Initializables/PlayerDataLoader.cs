@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -6,6 +7,11 @@ namespace SkibidiRunner.Managers
 {
     public class PlayerDataLoader : MonoBehaviourInitializable
     {
+        [SerializeField] private int failedTimeout;
+        [SerializeField] private int countTryLoad;
+
+        private int _count;
+        
         protected override void Initialize()
         {
             if(LocalYandexData.Instance.YandexDataLoaded) return;
@@ -18,6 +24,9 @@ namespace SkibidiRunner.Managers
             if (string.IsNullOrEmpty(json))
             {
                 Debug.Log("Failed to load player data");
+                if(_count >= countTryLoad) return;
+                _count++;
+                StartCoroutine(RetryCoroutine());
                 Initialize();
             }
             else
@@ -25,6 +34,12 @@ namespace SkibidiRunner.Managers
                 Debug.Log("Data loaded");
                 LocalYandexData.Instance.SetPlayerData(JsonUtility.FromJson<SaveInfo>(json));
             }
+        }
+
+        private IEnumerator RetryCoroutine()
+        {
+            yield return new WaitForSeconds(failedTimeout);
+            Initialize();
         }
     }
 }

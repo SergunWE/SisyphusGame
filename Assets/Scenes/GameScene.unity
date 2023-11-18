@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5226415, g: 0.6598465, b: 1, a: 1}
+  m_FogColor: {r: 0.85711104, g: 0.8899844, b: 0.9716981, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 50
@@ -1802,52 +1802,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 978879319}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &256568177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 256568179}
-  - component: {fileID: 256568178}
-  m_Layer: 0
-  m_Name: StoneFallChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &256568178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256568177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1585c1f8e4476ca44bc2144bac94a242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useLoadableData: 0
-  offset: 5
---- !u!4 &256568179
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256568177}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1027672512}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268835623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLoadableData: 0
-  offset: 7
+  offset: 8
   levelOffset: 0.05
 --- !u!1001 &273110752
 PrefabInstance:
@@ -2013,139 +1967,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fa35733e2a1a7478dd87d86b876a5f, type: 3}
---- !u!1 &278860411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 278860416}
-  - component: {fileID: 278860415}
-  - component: {fileID: 278860414}
-  - component: {fileID: 278860413}
-  - component: {fileID: 278860412}
-  m_Layer: 6
-  m_Name: Stone
-  m_TagString: Stone
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!54 &278860412
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278860411}
-  serializedVersion: 4
-  m_Mass: 2
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &278860413
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278860411}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &278860414
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278860411}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 578086212e999784fbd82a01c53abef0, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &278860415
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278860411}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &278860416
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278860411}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.85, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &309980873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20623b94597c9d44971d7f3117a5919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkTag: 
 --- !u!54 &442310917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3134,7 +2956,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.17364825, y: -0, z: -0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 81, z: 231.8746}
-  m_LocalScale: {x: 15, y: 3, z: 513.7}
+  m_LocalScale: {x: 5, y: 3, z: 513.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 877840895}
@@ -3669,7 +3491,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 256568178}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SkibidiRunner.Managers.StoneFallChecker, Assembly-CSharp
         m_MethodName: StartChecking
         m_Mode: 1
@@ -4313,9 +4135,8 @@ MonoBehaviour:
   parkourPlatform: {fileID: 1001688082}
   islandStartPos: {fileID: 348359234}
   playerSpawnOffset: {x: 0, y: 0, z: -5}
-  stoneSpawnOffset: {x: 0, y: 2, z: -1}
   islandSpawnOffset: {x: 0, y: 0, z: -53}
-  parkourLevelOffset: 8
+  parkourLevelOffset: 7
   parkourIslandMinDistance: 2
   parkourIslandMinDistanceDiff: 0.4
   parkourIslandOffset: {x: 5, y: 0.1, z: 5}
@@ -4329,14 +4150,19 @@ MonoBehaviour:
   - {fileID: 1966334982672295049, guid: c698e92835f6eae4b83c3406fe386b78, type: 3}
   - {fileID: 3603960335470740008, guid: 35845763e2f6235459d23ffc23e15093, type: 3}
   - {fileID: 3603960335470740008, guid: 0766915a5458bbf4bb62d04655ceb06e, type: 3}
-  slopeLevelOffset: 1.9
-  obstacleClearance: 5
-  obstacleVerticalOffset: 8.7
-  obstacleHorizontalOffset: 7
+  slopeLevelOffset: 4
+  obstacleClearance: 4
+  obstacleVerticalOffset: 4
+  obstacleHorizontalOffset: 2.5
   obstacles:
   - {fileID: 1558701893152855384, guid: 06226ed123e9fd7468a61f006f3050ee, type: 3}
   - {fileID: 938141462233862694, guid: 34a9bf72e6f37d440803bdc0d504cd67, type: 3}
   - {fileID: 1016906245847389394, guid: ab8d2f789bf720e408b3237de57e3fba, type: 3}
+  - {fileID: 6247277052146678202, guid: 297c27d5039ec314699c830209d13b6d, type: 3}
+  - {fileID: 2066000584587812530, guid: a95ceb376e4a8b84aa2b7d41a350b204, type: 3}
+  - {fileID: 3603960335470740008, guid: 661c3502e51fa86469d3c9d1747bf77c, type: 3}
+  - {fileID: 1966334982672295049, guid: c698e92835f6eae4b83c3406fe386b78, type: 3}
+  - {fileID: 3603960335470740008, guid: 0766915a5458bbf4bb62d04655ceb06e, type: 3}
 --- !u!4 &662963556
 Transform:
   m_ObjectHideFlags: 0
@@ -5147,11 +4973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useLoadableData: 0
   <MainPlatform>k__BackingField: {fileID: 1059781659}
-  <StoneSpawnPoint>k__BackingField: {fileID: 470584927}
   <PlayerSavePoint>k__BackingField: {fileID: 585968307}
   <CoinCount>k__BackingField: 0
-  <StoneFall>k__BackingField: 0
-  <StoneLastPoint>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!4 &898209483
 Transform:
   m_ObjectHideFlags: 0
@@ -6515,9 +6338,7 @@ Transform:
   - {fileID: 166605096}
   - {fileID: 662963556}
   - {fileID: 1106755902}
-  - {fileID: 1484510030}
   - {fileID: 898209483}
-  - {fileID: 256568179}
   - {fileID: 268835624}
   - {fileID: 1831388675}
   - {fileID: 516649743}
@@ -6548,15 +6369,13 @@ MonoBehaviour:
   - {fileID: 1106755901}
   - {fileID: 898209482}
   - {fileID: 9097920230810295281}
-  - {fileID: 256568178}
-  - {fileID: 268835625}
-  - {fileID: 1484510031}
   - {fileID: 1831388676}
   startInitObjects:
   - {fileID: 1656977092}
   - {fileID: 1096436415}
   - {fileID: 516649744}
   - {fileID: 1475784003}
+  - {fileID: 268835625}
 --- !u!1 &1045816824
 GameObject:
   m_ObjectHideFlags: 0
@@ -7616,7 +7435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLoadableData: 0
-  <Stone>k__BackingField: {fileID: 278860416}
   <Player>k__BackingField: {fileID: 3893294199183149141}
 --- !u!1 &1353238940
 GameObject:
@@ -7714,51 +7532,6 @@ MonoBehaviour:
   offSprite: {fileID: 21300000, guid: fd5ff9b47dc7586448f58c36cfd2badc, type: 3}
   musicSources:
   - {fileID: 1568684713}
---- !u!1 &1484510029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1484510030}
-  - component: {fileID: 1484510031}
-  m_Layer: 0
-  m_Name: PlayerColorChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1484510030
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484510029}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1027672512}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1484510031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484510029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0deacce91b16b4c9bd6e4f9ae94129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useLoadableData: 0
 --- !u!1001 &1484858091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10020,6 +9793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20623b94597c9d44971d7f3117a5919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkTag: Player
 --- !u!54 &1690337717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11916,15 +11690,6 @@ MonoBehaviour:
       m_TableCollectionName: GUID:896937ea4a4941348895acfb4e842895
     m_TableEntryReference:
       m_KeyId: 4326846622388224
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  fallStoneLocalizedString:
-    m_TableReference:
-      m_TableCollectionName: GUID:896937ea4a4941348895acfb4e842895
-    m_TableEntryReference:
-      m_KeyId: 4326866415308800
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -14904,7 +14669,6 @@ SceneRoots:
   - {fileID: 18550869}
   - {fileID: 76429866}
   - {fileID: 3893294199183149141}
-  - {fileID: 278860416}
   - {fileID: 877840895}
   - {fileID: 1059781659}
   - {fileID: 1001688082}

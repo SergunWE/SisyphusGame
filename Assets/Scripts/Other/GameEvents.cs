@@ -36,7 +36,6 @@ namespace SkibidiRunner.Managers
             if(GameLost || GameWined) return;
             //Debug.Log(stoneFell ? "Game lose stone" : "Game lose player");
             GameLost = true;
-            GameInfo.Instance.StoneFall = stoneFell;
 
             gameLose?.Invoke();
         }

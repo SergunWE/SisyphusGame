@@ -7,7 +7,6 @@ namespace SkibidiRunner.Managers
     {
         public static ActiveGameObjectStore Instance { get; private set; }
         
-        [field:SerializeField] public Transform Stone { get; private set; }
         [field:SerializeField] public Transform Player { get; private set; }
 
         protected override void Initialize()

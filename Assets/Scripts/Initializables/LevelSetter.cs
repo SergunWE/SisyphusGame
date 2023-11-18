@@ -15,7 +15,6 @@ public class LevelSetter : MonoBehaviourInitializable
     [SerializeField] private Transform islandStartPos;
 
     [SerializeField, Space] private Vector3 playerSpawnOffset;
-    [SerializeField] private Vector3 stoneSpawnOffset;
     [SerializeField] private Vector3 islandSpawnOffset;
 
     [SerializeField, Space] private float parkourLevelOffset = 10f;
@@ -45,8 +44,6 @@ public class LevelSetter : MonoBehaviourInitializable
         float levelDistance = Mathf.Clamp(slopeLevelOffset * SaveInfo.LevelNumber, 0, maxDistance);
         var levelPosition = startPosition + levelDirection * levelDistance;
         mainPlatform.transform.position = levelPosition;
-        var rb = ActiveGameObjectStore.Instance.Stone.gameObject.GetComponent<Rigidbody>();
-        ActiveGameObjectStore.Instance.Stone.position = rb.position = levelPosition + stoneSpawnOffset;
 
         //obstacle
         for (float i = 0; i < levelDistance - obstacleClearance; i += obstacleVerticalOffset)
@@ -63,7 +60,9 @@ public class LevelSetter : MonoBehaviourInitializable
         var islandDirection = parkourPlatform.forward * -1;
         var islandPosition = levelPosition + islandSpawnOffset + islandDirection * islandDistance;
         parkourPlatform.transform.position = islandPosition;
+        ActiveGameObjectStore.Instance.Player.gameObject.SetActive(false);
         ActiveGameObjectStore.Instance.Player.position = islandPosition + playerSpawnOffset;
+        ActiveGameObjectStore.Instance.Player.gameObject.SetActive(true);
 
         var currentIslandPosition = islandStartPos.position;
         float currentDistance = 0;

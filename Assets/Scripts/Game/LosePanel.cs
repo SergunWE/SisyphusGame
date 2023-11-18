@@ -12,7 +12,6 @@ namespace Game
     {
         [SerializeField] private TMP_Text text;
         [SerializeField] private LocalizedString fallPlayerLocalizedString;
-        [SerializeField] private LocalizedString fallStoneLocalizedString;
         [SerializeField, Space] private GameObject moneyBackButton;
         [SerializeField] private TMP_Text moneyText;
         [SerializeField] private Animation panelAnimation;
@@ -31,9 +30,7 @@ namespace Game
             moneyBackButton.SetActive(LocalYandexData.Instance.SaveInfo.Coins >= _currentCost);
             moneyText.text = _currentCost.ToString();
 
-            text.text = GameInfo.Instance.StoneFall
-                ? fallStoneLocalizedString.GetLocalizedString()
-                : fallPlayerLocalizedString.GetLocalizedString();
+            text.text = fallPlayerLocalizedString.GetLocalizedString();
 
             panelAnimation.Play();
         }
