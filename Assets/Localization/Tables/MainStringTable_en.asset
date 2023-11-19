@@ -131,6 +131,10 @@ MonoBehaviour:
     m_Localized: Beware of hammers and falling platforms. Pay attention!
     m_Metadata:
       m_Items: []
+  - m_Id: 32838839691956224
+    m_Localized: Almost loaded...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -34,12 +34,12 @@ namespace SkibidiRunner.Managers
 
         protected virtual void OnEnable()
         {
-            LocalYandexData.Instance.OnYandexDataLoaded += OnYandexDataLoaded;
+            LocalYandexData.Instance.OnYandexDataLoaded.Add(this);
         }
 
         protected virtual void OnDisable()
         {
-            LocalYandexData.Instance.OnYandexDataLoaded -= OnYandexDataLoaded;
+            LocalYandexData.Instance.OnYandexDataLoaded.Remove(this);
         }
 
         protected virtual void OnYandexDataLoaded()

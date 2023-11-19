@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using SkibidiRunner.Managers;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace YandexSDK.Scripts
 {
@@ -11,7 +15,7 @@ namespace YandexSDK.Scripts
         
         public bool YandexDataLoaded { get; private set; }
         
-        public event Action OnYandexDataLoaded;
+        public List<MonoBehaviourInitializable> OnYandexDataLoaded = new();
 
         public SaveInfo SaveInfo { get; private set; }
 
@@ -29,7 +33,10 @@ namespace YandexSDK.Scripts
             }
 
             Debug.Log("CALL OnYandexDataLoaded");
-            OnYandexDataLoaded?.Invoke();
+            foreach (var module in OnYandexDataLoaded.ToList())
+            {
+                module.TryInitialize();
+            }
         }
         
         public void DebugSetPlayerData(SaveInfo playerData)
@@ -48,7 +55,10 @@ namespace YandexSDK.Scripts
         {
             SaveInfo = new SaveInfo();
             YandexGamesManager.SavePlayerData(SaveInfo);
-            OnYandexDataLoaded?.Invoke();
+            foreach (var module in OnYandexDataLoaded.ToList())
+            {
+                module.TryInitialize();
+            }
         }
     }
 }

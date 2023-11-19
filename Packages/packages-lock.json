@@ -53,7 +53,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.24",
+      "version": "3.0.26",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -87,7 +87,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.localization": {
-      "version": "1.4.4",
+      "version": "1.4.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -175,18 +175,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.timeline": {
-      "version": "1.7.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.ugui": {
       "version": "1.0.0",
       "depth": 0,
@@ -195,16 +183,6 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
-    },
-    "com.unity.visualscripting": {
-      "version": "1.9.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
     },
     "com.unity.modules.androidjni": {
       "version": "1.0.0",
@@ -230,15 +208,6 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.modules.director": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.animation": "1.0.0"
-      }
-    },
     "com.unity.modules.imageconversion": {
       "version": "1.0.0",
       "depth": 0,
@@ -253,7 +222,7 @@
     },
     "com.unity.modules.jsonserialize": {
       "version": "1.0.0",
-      "depth": 0,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {}
     },

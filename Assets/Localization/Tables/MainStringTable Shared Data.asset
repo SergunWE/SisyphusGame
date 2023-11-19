@@ -123,6 +123,10 @@ MonoBehaviour:
     m_Key: Obstacle
     m_Metadata:
       m_Items: []
+  - m_Id: 32838839691956224
+    m_Key: AlmostLoading
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

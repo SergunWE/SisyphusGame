@@ -26,18 +26,24 @@ namespace Skins
 
         public void SetSkin(PlayerSkinSo playerSkinSo)
         {
-            if(_prevId == playerSkinSo.Id) return;
-            
+            if (_prevId == playerSkinSo.Id) return;
+
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
             }
 
             var model = Instantiate(playerSkinSo.PlayerModel, transform);
-           
+
             animator.avatar = playerSkinSo.Avatar;
             animator.Rebind();
             _prevId = playerSkinSo.Id;
+        }
+        
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if(!hasFocus) return;
+            Initialize();
         }
     }
 }

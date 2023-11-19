@@ -14,7 +14,7 @@ namespace SkibidiRunner.Managers
 
         static Coin()
         {
-            Random = new Random(DateTime.UtcNow.Millisecond);
+            Random = new Random((int)DateTime.UtcNow.Ticks);
         }
         
         private void Awake()

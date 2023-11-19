@@ -156,6 +156,8 @@ mergeInto(LibraryManager.library, {
   },
 
   showRewardedAdv: function (objectName, methodName) {
+    let obj = UTF8ToString(objectName);
+    let method = UTF8ToString(methodName);
     waitForYsdk().then((_ysdk) => {
       _ysdk.adv.showRewardedVideo({
         callbacks: {
