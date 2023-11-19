@@ -1,5 +1,6 @@
 ﻿using SkibidiRunner.Managers;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using YandexSDK.Scripts;
 
@@ -12,6 +13,8 @@ namespace Clickers
         [SerializeField] private float levelMultiplyOffset;
         [SerializeField] private float startPowerOffset;
         [SerializeField] private float upgradePowerOffset;
+
+        [SerializeField] private UnityEvent clicked;
         
         public static int TotalClick { get; private set; }
         public static float CurrentClick { get; private set; }
@@ -41,6 +44,7 @@ namespace Clickers
         {
             if (!context.started || !_start) return;
             CurrentClick += _clickPower;
+            clicked?.Invoke();
             if (CurrentClick >= TotalClick)
             {
                 GameEvents.Instance.WinGame();

@@ -10,6 +10,11 @@ namespace Menus
     {
         [SerializeField] private GameObject loadingPanel;
 
+        private void Awake()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         public void StartGame()
         {
             loadingPanel.SetActive(true);

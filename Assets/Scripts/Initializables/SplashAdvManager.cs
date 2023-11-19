@@ -17,6 +17,8 @@ namespace SkibidiRunner.Managers
         private static DateTime _adsTime;
         private static readonly DateTime StartTime;
 
+        private bool _prevPause;
+
         static SplashAdvManager()
         {
             StartTime = DateTime.UtcNow;
@@ -57,9 +59,12 @@ namespace SkibidiRunner.Managers
             switch (result)
             {
                 case 0:
+                    _prevPause = Cursor.lockState == CursorLockMode.Locked;
+                    Cursor.lockState = CursorLockMode.None;
                     PauseManager.Instance.PauseGame();
                     break;
                 case 1:
+                    Cursor.lockState = _prevPause ? CursorLockMode.Locked : CursorLockMode.None;
                     PauseManager.Instance.ResumeGame();
                     _adsTime = DateTime.UtcNow;
                     break;
