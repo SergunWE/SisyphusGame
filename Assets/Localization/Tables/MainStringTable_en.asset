@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3977543521456128
-    m_Localized: Get x5
+    m_Localized: Get x10
     m_Metadata:
       m_Items: []
   - m_Id: 4326785716899840
@@ -103,32 +103,42 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4342506362556416
-    m_Localized: Use the left joystick to move around
+    m_Localized: 'Left joystick - move/run
+
+      Right joystick - rotate camera'
     m_Metadata:
       m_Items: []
   - m_Id: 4342561500876800
-    m_Localized: Use the right joystick to view. Use the button to jump.
+    m_Localized: 'The button on the right is jump
+
+      Pull the left joystick all
+      the way down for maximum speed'
     m_Metadata:
       m_Items: []
   - m_Id: 4342598263951360
-    m_Localized: Use the WASD keys to move. Use the SHIFT key to run.
+    m_Localized: 'WASD - move
+
+      SHIFT - run'
     m_Metadata:
       m_Items: []
   - m_Id: 4342644803948544
-    m_Localized: Use the mouse for an overview. Use the Spacebar to jump. To pause
-      the game, press "Tab".
+    m_Localized: 'Space - jump
+
+      Tab - pause'
     m_Metadata:
       m_Items: []
   - m_Id: 4342713645060096
-    m_Localized: Lift the rock up. Don't drop it! Just push it.
+    m_Localized: Find the door and get out of this void!
     m_Metadata:
       m_Items: []
   - m_Id: 4342740526354432
-    m_Localized: Avoid obstacles when lifting the stone!
+    m_Localized: Upgrade your speed, jump and strength to pass more challenging levels.
+      You can upgrade in the main menu, buttons on the right.
     m_Metadata:
       m_Items: []
   - m_Id: 4342772688277504
-    m_Localized: Beware of hammers and falling platforms. Pay attention!
+    m_Localized: Beware of hammers and falling platforms. They're faster than they
+      look.
     m_Metadata:
       m_Items: []
   - m_Id: 32838839691956224

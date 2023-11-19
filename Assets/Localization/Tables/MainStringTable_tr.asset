@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3977543521456128
-    m_Localized: x5 al
+    m_Localized: x10 al
     m_Metadata:
       m_Items: []
   - m_Id: 4326785716899840
@@ -103,37 +103,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4342506362556416
-    m_Localized: "Hareket ettirmek i\xE7in sol joystick'i kullan\u0131n"
+    m_Localized: "Sol joystick - hareket et/\xE7al\u0131\u015Ft\u0131r\nSa\u011F
+      joystick - kameray\u0131 d\xF6nd\xFCr\xFCr"
     m_Metadata:
       m_Items: []
   - m_Id: 4342561500876800
-    m_Localized: "Genel bak\u0131\u015F i\xE7in sa\u011F kumanda kolunu kullan\u0131n.
-      Z\u0131plamak i\xE7in d\xFC\u011Fmeyi kullan\u0131n."
+    m_Localized: "Sa\u011Fdaki d\xFC\u011Fme bir atlamad\u0131r\r\nMaksimum h\u0131z
+      i\xE7in sol kumanda kolunu sonuna kadar a\u015Fa\u011F\u0131 \xE7ekin"
     m_Metadata:
       m_Items: []
   - m_Id: 4342598263951360
-    m_Localized: "Hareket etmek i\xE7in WASD tu\u015Flar\u0131n\u0131 kullan\u0131n.
-      \xC7al\u0131\u015Ft\u0131rmak i\xE7in SHIFT tu\u015Funu kullan\u0131n."
+    m_Localized: "WASD - hareket et\nSHIFT - \xE7al\u0131\u015Ft\u0131r"
     m_Metadata:
       m_Items: []
   - m_Id: 4342644803948544
-    m_Localized: "Genel bak\u0131\u015F i\xE7in fareyi kullan\u0131n. Z\u0131plamak
-      i\xE7in \"bo\u015Fluk tu\u015Funu\" kullan\u0131n. Oyunu duraklatmak i\xE7in
-      \"Tab\" tu\u015Funa bas\u0131n."
+    m_Localized: 'Uzay - atlama
+
+      Sekme - duraklat'
     m_Metadata:
       m_Items: []
   - m_Id: 4342713645060096
-    m_Localized: "Ta\u015F\u0131 yukar\u0131 kald\u0131r. Sak\u0131n d\xFC\u015F\xFCrme!
-      Sadece it."
+    m_Localized: "Kap\u0131y\u0131 bul ve bu bo\u015Fluktan \xE7\u0131k!"
     m_Metadata:
       m_Items: []
   - m_Id: 4342740526354432
-    m_Localized: "Ta\u015F\u0131 kald\u0131r\u0131rken engellerden ka\xE7\u0131n\u0131n!"
+    m_Localized: "Daha zor seviyeleri ge\xE7mek i\xE7in h\u0131z\u0131n\u0131z\u0131,
+      z\u0131plaman\u0131z\u0131 ve g\xFCc\xFCn\xFCz\xFC y\xFCkseltin. Ana men\xFCde,
+      sa\u011Fdaki d\xFC\u011Fmelerden y\xFCkseltme yapabilirsiniz."
     m_Metadata:
       m_Items: []
   - m_Id: 4342772688277504
-    m_Localized: "\xC7eki\xE7lere ve d\xFC\u015Fen platformlara dikkat edin. Dikkatli
-      olun!"
+    m_Localized: "\xC7eki\xE7lere ve d\xFC\u015Fen platformlara dikkat edin. G\xF6r\xFCnd\xFCklerinden
+      daha h\u0131zl\u0131d\u0131rlar."
     m_Metadata:
       m_Items: []
   - m_Id: 32838839691956224

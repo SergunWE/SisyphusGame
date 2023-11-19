@@ -40,7 +40,7 @@ namespace Game
                         : mobileSecondLocalizedString.GetLocalizedString();
                     stoneText.text = stoneFirstLocalizedString.GetLocalizedString();
                     break;
-                case 3:
+                case 2:
                     firstText.text = obstacleLocalizedString.GetLocalizedString();
                     secondText.gameObject.SetActive(false);
                     stoneText.text = stoneSecondLocalizedString.GetLocalizedString();

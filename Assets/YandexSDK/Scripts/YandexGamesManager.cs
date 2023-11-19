@@ -232,7 +232,7 @@ namespace YandexSDK.Scripts
             }
             catch
             {
-                return DeviceType.Desktop;
+                return DeviceType.Mobile;
             }
         }
 

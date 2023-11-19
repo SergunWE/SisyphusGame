@@ -39,11 +39,5 @@ namespace Skins
             animator.Rebind();
             _prevId = playerSkinSo.Id;
         }
-        
-        private void OnApplicationFocus(bool hasFocus)
-        {
-            if(!hasFocus) return;
-            Initialize();
-        }
     }
 }

@@ -9,6 +9,7 @@ namespace Game
     {
         [SerializeField] private Animation panelAnimation;
         [SerializeField] private StarterAssetsInputs starterAssetsInputs;
+        [SerializeField] private CursorLocker cursorLocker;
 
         private void OnEnable()
         {
@@ -19,7 +20,7 @@ namespace Game
         public void Close()
         {
             if (GameEvents.Instance.GameLost || GameEvents.Instance.GameLost) return;
-            Cursor.lockState = CursorLockMode.Locked;
+            cursorLocker.SetCursorState(true);
             starterAssetsInputs.SetInputEnable(true);
         }
     }

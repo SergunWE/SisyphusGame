@@ -194,13 +194,11 @@ mergeInto(LibraryManager.library, {
 
   deviceType: function () {
     try {
-      waitForYsdk().then((_ysdk) => {
-        var returnStr = _ysdk.deviceInfo.type;
-        var bufferSize = lengthBytesUTF8(returnStr) + 1;
-        var buffer = _malloc(bufferSize);
-        stringToUTF8(returnStr, buffer, bufferSize);
-        return buffer;
-      });
+      var returnStr = _ysdk.deviceInfo.type;
+      var bufferSize = lengthBytesUTF8(returnStr) + 1;
+      var buffer = _malloc(bufferSize);
+      stringToUTF8(returnStr, buffer, bufferSize);
+      return buffer;
     } catch (err) {
       console.error(err);
       return null;

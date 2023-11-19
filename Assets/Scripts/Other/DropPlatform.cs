@@ -6,6 +6,7 @@ namespace SkibidiRunner.Managers
 {
     public class DropPlatform : MonoBehaviour
     {
+        [SerializeField] private string playerTag = "Player";
         [SerializeField] private Animation objectAnimation;
         [SerializeField, Range(0,1)] private float speed;
 
@@ -16,7 +17,7 @@ namespace SkibidiRunner.Managers
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (!other.CompareTag(playerTag)) return;
             objectAnimation.Stop();
             objectAnimation.Play();
         }

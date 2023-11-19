@@ -651,18 +651,18 @@ MonoBehaviour:
   initObjects:
   - {fileID: 1006497280}
   - {fileID: 1375118010}
-  startInitObjects:
   - {fileID: 1304622735}
+  startInitObjects:
   - {fileID: 7945741226381473304}
   - {fileID: 2036034180}
   - {fileID: 939445655}
   - {fileID: 1530354188}
   - {fileID: 1956151307}
-  - {fileID: 1493982433}
   - {fileID: 826351693}
   - {fileID: 1149343478}
   - {fileID: 316003841}
   - {fileID: 1581299344}
+  - {fileID: 1493982433}
 --- !u!4 &128110437
 Transform:
   m_ObjectHideFlags: 0
@@ -3822,9 +3822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5058c0db72405881e26591329550a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showStartup: 1
+  showStartup: 0
   delayStartup: 0
-  delaySeconds: 60
+  delaySeconds: 100
 --- !u!4 &786931731
 Transform:
   m_ObjectHideFlags: 0
@@ -5937,7 +5937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1375118007
 RectTransform:
   m_ObjectHideFlags: 0

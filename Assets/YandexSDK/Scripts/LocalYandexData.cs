@@ -15,7 +15,7 @@ namespace YandexSDK.Scripts
         
         public bool YandexDataLoaded { get; private set; }
         
-        public List<MonoBehaviourInitializable> OnYandexDataLoaded = new();
+        public readonly List<MonoBehaviourInitializable> OnYandexDataLoaded = new();
 
         public SaveInfo SaveInfo { get; private set; }
 
@@ -31,8 +31,7 @@ namespace YandexSDK.Scripts
             {
                 SaveInfo = playerData;
             }
-
-            Debug.Log("CALL OnYandexDataLoaded");
+            
             foreach (var module in OnYandexDataLoaded.ToList())
             {
                 module.TryInitialize();

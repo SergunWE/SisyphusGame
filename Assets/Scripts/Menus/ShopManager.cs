@@ -33,7 +33,7 @@ namespace SkibidiRunner.Managers
                         LocalYandexData.Instance.SaveInfo.GravityLevel++;
                         break;
                     case Skill.Power:
-                        LocalYandexData.Instance.SaveInfo.PushingForceLevel++;
+                        LocalYandexData.Instance.SaveInfo.ClickPowerLevel++;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(skill), skill, null);

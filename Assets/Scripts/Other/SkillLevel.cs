@@ -43,7 +43,7 @@ namespace SkibidiRunner.Managers
             {
                 Skill.Speed => LocalYandexData.Instance.SaveInfo.SpeedLevel,
                 Skill.Jump => LocalYandexData.Instance.SaveInfo.GravityLevel,
-                Skill.Power => LocalYandexData.Instance.SaveInfo.PushingForceLevel,
+                Skill.Power => LocalYandexData.Instance.SaveInfo.ClickPowerLevel,
                 _ => throw new ArgumentOutOfRangeException()
             };
             _cost = startCost + offsetCost * level;

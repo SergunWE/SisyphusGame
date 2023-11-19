@@ -42,7 +42,7 @@ namespace SkibidiRunner.Managers
             _playerController.SprintSpeed += SaveInfo.SpeedLevel * sprintOffset;
             _playerController.Gravity = Physics.gravity.y;
             _playerController.JumpHeight += SaveInfo.GravityLevel * jumpOffset;
-            _pushController.strength += SaveInfo.PushingForceLevel * pushOffset;
+            _pushController.strength += SaveInfo.ClickPowerLevel * pushOffset;
         }
     }
 }
