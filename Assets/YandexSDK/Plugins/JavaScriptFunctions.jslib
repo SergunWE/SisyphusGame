@@ -114,11 +114,9 @@ mergeInto(LibraryManager.library, {
 
   setToLeaderboard: function (lbName, value) {
     try {
-      waitForYsdk().then((_ysdk) => {
-        var lbNameString = UTF8ToString(lbName);
-        initLb().then((_lb) => {
-          lb.setLeaderboardScore(lbNameString, value);
-        });
+      var lbNameString = UTF8ToString(lbName);
+      initLb().then((_lb) => {
+        lb.setLeaderboardScore(lbNameString, value);
       });
     } catch (err) {
       console.error(err);
