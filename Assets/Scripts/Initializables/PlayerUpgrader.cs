@@ -14,10 +14,8 @@ namespace SkibidiRunner.Managers
         [SerializeField] private float sprintOffset;
         [SerializeField] private float gravityOffset;
         [SerializeField] private float jumpOffset;
-        [SerializeField] private float pushOffset;
         
         private ThirdPersonController _playerController;
-        private BasicRigidBodyPush _pushController;
 
         private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
         private static readonly Vector3 DefaultGravity;
@@ -36,13 +34,11 @@ namespace SkibidiRunner.Managers
             }
 
             _playerController = ActiveGameObjectStore.Instance.Player.GetComponent<ThirdPersonController>();
-            _pushController = ActiveGameObjectStore.Instance.Player.GetComponent<BasicRigidBodyPush>();
 
             _playerController.MoveSpeed += SaveInfo.SpeedLevel * walkOffset;
             _playerController.SprintSpeed += SaveInfo.SpeedLevel * sprintOffset;
             _playerController.Gravity = Physics.gravity.y;
             _playerController.JumpHeight += SaveInfo.GravityLevel * jumpOffset;
-            _pushController.strength += SaveInfo.ClickPowerLevel * pushOffset;
         }
     }
 }

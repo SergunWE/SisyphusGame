@@ -50,5 +50,16 @@ namespace Clickers
                 GameEvents.Instance.WinGame();
             }
         }
+
+        public void Click()
+        {
+            if (!_start) return;
+            CurrentClick += _clickPower;
+            clicked?.Invoke();
+            if (CurrentClick >= TotalClick)
+            {
+                GameEvents.Instance.WinGame();
+            }
+        }
     }
 }

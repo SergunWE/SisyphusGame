@@ -86,26 +86,29 @@ mergeInto(LibraryManager.library, {
     let method = UTF8ToString(methodName);
     try {
       waitForYsdk().then((_ysdk) => {
-        if(playerData !== null && playerData !== undefined)
-        {
-          unityInstance.SendMessage(obj, method, playerData);
+        if (playerData !== null && playerData !== undefined) {
+          waitForUnity().then((_unityInstance) => {
+            unityInstance.SendMessage(obj, method, playerData);
+          });
         }
-        else
-        {
+        else {
           initPlayer().then((_player) => {
             player.getData().then((_date) => {
               var myJSON = JSON.stringify(_date);
               console.log(myJSON);
               playerData = myJSON;
-              unityInstance.SendMessage(obj, method, myJSON);
+              waitForUnity().then((_unityInstance) => {
+                unityInstance.SendMessage(obj, method, myJSON);
+              });
             });
           });
         }
       });
     } catch (error) {
-      if (unityInstance === undefined) return;
       console.error(error);
-      unityInstance.SendMessage(obj, method, '');
+      waitForUnity().then((_unityInstance) => {
+        unityInstance.SendMessage(obj, method, '');
+      });
     }
   },
 
@@ -114,7 +117,7 @@ mergeInto(LibraryManager.library, {
       waitForYsdk().then((_ysdk) => {
         var lbNameString = UTF8ToString(lbName);
         initLb().then((_lb) => {
-          _lb.setLeaderboardScore(lbNameString, value);
+          lb.setLeaderboardScore(lbNameString, value);
         });
       });
     } catch (err) {
@@ -139,18 +142,20 @@ mergeInto(LibraryManager.library, {
     let obj = UTF8ToString(objectName);
     let method = UTF8ToString(methodName);
     waitForYsdk().then((_ysdk) => {
-      _ysdk.adv.showFullscreenAdv({
-        callbacks: {
-          onOpen: function () {
-            unityInstance.SendMessage(obj, method, 0);
+      waitForUnity().then((_unityInstance) => {
+        _ysdk.adv.showFullscreenAdv({
+          callbacks: {
+            onOpen: function () {
+              unityInstance.SendMessage(obj, method, 0);
+            },
+            onClose: function (wasShown) {
+              unityInstance.SendMessage(obj, method, 1);
+            },
+            onError: function (error) {
+              unityInstance.SendMessage(obj, method, -1);
+            },
           },
-          onClose: function (wasShown) {
-            unityInstance.SendMessage(obj, method, 1);
-          },
-          onError: function (error) {
-            unityInstance.SendMessage(obj, method, -1);
-          },
-        },
+        });
       });
     });
   },
@@ -194,7 +199,7 @@ mergeInto(LibraryManager.library, {
 
   deviceType: function () {
     try {
-      var returnStr = _ysdk.deviceInfo.type;
+      var returnStr = ysdk.deviceInfo.type;
       var bufferSize = lengthBytesUTF8(returnStr) + 1;
       var buffer = _malloc(bufferSize);
       stringToUTF8(returnStr, buffer, bufferSize);

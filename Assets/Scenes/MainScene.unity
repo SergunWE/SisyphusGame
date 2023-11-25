@@ -2088,7 +2088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.500793, y: 0}
+  m_AnchoredPosition: {x: 12.500732, y: 0}
   m_SizeDelta: {x: 25, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253420567
@@ -4348,7 +4348,7 @@ MonoBehaviour:
     <Coins>k__BackingField: 0
     <DailyRewardLevel>k__BackingField: 0
     <DailyRewardTimeTicks>k__BackingField: 0
-    <SpeedLevel>k__BackingField: 0
+    <SpeedLevel>k__BackingField: 15
     <GravityLevel>k__BackingField: 0
     <ClickPowerLevel>k__BackingField: 0
     <LastSaveTimeTicks>k__BackingField: 0
@@ -5658,7 +5658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLoadableData: 0
-  maxTime: 10000
+  maxTime: 10
 --- !u!1001 &1382647360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8534,7 +8534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.496887, y: 0.00012207031}
+  m_AnchoredPosition: {x: 12.496826, y: 0.00012207031}
   m_SizeDelta: {x: 25.000202, y: -0.00024414062}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974609355
