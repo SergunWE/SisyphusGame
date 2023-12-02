@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,7 +32,7 @@ public class LevelSetter : MonoBehaviourInitializable
     [SerializeField] private float obstacleHorizontalOffset = 1f;
     [SerializeField] private List<GameObject> obstacles;
 
-    private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
+    private static StoredData SaveInfo => SDKManager.Instance.SaveData.CurrentData;
 
     protected override void Initialize()
     {
@@ -72,7 +73,7 @@ public class LevelSetter : MonoBehaviourInitializable
         var currentParkourIslandOffset = parkourIslandOffset + parkourIslandOffsetDiff * SaveInfo.LevelNumber;
 
        float currentParkourIslandYMaxOffset = parkourIslandMaxOffset.y +
-                                             parkourIslandOffsetDiff.y * LocalYandexData.Instance.SaveInfo.LevelNumber;
+                                             parkourIslandOffsetDiff.y * SaveInfo.LevelNumber;
 
        //Debug.Log("MAX Y - " + currentParkourIslandYMaxOffset);
 

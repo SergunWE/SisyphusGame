@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using YandexSDK.Scripts;
 
@@ -8,15 +9,15 @@ namespace SkibidiRunner.Managers
     {
         public void GoToNext()
         {
-            LocalYandexData.Instance.SaveInfo.LevelNumber++;
-            YandexGamesManager.SetToLeaderboard(LocalYandexData.Instance.SaveInfo.LevelNumber);
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.CurrentData.LevelNumber++;
+            YandexGamesManager.SetToLeaderboard(SDKManager.Instance.SaveData.CurrentData.LevelNumber);
+            SDKManager.Instance.SaveData.Save();
         }
 
         public void GoToMainMenu()
         {
             Cursor.lockState = CursorLockMode.None;
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
             SplashAdvManager.Instance.ShowAdv();
             SceneManager.LoadSceneAsync(0);
         }
@@ -26,7 +27,7 @@ namespace SkibidiRunner.Managers
             Cursor.lockState = CursorLockMode.None;
             SplashAdvManager.Instance.ShowAdv();
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using SDKNewRealization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YandexSDK.Scripts;
@@ -18,7 +19,7 @@ namespace Menus
         public void StartGame()
         {
             loadingPanel.SetActive(true);
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
             SceneManager.LoadSceneAsync(1);
         }
     }

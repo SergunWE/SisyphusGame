@@ -1,4 +1,5 @@
-﻿using SkibidiRunner.Managers;
+﻿using SDKNewRealization;
+using SkibidiRunner.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -25,8 +26,8 @@ namespace Clickers
         protected override void Initialize()
         {
             CurrentClick = 0;
-            _clickPower = startPowerOffset + LocalYandexData.Instance.SaveInfo.ClickPowerLevel * upgradePowerOffset;
-            TotalClick = startOffset + LocalYandexData.Instance.SaveInfo.LevelNumber * levelOffset;
+            _clickPower = startPowerOffset + SDKManager.Instance.SaveData.CurrentData.ClickPowerLevel * upgradePowerOffset;
+            TotalClick = startOffset + SDKManager.Instance.SaveData.CurrentData.LevelNumber * levelOffset;
             TotalClick = (int)(TotalClick * levelMultiplyOffset);
         }
 

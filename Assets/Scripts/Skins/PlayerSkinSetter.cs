@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using UnityEngine;
 using YandexSDK.Scripts;
@@ -21,7 +22,7 @@ namespace Skins
 
         public void SetCurrentSkin()
         {
-            SetSkin(PlayerList.Find(x => x.Id == LocalYandexData.Instance.SaveInfo.PlayerSkinId));
+            SetSkin(PlayerList.Find(x => x.Id == SDKManager.Instance.SaveData.CurrentData.PlayerSkinId));
         }
 
         public void SetSkin(PlayerSkinSo playerSkinSo)

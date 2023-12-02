@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -9,7 +10,7 @@ namespace SkibidiRunner.Managers
         
         protected override void Initialize()
         {
-            musicSource.mute = !LocalYandexData.Instance.SaveInfo.MusicOn;
+            musicSource.mute = !SDKManager.Instance.SaveData.CurrentData.MusicOn;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -33,7 +34,7 @@ namespace SkibidiRunner.Managers
         protected override void Initialize()
         {
             localizedString.Arguments = new object[] { _levelCount };
-            _levelCount = LocalYandexData.Instance.SaveInfo.LevelNumber + 1;
+            _levelCount = SDKManager.Instance.SaveData.CurrentData.LevelNumber + 1;
             localizedString.Arguments[0] = _levelCount;
             localizedString.RefreshString();
         }

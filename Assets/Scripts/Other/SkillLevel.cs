@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,13 +42,13 @@ namespace SkibidiRunner.Managers
         {
             int level = skill switch
             {
-                Skill.Speed => LocalYandexData.Instance.SaveInfo.SpeedLevel,
-                Skill.Jump => LocalYandexData.Instance.SaveInfo.GravityLevel,
-                Skill.Power => LocalYandexData.Instance.SaveInfo.ClickPowerLevel,
+                Skill.Speed => SDKManager.Instance.SaveData.CurrentData.SpeedLevel,
+                Skill.Jump => SDKManager.Instance.SaveData.CurrentData.GravityLevel,
+                Skill.Power => SDKManager.Instance.SaveData.CurrentData.ClickPowerLevel,
                 _ => throw new ArgumentOutOfRangeException()
             };
             _cost = startCost + offsetCost * level;
-            _useAd = LocalYandexData.Instance.SaveInfo.Coins < _cost;
+            _useAd = SDKManager.Instance.SaveData.CurrentData.Coins < _cost;
             costView.SetActive(!_useAd);
             adView.SetActive(_useAd);
             textLevel.text = level.ToString();

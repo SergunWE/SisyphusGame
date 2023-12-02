@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -16,7 +17,7 @@ namespace SkibidiRunner.Managers
             {
                 if (useLoadableData)
                 {
-                    if (LocalYandexData.Instance.YandexDataLoaded)
+                    if (SDKManager.Instance.SaveData.IsDataLoaded)
                     {
                         Initialize();
                     }
@@ -34,12 +35,12 @@ namespace SkibidiRunner.Managers
 
         protected virtual void OnEnable()
         {
-            LocalYandexData.Instance.OnYandexDataLoaded.Add(this);
+            SDKManager.Instance.SaveData.DataLoaded += TryInitialize;
         }
 
         protected virtual void OnDisable()
         {
-            LocalYandexData.Instance.OnYandexDataLoaded.Remove(this);
+            SDKManager.Instance.SaveData.DataLoaded -= TryInitialize;
         }
 
         protected virtual void OnYandexDataLoaded()

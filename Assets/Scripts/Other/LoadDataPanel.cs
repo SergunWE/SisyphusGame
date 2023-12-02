@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using SDKNewRealization;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -11,8 +12,8 @@ namespace SkibidiRunner.Managers
         protected override void Initialize()
         {
             StopAllCoroutines();
-            gameObject.SetActive(!LocalYandexData.Instance.YandexDataLoaded);
-            if (!LocalYandexData.Instance.YandexDataLoaded)
+            gameObject.SetActive(!SDKManager.Instance.SaveData.IsDataLoaded);
+            if (!SDKManager.Instance.SaveData.IsDataLoaded)
             {
                 StartCoroutine(WaitCoroutine());
             }

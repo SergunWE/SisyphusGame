@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,18 +32,18 @@ namespace Buttons
 
         protected override void Initialize()
         {
-            imageButton.sprite = LocalYandexData.Instance.SaveInfo.MusicOn ? onSprite : offSprite;
+            imageButton.sprite = SDKManager.Instance.SaveData.CurrentData.MusicOn ? onSprite : offSprite;
 
             foreach (var audioSource in musicSources)
             {
-                audioSource.mute = !LocalYandexData.Instance.SaveInfo.MusicOn;
+                audioSource.mute = !SDKManager.Instance.SaveData.CurrentData.MusicOn;
             }
         }
 
         private void ChangeState()
         {
-            LocalYandexData.Instance.SaveInfo.MusicOn = !LocalYandexData.Instance.SaveInfo.MusicOn;
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.CurrentData.MusicOn = !SDKManager.Instance.SaveData.CurrentData.MusicOn;
+            SDKManager.Instance.SaveData.Save();
             TryInitialize();
         }
     }

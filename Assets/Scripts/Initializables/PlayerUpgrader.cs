@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using StarterAssets;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace SkibidiRunner.Managers
         
         private ThirdPersonController _playerController;
 
-        private static SaveInfo SaveInfo => LocalYandexData.Instance.SaveInfo;
+        private static StoredData SaveInfo => SDKManager.Instance.SaveData.CurrentData;
         private static readonly Vector3 DefaultGravity;
 
         static PlayerUpgrader()

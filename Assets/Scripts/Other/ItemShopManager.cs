@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -14,13 +15,13 @@ namespace SkibidiRunner.Managers
 
         public void SkipLevel()
         {
-            LocalYandexData.Instance.SaveInfo.LevelNumber++;
+            SDKManager.Instance.SaveData.CurrentData.LevelNumber++;
             levelView.TryInitialize();
         }
 
         public void ResetLevel()
         {
-            LocalYandexData.Instance.SaveInfo.LevelNumber = 0;
+            SDKManager.Instance.SaveData.CurrentData.LevelNumber = 0;
             levelView.TryInitialize();
         }
     }

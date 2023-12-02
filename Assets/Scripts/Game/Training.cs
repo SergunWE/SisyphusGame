@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using TMPro;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace Game
         {
             bool desktop = YandexGamesManager.GetDeviceType() == DeviceType.Desktop;
             
-            switch (LocalYandexData.Instance.SaveInfo.LevelNumber)
+            switch (SDKManager.Instance.SaveData.CurrentData.LevelNumber)
             {
                 case 0:
                     firstText.text = desktop

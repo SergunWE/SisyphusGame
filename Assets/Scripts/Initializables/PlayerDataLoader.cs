@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Threading.Tasks;
+using SDKNewRealization;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -14,26 +15,27 @@ namespace SkibidiRunner.Managers
         
         protected override void Initialize()
         {
-            if(LocalYandexData.Instance.YandexDataLoaded) return;
-            YandexGamesManager.LoadPlayerData(gameObject, nameof(OnPlayerDataReceived));
+            SDKManager.Instance.SaveData.Load();
+            //if(LocalYandexData.Instance.YandexDataLoaded) return;
+            //YandexGamesManager.LoadPlayerData(gameObject, nameof(OnPlayerDataReceived));
         }
 
-        public void OnPlayerDataReceived(string json)
-        {
-            //Debug.Log("OnPlayerDataReceived " + json);
-            if (string.IsNullOrEmpty(json))
-            {
-                Debug.Log("Failed to load player data");
-                if(_count >= countTryLoad) return;
-                _count++;
-                StartCoroutine(RetryCoroutine());
-            }
-            else
-            {
-                Debug.Log("Data loaded" + json);
-                LocalYandexData.Instance.SetPlayerData(JsonUtility.FromJson<SaveInfo>(json));
-            }
-        }
+        // public void OnPlayerDataReceived(string json)
+        // {
+        //     //Debug.Log("OnPlayerDataReceived " + json);
+        //     if (string.IsNullOrEmpty(json))
+        //     {
+        //         Debug.Log("Failed to load player data");
+        //         if(_count >= countTryLoad) return;
+        //         _count++;
+        //         StartCoroutine(RetryCoroutine());
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("Data loaded" + json);
+        //         LocalYandexData.Instance.SetPlayerData(JsonUtility.FromJson<SaveInfo>(json));
+        //     }
+        // }
 
         private IEnumerator RetryCoroutine()
         {

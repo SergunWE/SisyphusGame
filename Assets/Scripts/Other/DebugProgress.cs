@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -7,13 +8,13 @@ namespace SkibidiRunner.Managers
     {
         public void Reset()
         {
-            LocalYandexData.Instance.ResetProgress();
+            SDKManager.Instance.SaveData.DebugSetData(new StoredData());
         }
 
         public void GetMoney()
         {
             ShopManager.Instance.ChangeCoins(100000);
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
         }
     }
 }

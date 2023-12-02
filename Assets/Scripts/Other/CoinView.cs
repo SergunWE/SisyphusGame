@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using SDKNewRealization;
+using TMPro;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -22,7 +23,7 @@ namespace SkibidiRunner.Managers
 
         protected override void Initialize()
         {
-            text.text = LocalYandexData.Instance.SaveInfo.Coins.ToString();
+            text.text = SDKManager.Instance.SaveData.CurrentData.Coins.ToString();
         }
     }
 }

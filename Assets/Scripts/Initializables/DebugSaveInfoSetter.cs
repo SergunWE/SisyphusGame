@@ -1,10 +1,11 @@
-﻿using SkibidiRunner.Managers;
+﻿using SDKNewRealization;
+using SkibidiRunner.Managers;
 using UnityEngine;
 using YandexSDK.Scripts;
 
 public class DebugSaveInfoSetter : MonoBehaviourInitializable
 {
-    [SerializeField] private SaveInfo saveInfo;
+    [SerializeField] private StoredData saveInfo;
 
     private static bool _set;
 
@@ -13,12 +14,12 @@ public class DebugSaveInfoSetter : MonoBehaviourInitializable
 #if UNITY_EDITOR
         if (_set)
         {
-            saveInfo = LocalYandexData.Instance.SaveInfo;
+            saveInfo = SDKManager.Instance.SaveData.CurrentData;
         }
         else
         {
             saveInfo.LastSaveTimeTicks = 1;
-            LocalYandexData.Instance.DebugSetPlayerData(saveInfo);
+            SDKManager.Instance.SaveData.DebugSetData(saveInfo);
             _set = true;
         }
 #endif

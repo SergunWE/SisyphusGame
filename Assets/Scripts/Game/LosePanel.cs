@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using TMPro;
 using UnityEngine;
@@ -27,7 +28,7 @@ namespace Game
 
         private void OnEnable()
         {
-            moneyBackButton.SetActive(LocalYandexData.Instance.SaveInfo.Coins >= _currentCost);
+            moneyBackButton.SetActive(SDKManager.Instance.SaveData.CurrentData.Coins >= _currentCost);
             moneyText.text = _currentCost.ToString();
 
             text.text = fallPlayerLocalizedString.GetLocalizedString();
@@ -37,7 +38,7 @@ namespace Game
 
         public void BuyContinue()
         {
-            if (LocalYandexData.Instance.SaveInfo.Coins < _currentCost) return;
+            if (SDKManager.Instance.SaveData.CurrentData.Coins < _currentCost) return;
             ShopManager.Instance.ChangeCoins(-_currentCost);
             _currentCost += offsetCost;
             GameEvents.Instance.ContinueGame();

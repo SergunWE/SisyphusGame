@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using TMPro;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace Menus
         {
             var time = TimeSpan.FromDays(1) -
                        TimeSpan.FromTicks(DateTime.UtcNow.Ticks -
-                                          LocalYandexData.Instance.SaveInfo.DailyRewardTimeTicks);
+                                          SDKManager.Instance.SaveData.CurrentData.DailyRewardTimeTicks);
             if (time > TimeSpan.Zero)
             {
                 timerText.text = time.ToString(time.Hours > 0 ? @"h\:mm\:ss" : @"m\:ss");
@@ -50,15 +51,15 @@ namespace Menus
         {
             var time = TimeSpan.FromDays(1) -
                        TimeSpan.FromTicks(DateTime.UtcNow.Ticks -
-                                          LocalYandexData.Instance.SaveInfo.DailyRewardTimeTicks);
+                                          SDKManager.Instance.SaveData.CurrentData.DailyRewardTimeTicks);
 
             if (time <= TimeSpan.Zero)
             {
-                int reward = giftStartCount + giftLevelOffset * LocalYandexData.Instance.SaveInfo.DailyRewardLevel;
+                int reward = giftStartCount + giftLevelOffset * SDKManager.Instance.SaveData.CurrentData.DailyRewardLevel;
                 rewardCountText.text = reward.ToString();
                 
-                LocalYandexData.Instance.SaveInfo.DailyRewardLevel++;
-                LocalYandexData.Instance.SaveInfo.DailyRewardTimeTicks = DateTime.UtcNow.Ticks;
+                SDKManager.Instance.SaveData.CurrentData.DailyRewardLevel++;
+                SDKManager.Instance.SaveData.CurrentData.DailyRewardTimeTicks = DateTime.UtcNow.Ticks;
                 ShopManager.Instance.ChangeCoins(reward);
                 
                 giftPanel.SetActive(true);

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using SDKNewRealization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -35,7 +36,7 @@ namespace SkibidiRunner.Managers
 
         private void Init()
         {
-            _useAd = LocalYandexData.Instance.SaveInfo.Coins < cost || onlyForAds;
+            _useAd = SDKManager.Instance.SaveData.CurrentData.Coins < cost || onlyForAds;
             costView.SetActive(!_useAd);
             adView.SetActive(_useAd);
             textCost.text = cost.ToString();

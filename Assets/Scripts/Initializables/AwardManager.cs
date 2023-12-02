@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using YandexSDK.Scripts;
 
 namespace SkibidiRunner.Managers
@@ -12,7 +13,7 @@ namespace SkibidiRunner.Managers
         public void GetLevelReward()
         {
             int award = winGameCoinCount +
-                        (int)Mathf.Round(winGameCoinArithmeticOffset * LocalYandexData.Instance.SaveInfo.LevelNumber);
+                        (int)Mathf.Round(winGameCoinArithmeticOffset * SDKManager.Instance.SaveData.CurrentData.LevelNumber);
             award += (int)(award * winGameCoinGeometricOffset);
             //Debug.Log("Level award count: " + award);
             GameInfo.Instance.CoinCount += award;

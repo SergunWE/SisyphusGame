@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -13,7 +14,7 @@ namespace SkibidiRunner.Managers
         protected override void Initialize()
         {
             Instance = this;
-            audioSource.mute = !LocalYandexData.Instance.SaveInfo.SoundOn;
+            audioSource.mute = !SDKManager.Instance.SaveData.CurrentData.SoundOn;
         }
 
         public void PlaySound(AudioClip audioClip)

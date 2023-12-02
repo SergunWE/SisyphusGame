@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using Skins;
 using YandexSDK.Scripts;
 
@@ -21,19 +22,19 @@ namespace SkibidiRunner.Managers
 
         public void BuySkill(Skill skill, int cost)
         {
-            if (LocalYandexData.Instance.SaveInfo.Coins >= cost)
+            if (SDKManager.Instance.SaveData.CurrentData.Coins >= cost)
             {
-                LocalYandexData.Instance.SaveInfo.Coins -= cost;
+                SDKManager.Instance.SaveData.CurrentData.Coins -= cost;
                 switch (skill)
                 {
                     case Skill.Speed:
-                        LocalYandexData.Instance.SaveInfo.SpeedLevel++;
+                        SDKManager.Instance.SaveData.CurrentData.SpeedLevel++;
                         break;
                     case Skill.Jump:
-                        LocalYandexData.Instance.SaveInfo.GravityLevel++;
+                        SDKManager.Instance.SaveData.CurrentData.GravityLevel++;
                         break;
                     case Skill.Power:
-                        LocalYandexData.Instance.SaveInfo.ClickPowerLevel++;
+                        SDKManager.Instance.SaveData.CurrentData.ClickPowerLevel++;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(skill), skill, null);
@@ -43,33 +44,33 @@ namespace SkibidiRunner.Managers
             }
 
             CoinCountUpdate?.Invoke();
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
         }
 
         public void BuySkin(PlayerSkinSo skin)
         {
             if(skin.LevelCost) return;
             
-            if (LocalYandexData.Instance.SaveInfo.Coins >= skin.Cost)
+            if (SDKManager.Instance.SaveData.CurrentData.Coins >= skin.Cost)
             {
-                LocalYandexData.Instance.SaveInfo.Coins -= skin.Cost;
-                LocalYandexData.Instance.SaveInfo.PlayerPurchasedSkins.Add(skin.Id);
+                SDKManager.Instance.SaveData.CurrentData.Coins -= skin.Cost;
+                SDKManager.Instance.SaveData.CurrentData.PlayerPurchasedSkins.Add(skin.Id);
                 SkinPurchaseSuccessful?.Invoke();
             }
             
             CoinCountUpdate?.Invoke();
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
         }
 
         public void ChangeCoins(int value)
         {
-            LocalYandexData.Instance.SaveInfo.Coins += value;
+            SDKManager.Instance.SaveData.CurrentData.Coins += value;
             CoinCountUpdate?.Invoke();
             if (value > 0)
             {
                 CoinAdded?.Invoke();
             }
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.Save();
         }
     }
 }

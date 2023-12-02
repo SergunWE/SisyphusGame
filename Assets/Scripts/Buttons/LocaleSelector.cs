@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Threading.Tasks;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -51,8 +52,8 @@ namespace Buttons
             }
 
             LocalizationSettings.SelectedLocale = locale;
-            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
-            LocalYandexData.Instance.SaveData();
+            SDKManager.Instance.SaveData.CurrentData.ManualLanguage = locale.Identifier.Code;
+            SDKManager.Instance.SaveData.Save();
         }
 
         private IEnumerator LoadLanguageCoroutine()
@@ -67,7 +68,7 @@ namespace Buttons
                 yield return null;
             }
             Locale locale;
-            if (string.IsNullOrEmpty(LocalYandexData.Instance.SaveInfo.ManualLanguage))
+            if (string.IsNullOrEmpty(SDKManager.Instance.SaveData.CurrentData.ManualLanguage))
             {
                 string localeCode = YandexGamesManager.GetLanguageString();
                 locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
@@ -80,12 +81,12 @@ namespace Buttons
             else
             {
                 locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
-                    x.Identifier.Code.Contains(LocalYandexData.Instance.SaveInfo.ManualLanguage));
+                    x.Identifier.Code.Contains(SDKManager.Instance.SaveData.CurrentData.ManualLanguage));
                 LocalizationSettings.SelectedLocale = locale;
             }
 
             LocalizationSettings.SelectedLocale = locale;
-            LocalYandexData.Instance.SaveInfo.ManualLanguage = locale.Identifier.Code;
+            SDKManager.Instance.SaveData.CurrentData.ManualLanguage = locale.Identifier.Code;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using SDKNewRealization;
 using UnityEngine;
 using YandexSDK.Scripts;
 
@@ -25,7 +26,7 @@ namespace SkibidiRunner.Managers
         
         public void StartChecking()
         {
-            _finalOffset = offset + levelOffset * LocalYandexData.Instance.SaveInfo.LevelNumber;
+            _finalOffset = offset + levelOffset * SDKManager.Instance.SaveData.CurrentData.LevelNumber;
             //Debug.Log("FInal OFFSET " + _finalOffset);
             //Debug.Log("StartHeight " + _startHeight);
             _checking = true;

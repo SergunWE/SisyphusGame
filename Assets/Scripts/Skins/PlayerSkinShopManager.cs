@@ -1,4 +1,5 @@
 ﻿using System;
+using SDKNewRealization;
 using SkibidiRunner.Managers;
 using TMPro;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace Skins
 
         private void OnEnable()
         {
-            _currentSkinIndex = LocalYandexData.Instance.SaveInfo.PlayerSkinId;
+            _currentSkinIndex = SDKManager.Instance.SaveData.CurrentData.PlayerSkinId;
             prevSkinButton.onClick.AddListener(PrevSkin);
             nextSkinButton.onClick.AddListener(NextSkin);
             buySelectButton.onClick.AddListener(OnBuySelectClicked);
@@ -72,11 +73,11 @@ namespace Skins
 
             switch (currentSkin.LevelCost)
             {
-                case true when LocalYandexData.Instance.SaveInfo.LevelNumber >= currentSkin.Cost:
+                case true when SDKManager.Instance.SaveData.CurrentData.LevelNumber >= currentSkin.Cost:
                     SetSkin(currentSkin);
                     return;
                 case false when
-                    LocalYandexData.Instance.SaveInfo.PlayerPurchasedSkins.IndexOf(currentSkin.Id) != -1 ||
+                    SDKManager.Instance.SaveData.CurrentData.PlayerPurchasedSkins.IndexOf(currentSkin.Id) != -1 ||
                     currentSkin.Cost <= 0:
                     SetSkin(currentSkin);
                     return;
@@ -92,7 +93,7 @@ namespace Skins
 
         private void SetSkin(PlayerSkinSo skin)
         {
-            LocalYandexData.Instance.SaveInfo.PlayerSkinId = skin.Id;
+            SDKManager.Instance.SaveData.CurrentData.PlayerSkinId = skin.Id;
             ShopManager.Instance.ChangeCoins(0);
             UpdateBuyButtonState();
         }
@@ -121,13 +122,13 @@ namespace Skins
         {
             var currentSkin = playerSkinSetter.PlayerList[_currentSkinIndex];
 
-            if (currentSkin.Id == LocalYandexData.Instance.SaveInfo.PlayerSkinId)
+            if (currentSkin.Id == SDKManager.Instance.SaveData.CurrentData.PlayerSkinId)
             {
                 _skinState = SkinState.Selected;
             }
             else
             {
-                if (LocalYandexData.Instance.SaveInfo.PlayerPurchasedSkins.IndexOf(currentSkin.Id) != -1)
+                if (SDKManager.Instance.SaveData.CurrentData.PlayerPurchasedSkins.IndexOf(currentSkin.Id) != -1)
                 {
                     _skinState = SkinState.Bought;
                 }
@@ -135,7 +136,7 @@ namespace Skins
                 {
                     if (currentSkin.LevelCost)
                     {
-                        _skinState = LocalYandexData.Instance.SaveInfo.LevelNumber >= currentSkin.Cost
+                        _skinState = SDKManager.Instance.SaveData.CurrentData.LevelNumber >= currentSkin.Cost
                             ? SkinState.Bought
                             : SkinState.Blocked;
                     }

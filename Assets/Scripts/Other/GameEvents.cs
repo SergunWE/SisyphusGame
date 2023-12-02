@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using YandexSDK.Scripts;
@@ -48,7 +49,7 @@ namespace SkibidiRunner.Managers
 
         public void CoinCollected()
         {
-            LocalYandexData.Instance.SaveInfo.Coins++;
+            SDKManager.Instance.SaveData.CurrentData.Coins++;
             GameInfo.Instance.CoinCount++;
             coinCollect?.Invoke();
         }
