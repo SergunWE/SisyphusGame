@@ -70,7 +70,7 @@ namespace Buttons
             Locale locale;
             if (string.IsNullOrEmpty(SDKManager.Instance.SaveData.CurrentData.ManualLanguage))
             {
-                string localeCode = YandexGamesManager.GetLanguageString();
+                string localeCode = SDKManager.Instance.PlatformData.LanguageCode;
                 locale = LocalizationSettings.AvailableLocales.Locales.Find(x =>
                     x.Identifier.Code == localeCode);
                 if (locale == null)

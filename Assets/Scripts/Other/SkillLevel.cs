@@ -27,6 +27,10 @@ namespace SkibidiRunner.Managers
         {
             base.OnEnable();
             ShopManager.Instance.CoinCountUpdate += TryInitialize;
+            SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError += OnAdClosed;
             button.onClick.AddListener(BuySkill);
             TryInitialize();
         }
@@ -35,7 +39,65 @@ namespace SkibidiRunner.Managers
         {
             base.OnDisable();
             ShopManager.Instance.CoinCountUpdate -= TryInitialize;
+            SDKManager.Instance.Ads.OnAdOpened -= OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded -= OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed -= OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError -= OnAdClosed;
             button.onClick.RemoveListener(BuySkill);
+        }
+        
+        private void OnAdClosed()
+        {
+            switch (skill)
+            {
+                case Skill.Speed:
+                    AdsShopManager.Instance.GetSpeed(2);
+                    break;
+                case Skill.Jump:
+                    AdsShopManager.Instance.GetJump(2);
+                    break;
+                case Skill.Power:
+                    AdsShopManager.Instance.GetPower(2);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void OnAdRewarded()
+        {
+            switch (skill)
+            {
+                case Skill.Speed:
+                    AdsShopManager.Instance.GetSpeed(1);
+                    break;
+                case Skill.Jump:
+                    AdsShopManager.Instance.GetJump(1);
+                    break;
+                case Skill.Power:
+                    AdsShopManager.Instance.GetPower(1);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void OnAdOpened()
+        {
+            switch (skill)
+            {
+                case Skill.Speed:
+                    AdsShopManager.Instance.GetSpeed(0);
+                    break;
+                case Skill.Jump:
+                    AdsShopManager.Instance.GetJump(0);
+                    break;
+                case Skill.Power:
+                    AdsShopManager.Instance.GetPower(0);
+                    break;
+                default:
+                    break;
+            }
         }
 
         protected override void Initialize()
@@ -71,7 +133,8 @@ namespace SkibidiRunner.Managers
                     _ => throw new ArgumentOutOfRangeException()
                 };
 
-                YandexGamesManager.ShowRewardedAdv(AdsShopManager.Instance.gameObject, skillMethodName);
+                SDKManager.Instance.Ads.ShowFullscreenAd();
+                //YandexGamesManager.ShowRewardedAdv(AdsShopManager.Instance.gameObject, skillMethodName);
             }
         }
     }

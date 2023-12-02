@@ -19,7 +19,7 @@ namespace Menus
         private void Start()
         {
             if (DateTime.UtcNow - StartTime <= TimeSpan.FromSeconds(delaySeconds) || _reviewShowed) return;
-            YandexGamesManager.RequestReviewGame();
+            //YandexGamesManager.RequestReviewGame();
             _reviewShowed = true;
         }
     }

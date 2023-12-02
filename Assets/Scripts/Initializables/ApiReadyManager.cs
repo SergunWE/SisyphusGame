@@ -11,7 +11,7 @@ namespace SkibidiRunner.Managers
         {
             if(_called) return;
             _called = true;
-            YandexGamesManager.ApiReady();
+            //YandexGamesManager.ApiReady();
         }
     }
 }

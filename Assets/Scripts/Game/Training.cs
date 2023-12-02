@@ -28,7 +28,7 @@ namespace Game
 
         private void Set()
         {
-            bool desktop = YandexGamesManager.GetDeviceType() == DeviceType.Desktop;
+            bool desktop = SDKManager.Instance.PlatformData.DeviceType == SDKNewRealization.DeviceType.Desktop;
             
             switch (SDKManager.Instance.SaveData.CurrentData.LevelNumber)
             {

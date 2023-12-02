@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDKNewRealization;
+using UnityEngine;
 using YandexSDK.Scripts;
 using DeviceType = YandexSDK.Scripts.DeviceType;
 
@@ -10,7 +11,7 @@ namespace SkibidiRunner.Managers
         
         protected override void Initialize()
         {
-            mobileInput.SetActive(YandexGamesManager.GetDeviceType() != DeviceType.Desktop);
+            mobileInput.SetActive(SDKManager.Instance.PlatformData.DeviceType != SDKNewRealization.DeviceType.Desktop);
         }
     }
 }

@@ -10,24 +10,24 @@ namespace SkibidiRunner.Managers
         public void GoToNext()
         {
             SDKManager.Instance.SaveData.CurrentData.LevelNumber++;
-            YandexGamesManager.SetToLeaderboard(SDKManager.Instance.SaveData.CurrentData.LevelNumber);
+            //YandexGamesManager.SetToLeaderboard(SDKManager.Instance.SaveData.CurrentData.LevelNumber);
             SDKManager.Instance.SaveData.Save();
         }
 
         public void GoToMainMenu()
         {
-            Cursor.lockState = CursorLockMode.None;
             SDKManager.Instance.SaveData.Save();
-            SplashAdvManager.Instance.ShowAdv();
-            SceneManager.LoadSceneAsync(0);
+            Cursor.lockState = CursorLockMode.None;
+            SDKManager.Instance.Ads.ShowFullscreenAd();
+            SceneManager.LoadSceneAsync(1);
         }
 
         public void ReloadGame()
         {
-            Cursor.lockState = CursorLockMode.None;
-            SplashAdvManager.Instance.ShowAdv();
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
             SDKManager.Instance.SaveData.Save();
+            Cursor.lockState = CursorLockMode.None;
+            SDKManager.Instance.Ads.ShowFullscreenAd();
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
     }
 }

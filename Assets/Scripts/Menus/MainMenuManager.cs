@@ -20,7 +20,7 @@ namespace Menus
         {
             loadingPanel.SetActive(true);
             SDKManager.Instance.SaveData.Save();
-            SceneManager.LoadSceneAsync(1);
+            SceneManager.LoadSceneAsync(2);
         }
     }
 }

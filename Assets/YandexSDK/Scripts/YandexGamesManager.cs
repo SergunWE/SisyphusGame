@@ -209,7 +209,7 @@ namespace YandexSDK.Scripts
             try
             {
                 apiReady();
-                CallYandexMetric("GameLoaded");
+                //CallYandexMetric("GameLoaded");
             }
             catch
             {

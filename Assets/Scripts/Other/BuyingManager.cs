@@ -25,12 +25,36 @@ namespace SkibidiRunner.Managers
         {
             ShopManager.Instance.CoinCountUpdate += Init;
             button.onClick.AddListener(Buy);
+            SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError += OnAdClosed;
             Init();
+        }
+
+        private void OnAdClosed()
+        {
+            PauseManager.Instance.ResumeGame();
+        }
+
+        private void OnAdRewarded()
+        {
+            buyItem?.Invoke();
+            ShopManager.Instance.ChangeCoins(0);
+        }
+
+        private void OnAdOpened()
+        {
+            PauseManager.Instance.PauseGame();
         }
 
         protected void OnDisable()
         {
             ShopManager.Instance.CoinCountUpdate -= Init;
+            SDKManager.Instance.Ads.OnAdOpened -= OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded -= OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed -= OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError -= OnAdClosed;
             button.onClick.RemoveListener(Buy);
         }
 
@@ -51,7 +75,7 @@ namespace SkibidiRunner.Managers
             }
             else
             {
-                YandexGamesManager.ShowRewardedAdv(gameObject, nameof(BuyForAds));
+                SDKManager.Instance.Ads.ShowRewardedAd();
             }
         }
 

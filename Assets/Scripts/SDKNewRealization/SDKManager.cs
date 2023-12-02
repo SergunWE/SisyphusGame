@@ -6,16 +6,17 @@ namespace SDKNewRealization
 {
     public class SDKManager : MonoBehaviour
     {
-#if UNITY_ANDROID 
+#if UNITY_ANDROID
         [SerializeField] private string androidSaveKey;
+        [SerializeField] private string adUnitId = "demo-rewarded-yandex"; // замените на "R-M-XXXXXX-Y"
 #endif
-        
+
         public static SDKManager Instance { get; private set; }
 
         public ISaveData SaveData { get; private set; }
         public IAds Ads { get; private set; }
         public IPlatformData PlatformData { get; private set; }
-        
+
         private void Awake()
         {
             if (Instance != null) return;
@@ -24,9 +25,7 @@ namespace SDKNewRealization
             SaveData = GetPlatformSpecificSaveData();
             Ads = GetPlatformSpecificAds();
             PlatformData = GetPlatformSpecificData();
-#if UNITY_EDITOR
-            SceneManager.LoadSceneAsync(0);
-#endif
+            SceneManager.LoadSceneAsync(1);
         }
 
         private ISaveData GetPlatformSpecificSaveData()
@@ -37,15 +36,15 @@ namespace SDKNewRealization
             return null;
         }
 
-        private static IAds GetPlatformSpecificAds()
+        private IAds GetPlatformSpecificAds()
         {
 #if UNITY_ANDROID
-            return new AndroidAds();
+            return new AndroidYandexAds(adUnitId);
 #else
             return null;
 #endif
         }
-        
+
         private static IPlatformData GetPlatformSpecificData()
         {
 #if UNITY_ANDROID
