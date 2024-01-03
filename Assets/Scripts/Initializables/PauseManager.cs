@@ -25,7 +25,7 @@ namespace SkibidiRunner.Managers
 
         public void ResumeGame()
         {
-            Time.timeScale = _timeScale;
+            Time.timeScale = 1;
             AudioListener.pause = false;
         }
     }

@@ -23,29 +23,29 @@ namespace SkibidiRunner.Managers
         private int _cost;
         private bool _useAd;
 
+        private void Start()
+        {
+            Initialize();
+        }
+
         protected override void OnEnable()
         {
             base.OnEnable();
-            ShopManager.Instance.CoinCountUpdate += TryInitialize;
-            SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
-            SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
-            SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
-            SDKManager.Instance.Ads.OnAdError += OnAdClosed;
+            ShopManager.Instance.CoinCountUpdate += Initialize;
             button.onClick.AddListener(BuySkill);
-            TryInitialize();
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            ShopManager.Instance.CoinCountUpdate -= TryInitialize;
+            ShopManager.Instance.CoinCountUpdate -= Initialize;
             SDKManager.Instance.Ads.OnAdOpened -= OnAdOpened;
             SDKManager.Instance.Ads.OnAdRewarded -= OnAdRewarded;
             SDKManager.Instance.Ads.OnAdClosed -= OnAdClosed;
             SDKManager.Instance.Ads.OnAdError -= OnAdClosed;
             button.onClick.RemoveListener(BuySkill);
         }
-        
+
         private void OnAdClosed()
         {
             switch (skill)
@@ -60,8 +60,13 @@ namespace SkibidiRunner.Managers
                     AdsShopManager.Instance.GetPower(2);
                     break;
                 default:
-                    break;
+                    throw new ArgumentOutOfRangeException();
             }
+
+            SDKManager.Instance.Ads.OnAdOpened -= OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded -= OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed -= OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError -= OnAdClosed;
         }
 
         private void OnAdRewarded()
@@ -78,7 +83,7 @@ namespace SkibidiRunner.Managers
                     AdsShopManager.Instance.GetPower(1);
                     break;
                 default:
-                    break;
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -96,7 +101,7 @@ namespace SkibidiRunner.Managers
                     AdsShopManager.Instance.GetPower(0);
                     break;
                 default:
-                    break;
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -125,16 +130,11 @@ namespace SkibidiRunner.Managers
             }
             else
             {
-                string skillMethodName = skill switch
-                {
-                    Skill.Speed => nameof(AdsShopManager.GetSpeed),
-                    Skill.Jump => nameof(AdsShopManager.GetJump),
-                    Skill.Power => nameof(AdsShopManager.GetPower),
-                    _ => throw new ArgumentOutOfRangeException()
-                };
-
-                SDKManager.Instance.Ads.ShowFullscreenAd();
-                //YandexGamesManager.ShowRewardedAdv(AdsShopManager.Instance.gameObject, skillMethodName);
+                SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
+                SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
+                SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
+                SDKManager.Instance.Ads.OnAdError += OnAdClosed;
+                SDKManager.Instance.Ads.ShowRewardedAd();
             }
         }
     }

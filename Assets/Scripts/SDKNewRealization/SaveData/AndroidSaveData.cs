@@ -29,8 +29,10 @@ namespace SDKNewRealization
         {
             string json = PlayerPrefs.GetString(_saveKey);
             var loadedData = JsonConvert.DeserializeObject<StoredData>(json);
-            if (loadedData == null || loadedData.LastSaveTimeTicks == 0) return;
-            CurrentData = JsonConvert.DeserializeObject<StoredData>(json);
+            if (loadedData != null)
+            {
+                CurrentData = loadedData;
+            }
             IsDataLoaded = true;
             DataLoaded?.Invoke();
         }

@@ -60,20 +60,19 @@ namespace SDKNewRealization
         private void OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
             Debug.Log($"Ad {args.AdUnitId} failed for to load with {args.Message}");
-            OnAdError?.Invoke();
         }
 
         private void OnAdDismissed(object sender, EventArgs args)
         {
             DestroyRewardedAd();
             RequestRewardedAd();
-            OnAdClosed?.Invoke();
         }
 
         private void OnAdFailedToShow(object sender, AdFailureEventArgs args)
         {
             DestroyRewardedAd();
             RequestRewardedAd();
+            OnAdError?.Invoke();
         }
 
         private void OnAdShown(object sender, EventArgs args)
@@ -84,6 +83,7 @@ namespace SDKNewRealization
         private void OnRewarded(object sender, Reward args)
         {
             OnAdRewarded?.Invoke();
+            OnAdClosed?.Invoke();
         }
 
         private void DestroyRewardedAd()

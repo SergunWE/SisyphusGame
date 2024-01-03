@@ -25,16 +25,16 @@ namespace SkibidiRunner.Managers
         {
             ShopManager.Instance.CoinCountUpdate += Init;
             button.onClick.AddListener(Buy);
-            SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
-            SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
-            SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
-            SDKManager.Instance.Ads.OnAdError += OnAdClosed;
             Init();
         }
 
         private void OnAdClosed()
         {
             PauseManager.Instance.ResumeGame();
+            SDKManager.Instance.Ads.OnAdOpened -= OnAdOpened;
+            SDKManager.Instance.Ads.OnAdRewarded -= OnAdRewarded;
+            SDKManager.Instance.Ads.OnAdClosed -= OnAdClosed;
+            SDKManager.Instance.Ads.OnAdError -= OnAdClosed;
         }
 
         private void OnAdRewarded()
@@ -75,24 +75,11 @@ namespace SkibidiRunner.Managers
             }
             else
             {
+                SDKManager.Instance.Ads.OnAdOpened += OnAdOpened;
+                SDKManager.Instance.Ads.OnAdRewarded += OnAdRewarded;
+                SDKManager.Instance.Ads.OnAdClosed += OnAdClosed;
+                SDKManager.Instance.Ads.OnAdError += OnAdClosed;
                 SDKManager.Instance.Ads.ShowRewardedAd();
-            }
-        }
-
-        public void BuyForAds(int result)
-        {
-            switch (result)
-            {
-                case 0:
-                    PauseManager.Instance.PauseGame();
-                    break;
-                case 1:
-                    buyItem?.Invoke();
-                    ShopManager.Instance.ChangeCoins(0);
-                    break;
-                case 2:
-                    PauseManager.Instance.ResumeGame();
-                    break;
             }
         }
     }
