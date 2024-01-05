@@ -14,6 +14,7 @@ namespace Menus
         private void Awake()
         {
             Cursor.lockState = CursorLockMode.None;
+            Application.targetFrameRate = 60;
         }
 
         public void StartGame()
